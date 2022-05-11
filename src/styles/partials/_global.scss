@@ -1,0 +1,16 @@
+@use "./fonts" as *;
+@use "./mixins" as *;
+@use "./variables" as *;
+
+//box size reset
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+
+	//TODO: Change the font-family
+	font-family: Titillium Web;
+}
+body {
+	margin: 0;
+}

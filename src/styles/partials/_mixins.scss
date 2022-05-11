@@ -1,0 +1,18 @@
+//media queries for breakpoints
+
+@mixin mobile {
+	@media (min-width: 20rem) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media (min-width: 48rem) {
+		@content;
+	}
+}
+@mixin desktop {
+	@media (min-width: 67.5rem) {
+		@content;
+	}
+}

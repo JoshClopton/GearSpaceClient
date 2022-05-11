@@ -10,7 +10,16 @@ import {
 import React, { useState, useEffect } from "react";
 
 const App = () => {
-	return <>"hello world"</>;
+	return (
+		<>
+			<Router>
+				<Switch>
+					<Route path="/" exact />
+				</Switch>
+			</Router>
+			"hello world"
+		</>
+	);
 };
 
 export default App;

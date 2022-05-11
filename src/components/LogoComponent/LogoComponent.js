@@ -1,5 +1,5 @@
 import React from "react";
-import logoImage from "../assets/logo/BunchofFives_WEB_BW_800x800px.png";
+import logoImage from "../../assets/logo/BunchofFives_WEB_BW_800x800px.png";
 import "./LogoComponent.scss";
 
 //this is the component for the site logo

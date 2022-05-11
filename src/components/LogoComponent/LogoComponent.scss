@@ -1,0 +1,9 @@
+.logo {
+	display: flex;
+	flex-direction: column;
+
+	&__image {
+		height: 6rem;
+		width: 6rem;
+	}
+}

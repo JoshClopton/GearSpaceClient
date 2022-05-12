@@ -8,16 +8,18 @@ import {
 	useParams,
 } from "react-router-dom";
 import React, { useState, useEffect } from "react";
+import HomePage from "./pages/HomePage";
 
 const App = () => {
 	return (
 		<>
 			<Router>
 				<Switch>
-					<Route path="/" exact />
+					<Route path="/" exact>
+						<HomePage />
+					</Route>
 				</Switch>
 			</Router>
-			"hello world"
 		</>
 	);
 };

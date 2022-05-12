@@ -1,0 +1,17 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.form {
+	display: flex;
+	flex-direction: column;
+	width: 48%;
+
+	&__username {
+		@include input-styles;
+	}
+
+	&__password {
+		@include input-styles;
+	}
+}

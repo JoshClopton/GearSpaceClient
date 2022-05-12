@@ -2,13 +2,16 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
-.logo {
+.form {
 	display: flex;
 	flex-direction: column;
+	width: 48%;
 
-	&__image {
-		height: 6rem;
-		width: 6rem;
-		filter: invert(1);
+	&__username {
+		@include input-styles;
+	}
+
+	&__password {
+		@include input-styles;
 	}
 }

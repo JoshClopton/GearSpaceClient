@@ -21,6 +21,7 @@ const LoginFormComponent = () => {
 				placeholder="Password"
 			></input>
 			<LoginButtonComponent />
+			<div>Create an account.</div>
 		</div>
 	);
 };

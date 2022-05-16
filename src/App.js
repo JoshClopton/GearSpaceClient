@@ -19,6 +19,7 @@ const App = () => {
 					<Route path="/" exact>
 						<HomePage />
 					</Route>
+					<Route path="/shelves/:shelfID" />
 				</Switch>
 			</Router>
 		</>

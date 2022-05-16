@@ -4,26 +4,42 @@
 
 .header {
 	display: flex;
+	flex-direction: column;
 	align-items: center;
-	width: 100%;
 	justify-content: space-around;
-	padding-left: -11rem;
-	position: absolute;
-	top: 0rem;
 	background-color: black;
 	height: 12rem;
+	margin-bottom: 3rem;
+	width: 100%;
+
+	@include tablet {
+		flex-direction: row;
+	}
+
+	@include desktop {
+		justify-content: space-between;
+		padding: 0rem 10rem;
+	}
 
 	&__title-logo-container {
 		display: flex;
-		width: 32rem;
+		flex-direction: column;
 		justify-content: space-evenly;
 		align-items: center;
-		margin-left: -7rem;
+
+		@include tablet {
+			flex-direction: row;
+			gap: 1rem;
+		}
 	}
 
 	&__title {
-		font-size: 3.5rem;
+		font-size: 2rem;
 		color: gray;
+
+		@include desktop {
+			font-size: 3rem;
+		}
 	}
 
 	&__login-link {
@@ -33,12 +49,22 @@
 }
 
 .search-form {
-	margin-left: -7rem;
-	width: 9rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+
+	@include tablet {
+		flex-direction: row;
+	}
+
+	@include desktop {
+		gap: 2rem;
+	}
 
 	&__input {
-		width: 14rem;
-		height: 2rem;
+		// width: 14rem;
+		// height: 2rem;
 		text-align: center;
 		font-size: 1.2rem;
 	}

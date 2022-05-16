@@ -19,15 +19,14 @@ export const Header = () => {
 					name="search"
 					placeholder="Search by category"
 				/>
+				<a
+					className="header__login-link"
+					activeClassName="header__login-link--active"
+					href={"http://localhost:8000/auth/google"}
+				>
+					Sign In
+				</a>
 			</form>
-
-			<a
-				className="header__login-link"
-				activeClassName="header__login-link--active"
-				href={"http://localhost:8000/auth/google"}
-			>
-				Sign In
-			</a>
 		</div>
 	);
 };

@@ -2,16 +2,17 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
-.logo {
+.card {
 	display: flex;
 	flex-direction: column;
 
 	&__image {
-		width: 4rem;
-		filter: invert(1);
+		width: 12rem;
+		height: 12rem;
+		border-radius: 0.625rem;
+	}
 
-		@include desktop {
-			width: 8rem;
-		}
+	&__category {
+		font-size: 1.5rem;
 	}
 }

@@ -1,0 +1,45 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.header {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	justify-content: space-around;
+	padding-left: -11rem;
+	position: absolute;
+	top: 0rem;
+	background-color: black;
+	height: 12rem;
+
+	&__title-logo-container {
+		display: flex;
+		width: 32rem;
+		justify-content: space-evenly;
+		align-items: center;
+		margin-left: -7rem;
+	}
+
+	&__title {
+		font-size: 3.5rem;
+		color: gray;
+	}
+
+	&__login-link {
+		text-decoration: none;
+		color: gray;
+	}
+}
+
+.search-form {
+	margin-left: -7rem;
+	width: 9rem;
+
+	&__input {
+		width: 14rem;
+		height: 2rem;
+		text-align: center;
+		font-size: 1.2rem;
+	}
+}

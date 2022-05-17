@@ -1,10 +1,21 @@
-import React from "react";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
+import LoginButton from "../LoginButton/LoginButton";
 import LogoComponent from "../LogoComponent/LogoComponent";
-// import LoginButtonComponent from "../components/LoginButtonComponent/LoginButtonComponent";
 import "./Header.scss";
 
 export const Header = () => {
+	const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+	useEffect(() => {
+		axios
+			.get("http://localhost:8000/auth/profile", { withCredentials: true })
+			.then((res) => {
+				console.log("🕵🏻‍♂️ res: ", res); //TODO: remove/comment
+			});
+	}, []);
+
 	return (
 		<div className="header">
 			<div className="header__title-logo-container">
@@ -20,9 +31,8 @@ export const Header = () => {
 					placeholder="Search by category"
 				/>
 				<a
-					className="header__login-link"
-					activeClassName="header__login-link--active"
-					href={"http://localhost:8000/auth/google"}
+					className="header__login-link header__login-link--active"
+					href="http://localhost:8000/auth/google"
 				>
 					Sign In
 				</a>

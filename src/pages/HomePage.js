@@ -5,18 +5,36 @@ import LogoComponent from "../components/LogoComponent/LogoComponent";
 import LoginFormComponent from "../components/LoginFormComponent/LoginFormComponent";
 import { CardComponent } from "../components/CardComponent/CardComponent";
 import "./HomePage.scss";
-import LoginButtonComponent from "../components/LoginButtonComponent/LoginButtonComponent";
+import LoginButton from "../components/LoginButton/LoginButton";
 import { Header } from "../components/Header/Header";
+import uniqid from "uniqid";
+import shelfImage from "../assets/images/packs.png";
 
 const HomePage = () => {
+	const shelfCards = [
+		{
+			name: "sleep",
+			image: shelfImage,
+		},
+		{
+			name: "cook",
+			image: shelfImage,
+		},
+	];
+
+	//creating a hook
+	// const [modal, setModal]=useState(false);
+
+	// const showModal = ()
+
 	return (
 		<div className="home-page">
 			<Header />
-			<CardComponent />
-			{/* <LogoComponent />
-			<h1>GearSpace</h1>
-			<LoginFormComponent /> */}
-			{/* <LoginButtonComponent /> */}
+			{shelfCards.map((card) => {
+				return (
+					<CardComponent key={uniqid()} shelf={card.name} image={card.image} />
+				);
+			})}
 		</div>
 	);
 };

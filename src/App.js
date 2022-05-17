@@ -19,8 +19,8 @@ const App = () => {
 					<Route path="/" exact>
 						<HomePage />
 					</Route>
-					<Route path="/shelves" />
-					<Route path="/shelves/:shelfID" />
+					<Route path="/:shelfID" />
+					<Route path="/profile" />
 				</Switch>
 			</Router>
 		</>

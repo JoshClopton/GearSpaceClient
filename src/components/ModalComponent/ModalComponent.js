@@ -6,8 +6,8 @@ import CancelButton from "../../assets/icons/close-24px.svg";
 function ModalComponent({
 	show,
 	handleClose,
-	handleDelete,
-	deleteWarehouseObject,
+	// handleDelete,
+	// deleteWarehouseObject,
 }) {
 	//logic to show or hide the Modal
 	const toggleModal = show ? "modal--display" : "modal--hide";

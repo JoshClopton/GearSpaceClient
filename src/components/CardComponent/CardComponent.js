@@ -1,16 +1,16 @@
 import React from "react";
 import tentImage from "../../assets/images/tent.png";
 import "./CardComponent.scss";
+import image from "../../assets/images/packs.png";
+import shelfCards from "../../data/constants.js";
 
-export const CardComponent = () => {
+export const CardComponent = (props) => {
+	const { shelf, image } = props;
+
 	return (
-		<article className="card">
-			<Link to={`shelves/${shelf.id}`}>
-				{/* card image will be linked to the users shelf table category image */}
-				<img className="card__image" src={tentImage} />
-			</Link>
-			{/* category will be linked to users shelf table category */}
-			<div className="card__category">Shelter</div>
+		<article className="shelf-card">
+			<img src={image} alt="stuff" className="shelf-card__image"></img>
+			<div className="shelf-card__category">{shelf}</div>
 		</article>
 	);
 };

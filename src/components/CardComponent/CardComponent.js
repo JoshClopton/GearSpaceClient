@@ -1,8 +1,5 @@
 import React from "react";
-import tentImage from "../../assets/images/tent.png";
 import "./CardComponent.scss";
-import image from "../../assets/images/packs.png";
-import shelfCards from "../../data/constants.js";
 
 export const CardComponent = (props) => {
 	const { shelf, image } = props;

@@ -8,17 +8,33 @@ import "./HomePage.scss";
 import LoginButton from "../components/LoginButton/LoginButton";
 import { Header } from "../components/Header/Header";
 import uniqid from "uniqid";
-import shelfImage from "../assets/images/packs.png";
+import packs from "../assets/images/packs.png";
+import cook from "../assets/images/cook.png";
+import optics from "../assets/images/optics.png";
+import shelter from "../assets/images/shelter.png";
+import sleep from "../assets/images/sleep.jpg";
 
 const HomePage = () => {
 	const shelfCards = [
 		{
 			name: "sleep",
-			image: shelfImage,
+			image: sleep,
 		},
 		{
 			name: "cook",
-			image: shelfImage,
+			image: cook,
+		},
+		{
+			name: "packs",
+			image: packs,
+		},
+		{
+			name: "optics",
+			image: optics,
+		},
+		{
+			name: "shelter",
+			image: shelter,
 		},
 	];
 

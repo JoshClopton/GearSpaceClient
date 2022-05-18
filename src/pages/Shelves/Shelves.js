@@ -12,6 +12,7 @@ export const Shelves = () => {
 	const [shelfItem, setShelfItem] = useState(null);
 	const [shelfLocation, setShelfLocation] = useState(null);
 	const [shelfNotes, setShelfNotes] = useState(null);
+	const [shelfDescription, setShelfDescription] = useState(null);
 
 	const handleClick = () => {
 		axios.get("http://localhost:8000/shelves").then((res) => {
@@ -30,6 +31,7 @@ export const Shelves = () => {
 			setShelfItem(res.data[0].item);
 			setShelfLocation(res.data[0].location);
 			setShelfNotes(res.data[0].notes);
+			setShelfDescription(res.data[0].description);
 			//TODO: remove/comment
 		});
 	}, []);
@@ -47,11 +49,16 @@ export const Shelves = () => {
 									alt="stuff"
 									className="shelf-card__image"
 								></img> */}
-					<span className="shelves__title">My Shelves</span>
+					<span className="shelves__title">Packs</span>
 					<div className="shelves__details-container">
 						<div className="shelves__label">Item:</div>
 						<div className="shelves__content">{shelfItem}</div>
 					</div>
+					<div className="shelves__details-container">
+						<div className="shelves__label">Description:</div>
+						<div className="shelves__content">{shelfDescription}</div>
+					</div>
+
 					<div className="shelves__details-container">
 						<div className="shelves__label">Location:</div>
 						<div className="shelves__content">{shelfLocation}</div>

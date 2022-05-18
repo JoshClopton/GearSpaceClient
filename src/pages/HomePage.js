@@ -50,11 +50,17 @@ const HomePage = () => {
 	return (
 		<div className="home-page">
 			<Header />
-			{shelfCards.map((card) => {
-				return (
-					<CardComponent key={uniqid()} shelf={card.name} image={card.image} />
-				);
-			})}
+			<main className="home-page__main-container">
+				{shelfCards.map((card) => {
+					return (
+						<CardComponent
+							key={uniqid()}
+							shelf={card.name}
+							image={card.image}
+						/>
+					);
+				})}
+			</main>
 		</div>
 	);
 };

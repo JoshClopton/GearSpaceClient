@@ -22,7 +22,7 @@ export const CardComponent = (props) => {
 
 	return (
 		<article className="shelf-card">
-			<NavLink to={"/shelves"}>
+			<NavLink className="nav-link" to={"/shelves"}>
 				<div className="shelf-card__content-container">
 					<img
 						// onClick={handleClick}

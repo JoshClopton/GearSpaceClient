@@ -21,11 +21,17 @@
 
 	&__details-container {
 		display: flex;
+		flex-direction: column;
 		gap: 0.5rem;
 		padding-bottom: 0.5rem;
 	}
 
 	&__label {
 		color: antiquewhite;
+	}
+
+	&__content {
+		width: 22rem;
+		line-height: 1.3rem;
 	}
 }

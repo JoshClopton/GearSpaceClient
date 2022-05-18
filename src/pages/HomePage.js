@@ -36,6 +36,10 @@ const HomePage = () => {
 			name: "shelter",
 			image: shelter,
 		},
+		{
+			name: "cook",
+			image: cook,
+		},
 	];
 
 	//creating a hook

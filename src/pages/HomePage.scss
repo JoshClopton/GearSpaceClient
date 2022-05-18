@@ -1,6 +1,17 @@
+@use "../styles/partials/fonts" as *;
+@use "../styles/partials/mixins" as *;
+@use "../styles/partials/variables" as *;
+
 .home-page {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	background-color: rgb(95, 133, 102);
+
+	@include tablet {
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: 1rem;
+		justify-content: space-around;
+	}
 }

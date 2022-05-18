@@ -1,0 +1,31 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.shelves {
+	display: flex;
+	flex-direction: column;
+
+	&__content-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: right;
+		padding-left: 2rem;
+	}
+
+	&__title {
+		color: antiquewhite;
+		font-size: 2rem;
+		padding-bottom: 0.5rem;
+	}
+
+	&__details-container {
+		display: flex;
+		gap: 0.5rem;
+		padding-bottom: 0.5rem;
+	}
+
+	&__label {
+		color: antiquewhite;
+	}
+}

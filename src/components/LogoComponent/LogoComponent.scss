@@ -10,6 +10,10 @@
 		width: 4rem;
 		filter: invert(1);
 
+		@include tablet {
+			width: 7rem;
+		}
+
 		@include desktop {
 			width: 8rem;
 		}

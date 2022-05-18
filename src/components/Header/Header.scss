@@ -37,6 +37,10 @@
 		font-size: 2rem;
 		color: gray;
 
+		@include tablet {
+			font-size: 2.5rem;
+		}
+
 		@include desktop {
 			font-size: 3rem;
 		}

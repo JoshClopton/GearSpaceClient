@@ -13,6 +13,7 @@ export const Shelves = () => {
 	const [shelfLocation, setShelfLocation] = useState(null);
 	const [shelfNotes, setShelfNotes] = useState(null);
 	const [shelfDescription, setShelfDescription] = useState(null);
+	const [shelves, setShelves] = useState(null);
 
 	const handleClick = () => {
 		axios.get("http://localhost:8000/shelves").then((res) => {

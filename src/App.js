@@ -11,6 +11,7 @@ import {
 import React, { useState, useEffect } from "react";
 import HomePage from "./pages/HomePage";
 import { Shelves } from "./pages/Shelves/Shelves";
+import { FormPage } from "./pages/FormPage/FormPage";
 
 const App = () => {
 	return (
@@ -20,6 +21,10 @@ const App = () => {
 					<Route path="/" exact>
 						<HomePage />
 					</Route>
+					<Route path="/form-page">
+						<FormPage />
+					</Route>
+
 					<Route path="/shelves">
 						<Shelves />
 					</Route>

@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 
 export const CardComponent = (props) => {
 	// const [shelves, setShelves] = useState([]);
-	const { shelf, image } = props;
+	const { shelf, image, shelfId } = props;
 
 	//function to make a call to the server and grab items
 	// const handleClick = () => {
@@ -22,7 +22,7 @@ export const CardComponent = (props) => {
 
 	return (
 		<article className="shelf-card">
-			<NavLink className="nav-link" to={"/shelves"}>
+			<NavLink className="nav-link" to={`/shelves/${shelfId}`}>
 				<div className="shelf-card__content-container">
 					<img
 						// onClick={handleClick}

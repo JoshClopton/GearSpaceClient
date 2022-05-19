@@ -1,10 +1,13 @@
 import React from "react";
 import "./FormPage.scss";
 import { Formik, Field, Form } from "formik";
+import axios from "axios";
+import { Header } from "../../components/Header/Header";
 
 export const FormPage = () => {
 	return (
 		<div>
+			<Header />
 			<h1>Create a new shelf:</h1>
 			<Formik
 				initialValues={{
@@ -13,7 +16,24 @@ export const FormPage = () => {
 					description: "",
 				}}
 				onSubmit={(e) => {
-					console.log(e);
+					axios
+						.post(
+							`http://localhost:8000/shelves`,
+							{
+								shelf: e.shelf,
+								description: e.description,
+								item: e.item,
+							},
+							{ withCredentials: true }
+						)
+						// .then(() => {
+						//   // Re-fetch the posts
+						//   this.props.onPostCreate();
+						//   e.target.reset();
+						// })
+						.catch((err) => {
+							console.log("Error creating a new post:", err);
+						});
 				}}
 			>
 				<Form>
@@ -29,36 +49,3 @@ export const FormPage = () => {
 		</div>
 	);
 };
-
-{
-	/* <h1>Sign Up</h1>
-<Formik
-  initialValues={{
-    firstName: '',
-    lastName: '',
-    email: '',
-  }}
-  onSubmit={async (values) => {
-    await new Promise((r) => setTimeout(r, 500));
-    alert(JSON.stringify(values, null, 2));
-  }}
->
-  <Form>
-    <label htmlFor="firstName">First Name</label>
-    <Field id="firstName" name="firstName" placeholder="Jane" />
-
-    <label htmlFor="lastName">Last Name</label>
-    <Field id="lastName" name="lastName" placeholder="Doe" />
-
-    <label htmlFor="email">Email</label>
-    <Field
-      id="email"
-      name="email"
-      placeholder="jane@acme.com"
-      type="email"
-    />
-    <button type="submit">Submit</button>
-  </Form>
-</Formik>
-</div> */
-}

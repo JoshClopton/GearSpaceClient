@@ -16,25 +16,29 @@ export const Shelves = () => {
 	const [shelves, setShelves] = useState(null);
 
 	const handleClick = () => {
-		axios.get("http://localhost:8000/shelves").then((res) => {
-			console.log("🕵🏻‍♂️ res: ", res); //TODO: remove/comment
+		axios
+			.get("http://localhost:8000/shelves", { withCredentials: true })
+			.then((res) => {
+				console.log("🕵🏻‍♂️ res: ", res); //TODO: remove/comment
 
-			console.log("🕵🏻‍♂️ res.data[0].item: ", res.data[0].item); //TODO: remove/comment
-		});
+				console.log("🕵🏻‍♂️ res.data[0].item: ", res.data[0].item); //TODO: remove/comment
+			});
 	};
 
 	useEffect(() => {
-		axios.get("http://localhost:8000/shelves").then((res) => {
-			console.log("🕵🏻‍♂️ res: ", res); //TODO: remove/comment
+		axios
+			.get("http://localhost:8000/shelves", { withCredentials: true })
+			.then((res) => {
+				console.log("🕵🏻‍♂️ res: ", res); //TODO: remove/comment
 
-			console.log("🕵🏻‍♂️ res.data[0].item: ", res.data[0].item); //TODO: remove/comment
+				console.log("🕵🏻‍♂️ res.data[0].item: ", res.data[0].item); //TODO: remove/comment
 
-			setShelfItem(res.data[0].item);
-			setShelfLocation(res.data[0].location);
-			setShelfNotes(res.data[0].notes);
-			setShelfDescription(res.data[0].description);
-			//TODO: remove/comment
-		});
+				setShelfItem(res.data[0].item);
+				setShelfLocation(res.data[0].location);
+				setShelfNotes(res.data[0].notes);
+				setShelfDescription(res.data[0].description);
+				//TODO: remove/comment
+			});
 	}, []);
 
 	return (

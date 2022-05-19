@@ -13,6 +13,7 @@ export const Header = () => {
 			.get("http://localhost:8000/auth/profile", { withCredentials: true })
 			.then((res) => {
 				console.log("🕵🏻‍♂️ res: ", res); //TODO: remove/comment
+				res.data.google_id ? setIsLoggedIn(true) : setIsLoggedIn(false);
 			});
 	}, []);
 
@@ -30,12 +31,22 @@ export const Header = () => {
 					name="search"
 					placeholder="Search by category"
 				/>
-				<a
-					className="header__login-link header__login-link--active"
-					href="http://localhost:8000/auth/google"
-				>
-					Sign In
-				</a>
+
+				{isLoggedIn ? (
+					<a
+						className="header__login-link header__login-link--active"
+						href="http://localhost:8000/auth/logout"
+					>
+						Log Out
+					</a>
+				) : (
+					<a
+						className="header__login-link header__login-link--active"
+						href="http://localhost:8000/auth/google"
+					>
+						Log In
+					</a>
+				)}
 			</form>
 		</div>
 	);

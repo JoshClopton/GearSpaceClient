@@ -1,6 +1,6 @@
 import React from "react";
 import "./FormPage.scss";
-import { Formik, Field, Form } from "formik";
+import { Formik, Field, Form, validateYupSchema } from "formik";
 import axios from "axios";
 import { Header } from "../../components/Header/Header";
 
@@ -11,11 +11,15 @@ export const FormPage = () => {
 			<h1>Create a new shelf:</h1>
 			<Formik
 				initialValues={{
+					picked: "",
 					shelf: "",
 					item: "",
 					description: "",
+					qty: "",
+					location: "",
+					notes: "",
 				}}
-				onSubmit={(e) => {
+				onSubmit={(e, values) => {
 					axios
 						.post(
 							`http://localhost:8000/shelves`,
@@ -39,9 +43,38 @@ export const FormPage = () => {
 						});
 				}}
 			>
+				{/* {({ values }) => ( */}
 				<Form>
-					<label htmlFor="shelf">Shelf</label>
-					<Field id="shelf" name="shelf" />
+					<label>
+						<Field type="radio" name="shelf" value="shelter" />
+						Shelter
+					</label>
+					<label>
+						<Field type="radio" name="shelf" value="cook" />
+						Cook
+					</label>
+					<label>
+						<Field type="radio" name="shelf" value="bedding" />
+						Bedding
+					</label>
+					<label>
+						<Field type="radio" name="shelf" value="lighting" />
+						Lighting
+					</label>
+					<label>
+						<Field type="radio" name="shelf" value="clothing" />
+						Clothing
+					</label>
+					<label>
+						<Field type="radio" name="shelf" value="optics" />
+						Optics
+					</label>
+					<label>
+						<Field type="radio" name="shelf" value="otherGear" />
+						Other Gear
+					</label>
+					{/* <div>Selected: {values.selected}</div> */}
+
 					<label htmlFor="item">Item</label>
 					<Field id="item" name="item" />
 					<label htmlFor="description">Description</label>
@@ -55,6 +88,7 @@ export const FormPage = () => {
 
 					<button type="submit">Submit</button>
 				</Form>
+				{/* )} */}
 			</Formik>
 		</div>
 	);

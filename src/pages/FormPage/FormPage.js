@@ -23,6 +23,9 @@ export const FormPage = () => {
 								shelf: e.shelf,
 								description: e.description,
 								item: e.item,
+								location: e.location,
+								qty: e.qty,
+								notes: e.notes,
 							},
 							{ withCredentials: true }
 						)
@@ -43,6 +46,13 @@ export const FormPage = () => {
 					<Field id="item" name="item" />
 					<label htmlFor="description">Description</label>
 					<Field id="description" name="description" />
+					<label htmlFor="qty">Quantity</label>
+					<Field id="qty" name="qty" />
+					<label htmlFor="location">Location</label>
+					<Field id="location" name="location" />
+					<label htmlFor="notes">Notes</label>
+					<Field id="notes" name="notes" />
+
 					<button type="submit">Submit</button>
 				</Form>
 			</Formik>

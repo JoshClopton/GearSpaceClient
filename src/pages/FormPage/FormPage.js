@@ -18,6 +18,7 @@ export const FormPage = () => {
 					qty: "",
 					location: "",
 					notes: "",
+					otherGear: "",
 				}}
 				onSubmit={(e, values) => {
 					axios
@@ -30,6 +31,7 @@ export const FormPage = () => {
 								location: e.location,
 								qty: e.qty,
 								notes: e.notes,
+								otherGear: e.otherGear,
 							},
 							{ withCredentials: true }
 						)

@@ -12,11 +12,7 @@ import { useParams } from "react-router-dom";
 export const Shelves = () => {
 	let { shelfId } = useParams();
 
-	const [shelfItem, setShelfItem] = useState(null);
-	const [shelfLocation, setShelfLocation] = useState(null);
-	const [shelfNotes, setShelfNotes] = useState(null);
-	const [shelfDescription, setShelfDescription] = useState(null);
-	const [shelfQty, setShelfQty] = useState(null);
+	const [shelfData, setShelfData] = useState(null);
 
 	useEffect(() => {
 		axios
@@ -24,50 +20,47 @@ export const Shelves = () => {
 				withCredentials: true,
 			})
 			.then((res) => {
-				console.log("🕵🏻‍♂️ res.data ", res.data); //TODO: remove/comment
-
 				const shelves = res.data;
+				console.log("🕵🏻‍♂️ shelves: ", shelves); //TODO: remove/comment
 
-				shelves.map((shelf) => {
-					return (
-						setShelfItem(shelf.item),
-						setShelfLocation(shelf.location),
-						setShelfNotes(shelf.notes),
-						setShelfDescription(shelf.description),
-						setShelfQty(shelf.qty)
-					);
-				});
+				setShelfData(shelves);
 			});
 	}, []);
 
 	return (
 		<div className="shelves">
 			<Header />
-			{shelfItem && (
-				<article className="shelves__content-container">
-					<span className="shelves__title">Packs</span>
-					<div className="shelves__details-container">
-						<div className="shelves__label">Item:</div>
-						<div className="shelves__content">{shelfItem}</div>
-					</div>
-					<div className="shelves__details-container">
-						<div className="shelves__label">Description:</div>
-						<div className="shelves__content">{shelfDescription}</div>
-					</div>
+			{shelfData ? (
+				shelfData.map((shelf) => {
+					return (
+						<article className="shelves__content-container" key={shelf.id}>
+							<span className="shelves__title">{shelf.shelf}</span>
+							<div className="shelves__details-container">
+								<div className="shelves__label">Item:</div>
+								<div className="shelves__content">{shelf.item}</div>
+							</div>
+							<div className="shelves__details-container">
+								<div className="shelves__label">Description:</div>
+								<div className="shelves__content">{shelf.description}</div>
+							</div>
 
-					<div className="shelves__details-container">
-						<div className="shelves__label">Location:</div>
-						<div className="shelves__content">{shelfLocation}</div>
-					</div>
-					<div className="shelves__details-container">
-						<div className="shelves__label">Notes:</div>
-						<div className="shelves__content">{shelfNotes}</div>
-					</div>
-					<div className="shelves__details-container">
-						<div className="shelves__label">Qty:</div>
-						<div className="shelves__content">{shelfQty}</div>
-					</div>
-				</article>
+							<div className="shelves__details-container">
+								<div className="shelves__label">Location:</div>
+								<div className="shelves__content">{shelf.location}</div>
+							</div>
+							<div className="shelves__details-container">
+								<div className="shelves__label">Notes:</div>
+								<div className="shelves__content">{shelf.notes}</div>
+							</div>
+							<div className="shelves__details-container">
+								<div className="shelves__label">Qty:</div>
+								<div className="shelves__content">{shelf.qty}</div>
+							</div>
+						</article>
+					);
+				})
+			) : (
+				<p>...Loading</p>
 			)}
 		</div>
 	);

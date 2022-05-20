@@ -45,7 +45,6 @@ export const FormPage = () => {
 						});
 				}}
 			>
-				{/* {({ values }) => ( */}
 				<Form>
 					<label>
 						<Field type="radio" name="shelf" value="shelter" />
@@ -72,7 +71,7 @@ export const FormPage = () => {
 						Optics
 					</label>
 					<label>
-						<Field type="radio" name="shelf" value="otherGear" />
+						<Field type="radio" name="shelf" value="other-gear" />
 						Other Gear
 					</label>
 					{/* <div>Selected: {values.selected}</div> */}

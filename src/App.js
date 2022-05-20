@@ -22,16 +22,16 @@ const App = () => {
 						<HomePage />
 					</Route>
 
+					<Route path="/shelves/:shelfId">
+						<Shelves />
+					</Route>
+
 					<Route path="/shelves">
 						<Shelves />
 					</Route>
 
 					<Route path="/form-page">
 						<FormPage />
-					</Route>
-
-					<Route path="shelves/:shelfId">
-						<Shelves />
 					</Route>
 
 					<Route path="/profile" />

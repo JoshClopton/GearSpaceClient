@@ -9,27 +9,14 @@ import { useParams } from "react-router-dom";
 // import LogoComponent from "../LogoComponent/LogoComponent";
 // import "./Header.scss";
 
-export const Shelves = (props) => {
-	const { shelfId } = useParams();
+export const Shelves = () => {
+	let { shelfId } = useParams();
 
 	const [shelfItem, setShelfItem] = useState(null);
 	const [shelfLocation, setShelfLocation] = useState(null);
 	const [shelfNotes, setShelfNotes] = useState(null);
 	const [shelfDescription, setShelfDescription] = useState(null);
-	const [shelves, setShelves] = useState(null);
-
-	// let { shelfId } = useParams();
-
-	// const handleClick = () => {
-	// 	// console.log(id);
-	// 	axios
-	// 		.get("http://localhost:8000/shelves", { withCredentials: true })
-	// 		.then((res) => {
-	// 			console.log("🕵🏻‍♂️ res: ", res); //TODO: remove/comment
-
-	// 			console.log("🕵🏻‍♂️ res.data[0].item: ", res.data[0].item); //TODO: remove/comment
-	// 		});
-	// };
+	const [shelfQty, setShelfQty] = useState(null);
 
 	useEffect(() => {
 		axios
@@ -37,15 +24,19 @@ export const Shelves = (props) => {
 				withCredentials: true,
 			})
 			.then((res) => {
-				console.log("🕵🏻‍♂️ res: ", res); //TODO: remove/comment
+				console.log("🕵🏻‍♂️ res.data ", res.data); //TODO: remove/comment
 
-				// console.log("🕵🏻‍♂️ res.data[0].item: ", res.data[0].item); //TODO: remove/comment
+				const shelves = res.data;
 
-				setShelfItem(res.data[0].item);
-				setShelfLocation(res.data[0].location);
-				setShelfNotes(res.data[0].notes);
-				setShelfDescription(res.data[0].description);
-				//TODO: remove/comment
+				shelves.map((shelf) => {
+					return (
+						setShelfItem(shelf.item),
+						setShelfLocation(shelf.location),
+						setShelfNotes(shelf.notes),
+						setShelfDescription(shelf.description),
+						setShelfQty(shelf.qty)
+					);
+				});
 			});
 	}, []);
 
@@ -54,13 +45,6 @@ export const Shelves = (props) => {
 			<Header />
 			{shelfItem && (
 				<article className="shelves__content-container">
-					{/* <div className="shelf-card__content-container">
-								<img
-									// onClick={handleClick}
-									src={image}
-									alt="stuff"
-									className="shelf-card__image"
-								></img> */}
 					<span className="shelves__title">Packs</span>
 					<div className="shelves__details-container">
 						<div className="shelves__label">Item:</div>
@@ -79,8 +63,10 @@ export const Shelves = (props) => {
 						<div className="shelves__label">Notes:</div>
 						<div className="shelves__content">{shelfNotes}</div>
 					</div>
-
-					{/* {shelves} */}
+					<div className="shelves__details-container">
+						<div className="shelves__label">Qty:</div>
+						<div className="shelves__content">{shelfQty}</div>
+					</div>
 				</article>
 			)}
 		</div>

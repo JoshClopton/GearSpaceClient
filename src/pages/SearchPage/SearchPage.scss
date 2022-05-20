@@ -1,0 +1,49 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.title {
+	margin: 0rem 1rem 1rem 1rem;
+}
+
+.form {
+	margin-bottom: 1rem;
+	display: flex;
+	align-items: center;
+
+	@include desktop {
+		gap: 1rem;
+	}
+
+	&__button {
+		@include desktop {
+			width: 9.5rem;
+		}
+	}
+}
+
+.products {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1rem;
+	align-items: center;
+
+	@include desktop {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 1rem;
+		align-items: initial;
+		flex-wrap: wrap;
+		margin-left: 1rem;
+	}
+
+	&__title {
+		font-size: 1.5rem;
+		padding-left: 0.5rem;
+	}
+
+	&__image {
+		margin-bottom: 2rem;
+		width: 8rem;
+	}
+}

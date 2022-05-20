@@ -4,28 +4,40 @@ import { Formik, Field, Form, validateYupSchema } from "formik";
 import axios from "axios";
 import { Header } from "../../components/Header/Header";
 import { useState } from "react";
+import ModalComponent from "../../components/ModalComponent/ModalComponent";
 
 export const SearchPage = () => {
-	// const [searchData, setSearchData] = useState(null);
-	// const [searchImage, setSearchImage] = useState(null);
 	const [products, setProducts] = useState(null);
+	const [productTitle, setProductTitle] = useState(null);
+	const [productImage, setProductImage] = useState(null);
+	const [selectedProduct, setSelectedProduct] = useState(null);
+
+	// const handleClick = () => {
+	// 		setSelectedProduct(true)
+	// 		setProductTitle(product.title)
+	// 		setProductImage(product.thumbnail);
+	// };
+
 	const options = {
 		method: "GET",
 		url: "https://amazon-product-reviews-keywords.p.rapidapi.com/product/search",
 		params: {
 			keyword: "",
 			country: "US",
-			category: "aps",
+			category: "sporting",
 		},
 		headers: {
 			"X-RapidAPI-Host": "amazon-product-reviews-keywords.p.rapidapi.com",
 			"X-RapidAPI-Key": "2edab6dd23msh7b1abb83e1d7a9ep19250bjsn2a09939b82ef",
 		},
 	};
+
+	// console.log("🕵🏻‍♂️ asin: ", asin); //TODO: remove/comment
+
 	return (
 		<div>
 			<Header />
-			<h1>Search for your items:</h1>
+			<h1 className="title">Search for your items:</h1>
 			<Formik
 				initialValues={{
 					search: "",
@@ -44,12 +56,6 @@ export const SearchPage = () => {
 							); //TODO: remove/comment
 							const productsResponse = response.data.products;
 							setProducts(productsResponse);
-							// setSearchImage(response.data.products);
-							// console.log("🕵🏻‍♂️ searchData: ", searchData); //TODO: remove/comment
-
-							// .then(() => {
-							//   // Re-fetch the posts
-							//   this.props.onPostCreate();
 							//   e.target.reset();
 						})
 						.catch((err) => {
@@ -57,25 +63,45 @@ export const SearchPage = () => {
 						});
 				}}
 			>
-				<Form>
+				<Form className="form">
 					<label>
 						<Field type="input" name="search" />
 						Search
 					</label>
-					<button type="submit">Submit</button>
+					<button type="submit" className="form__button">
+						Submit
+					</button>
 				</Form>
 			</Formik>
+			{/* <ModalComponent asin={asin} /> */}
 			{products ? (
 				products.map((product) => {
 					return (
-						<section>
-							<div>{product.title}</div>
-							<img src={product.thumbnail} />
+						<section className="products">
+							<div
+								onClick={() => {
+									setSelectedProduct(true);
+									setProductImage(product.thumbnail);
+									setProductTitle(product.title);
+								}}
+								className="products__title"
+							>
+								{product.title}
+							</div>
+							<img src={product.thumbnail} className="products__image" />
 						</section>
 					);
 				})
 			) : (
 				<>...Loading</>
+			)}
+			{selectedProduct && (
+				<ModalComponent
+					productTitle={productTitle}
+					productImage={productImage}
+					// title={product.title}
+					// thumbnail={product.thumbnail}
+				/>
 			)}
 		</div>
 	);

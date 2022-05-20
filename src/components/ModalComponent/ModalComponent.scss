@@ -36,7 +36,7 @@
 	height: 2rem;
 	width: 47%;
 	border-radius: 1rem;
-	background-color: $Red;
+	background-color: red;
 	color: #fff;
 
 	@include tablet {
@@ -50,8 +50,8 @@
 	height: 2rem;
 	border-radius: 1rem;
 	border: 1px solid black;
-	background-color: $White;
-	color: $Instock-Black;
+	background-color: white;
+	color: black;
 	width: 47%;
 
 	@include tablet {
@@ -60,12 +60,12 @@
 }
 
 .modal--display {
-	background-color: $White;
-	height: 100%;
+	background-color: white;
+	height: 56%;
 	width: 100%;
 	position: absolute;
 	z-index: 2;
-	top: 0;
+	top: 255px;
 
 	@include tablet {
 		position: absolute;
@@ -78,6 +78,7 @@
 
 	@include desktop {
 		right: 15rem;
+		height: 40rem;
 	}
 }
 

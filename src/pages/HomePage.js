@@ -19,33 +19,34 @@ const HomePage = () => {
 		{
 			name: "sleep",
 			image: sleep,
+			shelfId: "sleep",
 		},
 		{
 			name: "cook",
 			image: cook,
+			shelfId: "cook",
 		},
 		{
 			name: "packs",
 			image: packs,
+			shelfId: "packs",
 		},
 		{
 			name: "optics",
 			image: optics,
+			shelfId: "optics",
 		},
 		{
 			name: "shelter",
 			image: shelter,
+			shelfId: "shelter",
 		},
 		{
-			name: "cook",
+			name: "other-gear",
 			image: cook,
+			shelfId: "other-gear",
 		},
 	];
-
-	//creating a hook
-	// const [modal, setModal]=useState(false);
-
-	// const showModal = ()
 
 	return (
 		<div className="home-page">
@@ -57,6 +58,7 @@ const HomePage = () => {
 							key={uniqid()}
 							shelf={card.name}
 							image={card.image}
+							shelfId={card.shelfId}
 						/>
 					);
 				})}

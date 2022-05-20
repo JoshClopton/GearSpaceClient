@@ -4,34 +4,42 @@ import { Link, NavLink } from "react-router-dom";
 import { Header } from "../../components/Header/Header";
 import "./Shelves.scss";
 import { CardComponent } from "../../components/CardComponent/CardComponent";
+import { useParams } from "react-router-dom";
 // import LoginButton from "../LoginButton/LoginButton";
 // import LogoComponent from "../LogoComponent/LogoComponent";
 // import "./Header.scss";
 
-export const Shelves = () => {
+export const Shelves = (props) => {
+	const { shelfId } = useParams();
+
 	const [shelfItem, setShelfItem] = useState(null);
 	const [shelfLocation, setShelfLocation] = useState(null);
 	const [shelfNotes, setShelfNotes] = useState(null);
 	const [shelfDescription, setShelfDescription] = useState(null);
 	const [shelves, setShelves] = useState(null);
 
-	const handleClick = () => {
-		axios
-			.get("http://localhost:8000/shelves", { withCredentials: true })
-			.then((res) => {
-				console.log("🕵🏻‍♂️ res: ", res); //TODO: remove/comment
+	// let { shelfId } = useParams();
 
-				console.log("🕵🏻‍♂️ res.data[0].item: ", res.data[0].item); //TODO: remove/comment
-			});
-	};
+	// const handleClick = () => {
+	// 	// console.log(id);
+	// 	axios
+	// 		.get("http://localhost:8000/shelves", { withCredentials: true })
+	// 		.then((res) => {
+	// 			console.log("🕵🏻‍♂️ res: ", res); //TODO: remove/comment
+
+	// 			console.log("🕵🏻‍♂️ res.data[0].item: ", res.data[0].item); //TODO: remove/comment
+	// 		});
+	// };
 
 	useEffect(() => {
 		axios
-			.get("http://localhost:8000/shelves", { withCredentials: true })
+			.get(`http://localhost:8000/shelves/${shelfId}`, {
+				withCredentials: true,
+			})
 			.then((res) => {
 				console.log("🕵🏻‍♂️ res: ", res); //TODO: remove/comment
 
-				console.log("🕵🏻‍♂️ res.data[0].item: ", res.data[0].item); //TODO: remove/comment
+				// console.log("🕵🏻‍♂️ res.data[0].item: ", res.data[0].item); //TODO: remove/comment
 
 				setShelfItem(res.data[0].item);
 				setShelfLocation(res.data[0].location);
@@ -44,7 +52,6 @@ export const Shelves = () => {
 	return (
 		<div className="shelves">
 			<Header />
-			{/* <button onClick={handleClick}>Click</button> */}
 			{shelfItem && (
 				<article className="shelves__content-container">
 					{/* <div className="shelf-card__content-container">

@@ -33,12 +33,18 @@ export const Header = () => {
 				/>
 
 				{isLoggedIn ? (
-					<a
-						className="header__login-link header__login-link--active"
-						href="http://localhost:8000/auth/logout"
-					>
-						Log Out
-					</a>
+					<>
+						{" "}
+						<a
+							className="header__login-link header__login-link--active"
+							href="http://localhost:8000/auth/logout"
+						>
+							Log Out
+						</a>
+						<NavLink to={"/form-page"} className="header__login-link">
+							Add Shelf
+						</NavLink>
+					</>
 				) : (
 					<a
 						className="header__login-link header__login-link--active"

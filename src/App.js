@@ -12,6 +12,7 @@ import React, { useState, useEffect } from "react";
 import HomePage from "./pages/HomePage";
 import { Shelves } from "./pages/Shelves/Shelves";
 import { FormPage } from "./pages/FormPage/FormPage";
+import { SearchPage } from "./pages/SearchPage/SearchPage";
 
 const App = () => {
 	return (
@@ -32,6 +33,9 @@ const App = () => {
 
 					<Route path="/form-page">
 						<FormPage />
+					</Route>
+					<Route path="/search">
+						<SearchPage />
 					</Route>
 
 					<Route path="/profile" />

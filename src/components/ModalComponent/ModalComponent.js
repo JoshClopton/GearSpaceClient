@@ -8,13 +8,16 @@ import { useEffect, useState } from "react";
 
 export const ModalComponent = (props) => {
 	// handleClose,
-	const { asin, productTitle, productImage } = props;
+	const { handleShow, productTitle, productImage } = props;
 	const [show, setShow] = useState(true);
 
 	//logic to show or hide the Modal
 	const toggleModal = show ? "modal--display" : "modal--hide";
 
-	const addItem = console.log("🕵🏻‍♂️ asin: ", asin); //TODO: remove/comment
+	const handleClick = () => {
+		handleShow();
+		setShow(false);
+	};
 
 	return (
 		<>
@@ -126,14 +129,9 @@ export const ModalComponent = (props) => {
 						{/* Cancel */}
 						{/* </button> */}
 
-						{/* <button
-							onClick={() => {
-								// handleDelete(deleteWarehouseObject.id);
-							}}
-							className="delete-button"
-						>
+						<button onClick={handleClick} className="delete-button">
 							Delete
-						</button> */}
+						</button>
 					</div>
 				</div>
 			</div>

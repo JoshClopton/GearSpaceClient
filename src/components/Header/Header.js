@@ -5,7 +5,8 @@ import LoginButton from "../LoginButton/LoginButton";
 import LogoComponent from "../LogoComponent/LogoComponent";
 import "./Header.scss";
 
-export const Header = () => {
+export const Header = (props) => {
+	const { handleLoggedIn } = props;
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
 
 	useEffect(() => {
@@ -14,6 +15,7 @@ export const Header = () => {
 			.then((res) => {
 				console.log("🕵🏻‍♂️ res: ", res); //TODO: remove/comment
 				res.data.google_id ? setIsLoggedIn(true) : setIsLoggedIn(false);
+				res.data.google_id && handleLoggedIn();
 			});
 	}, []);
 

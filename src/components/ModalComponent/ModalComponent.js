@@ -4,6 +4,7 @@ import "./ModalComponent.scss";
 import { Formik, Field, Form, validateYupSchema } from "formik";
 
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 export const ModalComponent = (props) => {
 	// handleClose,
@@ -12,6 +13,10 @@ export const ModalComponent = (props) => {
 
 	//logic to show or hide the Modal
 	const toggleModal = show ? "modal--display" : "modal--hide";
+
+	// const route = () =>{
+	// 	navigate('/')
+	// }
 
 	const handleClick = () => {
 		handleShow();

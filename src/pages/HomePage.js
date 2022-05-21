@@ -7,6 +7,7 @@ import { CardComponent } from "../components/CardComponent/CardComponent";
 import "./HomePage.scss";
 import LoginButton from "../components/LoginButton/LoginButton";
 import { Header } from "../components/Header/Header";
+import { useState } from "react";
 import uniqid from "uniqid";
 import packs from "../assets/images/packs.png";
 import cook from "../assets/images/cook.png";
@@ -15,6 +16,14 @@ import shelter from "../assets/images/shelter.png";
 import sleep from "../assets/images/sleep.jpg";
 
 const HomePage = () => {
+	const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+	const handleLoggedIn = () => {
+		setIsLoggedIn(true);
+	};
+
+	console.log("🕵🏻‍♂️ isLoggedIn: ", isLoggedIn); //TODO: remove/comment
+
 	const shelfCards = [
 		{
 			name: "sleep",
@@ -50,19 +59,23 @@ const HomePage = () => {
 
 	return (
 		<div className="home-page">
-			<Header />
-			<main className="home-page__main-container">
-				{shelfCards.map((card) => {
-					return (
-						<CardComponent
-							key={uniqid()}
-							shelf={card.name}
-							image={card.image}
-							shelfId={card.shelfId}
-						/>
-					);
-				})}
-			</main>
+			<Header handleLoggedIn={handleLoggedIn} />
+			{isLoggedIn ? (
+				<div>hello world</div>
+			) : (
+				<main className="home-page__main-container">
+					{shelfCards.map((card) => {
+						return (
+							<CardComponent
+								key={uniqid()}
+								shelf={card.name}
+								image={card.image}
+								shelfId={card.shelfId}
+							/>
+						);
+					})}
+				</main>
+			)}
 		</div>
 	);
 };

@@ -13,6 +13,7 @@ import HomePage from "./pages/HomePage";
 import { Shelves } from "./pages/Shelves/Shelves";
 import { FormPage } from "./pages/FormPage/FormPage";
 import { SearchPage } from "./pages/SearchPage/SearchPage";
+import { ShelfItemsComponent } from "./components/ShelfItemsComponent/ShelfItemsComponent";
 
 const App = () => {
 	return (
@@ -28,8 +29,12 @@ const App = () => {
 					</Route>
 
 					<Route path="/shelves">
-						<Shelves />
+						<ShelfItemsComponent />
 					</Route>
+
+					{/* <Route path="/shelves">
+						<Shelves />
+					</Route> */}
 
 					<Route path="/form-page">
 						<FormPage />

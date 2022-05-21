@@ -3,7 +3,6 @@ import axios from "axios";
 import "./ModalComponent.scss";
 import { Formik, Field, Form, validateYupSchema } from "formik";
 
-// import CancelButton from "../../assets/icons/close-24px.svg";
 import { useEffect, useState } from "react";
 
 export const ModalComponent = (props) => {
@@ -24,16 +23,7 @@ export const ModalComponent = (props) => {
 			<div className={toggleModal}>
 				<div className="modal">
 					<h1 className="modal__title">{productTitle}</h1>
-					<img
-						className="modal__close-icon"
-						src={productImage}
-						// src={CancelButton}
-						// onClick={handleClose}
-					/>
-					<button onClick={() => setShow(false)}>Cancel</button>
-					{/* <h1 className="modal__title"> */}
-					{/* Delete {deleteWarehouseObject.name} warehouse? */}
-					{/* </h1> */}
+					<img className="modal__close-icon" src={productImage} />
 					<Formik
 						initialValues={{
 							picked: "",
@@ -43,7 +33,6 @@ export const ModalComponent = (props) => {
 							qty: "",
 							location: "",
 							notes: "",
-							// otherGear: "",
 							image: "",
 						}}
 						onSubmit={(e, values) => {
@@ -57,16 +46,10 @@ export const ModalComponent = (props) => {
 										location: e.location,
 										qty: e.qty,
 										notes: e.notes,
-										otherGear: e.otherGear,
 										image: productImage,
 									},
 									{ withCredentials: true }
 								)
-								// .then(() => {
-								//   // Re-fetch the posts
-								//   this.props.onPostCreate();
-								//   e.target.reset();
-								// })
 								.catch((err) => {
 									console.log("Error creating a new post:", err);
 								});
@@ -101,12 +84,11 @@ export const ModalComponent = (props) => {
 								<Field type="radio" name="shelf" value="other-gear" />
 								Other Gear
 							</label>
-							{/* <div>Selected: {values.selected}</div> */}
 
-							<label htmlFor="item">Item</label>
-							<Field id="item" name="item" />
-							<label htmlFor="description">Description</label>
-							<Field id="description" name="description" />
+							{/* <label htmlFor="item">Item</label> */}
+							{/* <Field id="item" name="item" /> */}
+							{/* <label htmlFor="description">Description</label> */}
+							{/* <Field id="description" name="description" /> */}
 							<label htmlFor="qty">Quantity</label>
 							<Field id="qty" name="qty" />
 							<label htmlFor="location">Location</label>
@@ -116,21 +98,12 @@ export const ModalComponent = (props) => {
 
 							<button type="submit">Submit</button>
 						</Form>
-						{/* )} */}
 					</Formik>
 
-					<span className="modal__text">
-						{/* Please confirm that you’d like to delete the{" "} */}
-						{/* {deleteWarehouseObject.name} warehouse from the list of warehouses. */}
-						{/* You won’t be able to undo this action. */}
-					</span>
+					<span className="modal__text"></span>
 					<div className="button-container">
-						{/* <button onClick={handleClose} className="cancel-button"> */}
-						{/* Cancel */}
-						{/* </button> */}
-
 						<button onClick={handleClick} className="delete-button">
-							Delete
+							Cancel
 						</button>
 					</div>
 				</div>

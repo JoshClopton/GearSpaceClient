@@ -40,6 +40,15 @@ export const Shelves = () => {
 								<div className="shelves__content">{shelf.item}</div>
 							</div>
 							<div className="shelves__details-container">
+								<div className="shelves__label">Item:</div>
+								<img
+									src={shelf.image}
+									alt="stuff"
+									className="shelves__image"
+								></img>
+							</div>
+
+							<div className="shelves__details-container">
 								<div className="shelves__label">Description:</div>
 								<div className="shelves__content">{shelf.description}</div>
 							</div>

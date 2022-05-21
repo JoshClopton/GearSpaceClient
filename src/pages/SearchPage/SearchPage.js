@@ -4,19 +4,13 @@ import { Formik, Field, Form, validateYupSchema } from "formik";
 import axios from "axios";
 import { Header } from "../../components/Header/Header";
 import { useState } from "react";
-import ModalComponent from "../../components/ModalComponent/ModalComponent";
+import { ModalComponent } from "../../components/ModalComponent/ModalComponent";
 
 export const SearchPage = () => {
 	const [products, setProducts] = useState(null);
 	const [productTitle, setProductTitle] = useState(null);
 	const [productImage, setProductImage] = useState(null);
 	const [selectedProduct, setSelectedProduct] = useState(null);
-
-	// const handleClick = () => {
-	// 		setSelectedProduct(true)
-	// 		setProductTitle(product.title)
-	// 		setProductImage(product.thumbnail);
-	// };
 
 	const options = {
 		method: "GET",
@@ -31,8 +25,6 @@ export const SearchPage = () => {
 			"X-RapidAPI-Key": "2edab6dd23msh7b1abb83e1d7a9ep19250bjsn2a09939b82ef",
 		},
 	};
-
-	// console.log("🕵🏻‍♂️ asin: ", asin); //TODO: remove/comment
 
 	return (
 		<div>
@@ -73,7 +65,6 @@ export const SearchPage = () => {
 					</button>
 				</Form>
 			</Formik>
-			{/* <ModalComponent asin={asin} /> */}
 			{products ? (
 				products.map((product) => {
 					return (
@@ -99,8 +90,6 @@ export const SearchPage = () => {
 				<ModalComponent
 					productTitle={productTitle}
 					productImage={productImage}
-					// title={product.title}
-					// thumbnail={product.thumbnail}
 				/>
 			)}
 		</div>

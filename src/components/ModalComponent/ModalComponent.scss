@@ -7,6 +7,10 @@
 	flex-direction: column;
 	padding: 1rem;
 
+	&__title {
+		margin-bottom: 1rem;
+	}
+
 	&__close-icon {
 		align-self: flex-end;
 	}

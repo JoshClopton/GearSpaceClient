@@ -76,7 +76,6 @@ export const FormPage = () => {
 					</label>
 					{/* <div>Selected: {values.selected}</div> */}
 
-					<label htmlFor="item">Item</label>
 					<Field id="item" name="item" />
 					<label htmlFor="description">Description</label>
 					<Field id="description" name="description" />

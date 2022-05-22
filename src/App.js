@@ -14,6 +14,7 @@ import { Shelves } from "./pages/Shelves/Shelves";
 import { FormPage } from "./pages/FormPage/FormPage";
 import { SearchPage } from "./pages/SearchPage/SearchPage";
 import { ShelfItemsComponent } from "./components/ShelfItemsComponent/ShelfItemsComponent";
+import { EditShelfPage } from "./pages/EditShelfPage/EditShelfPage";
 
 const App = () => {
 	return (
@@ -22,6 +23,10 @@ const App = () => {
 				<Switch>
 					<Route path="/" exact>
 						<HomePage />
+					</Route>
+
+					<Route path="/shelves/:shelfId/edit">
+						<EditShelfPage />
 					</Route>
 
 					<Route path="/shelves/:shelfId">

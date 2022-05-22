@@ -1,6 +1,7 @@
 import React from "react";
 import logoImage from "../assets/logo/BunchofFives_WEB_BW_800x800px.jpg";
 // import "../components/LogoComponent.scss";
+import { ShelfItemsComponent } from "../components/ShelfItemsComponent/ShelfItemsComponent";
 import LogoComponent from "../components/LogoComponent/LogoComponent";
 import LoginFormComponent from "../components/LoginFormComponent/LoginFormComponent";
 import { CardComponent } from "../components/CardComponent/CardComponent";
@@ -14,6 +15,7 @@ import cook from "../assets/images/cook.png";
 import optics from "../assets/images/optics.png";
 import shelter from "../assets/images/shelter.png";
 import sleep from "../assets/images/sleep.jpg";
+import { NavLink } from "react-router-dom";
 
 const HomePage = () => {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -24,47 +26,17 @@ const HomePage = () => {
 
 	console.log("🕵🏻‍♂️ isLoggedIn: ", isLoggedIn); //TODO: remove/comment
 
-	const shelfCards = [
-		{
-			name: "sleep",
-			image: sleep,
-			shelfId: "sleep",
-		},
-		{
-			name: "cook",
-			image: cook,
-			shelfId: "cook",
-		},
-		{
-			name: "packs",
-			image: packs,
-			shelfId: "packs",
-		},
-		{
-			name: "optics",
-			image: optics,
-			shelfId: "optics",
-		},
-		{
-			name: "shelter",
-			image: shelter,
-			shelfId: "shelter",
-		},
-		{
-			name: "other-gear",
-			image: cook,
-			shelfId: "other-gear",
-		},
-	];
-
 	return (
 		<div className="home-page">
 			<Header handleLoggedIn={handleLoggedIn} />
 			{isLoggedIn ? (
-				<div>hello world</div>
+				<div>
+					<ShelfItemsComponent />
+				</div>
 			) : (
 				<main className="home-page__main-container">
-					{shelfCards.map((card) => {
+					<h1>Login to view shelves</h1>
+					{/* {shelfCards.map((card) => {
 						return (
 							<CardComponent
 								key={uniqid()}
@@ -73,7 +45,7 @@ const HomePage = () => {
 								shelfId={card.shelfId}
 							/>
 						);
-					})}
+					})} */}
 				</main>
 			)}
 		</div>

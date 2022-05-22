@@ -9,10 +9,31 @@ import { CardComponent } from "../../components/CardComponent/CardComponent";
 // import LoginButton from "../LoginButton/LoginButton";
 // import LogoComponent from "../LogoComponent/LogoComponent";
 // import "./Header.scss";
+import cook from "../../assets/images/cook.png";
+import optics from "../../assets/images/optics.png";
+import packs from "../../assets/images/packs.png";
+import shelter from "../../assets/images/shelter.png";
+import sleep from "../../assets/images/sleep.jpg";
 
 export const ShelfItemsComponent = () => {
 	const [shelfData, setShelfData] = useState(null);
-	// const { shelfId } = useParams();
+	const shelfCards = {
+		shelter: "shelter",
+		cook: "cook",
+		lighting: "lighting",
+		clothing: "clothing",
+		bedding: "bedding",
+		misc: "misc",
+		packs: "packs",
+	};
+
+	const fetchImage = (arr) => {
+		arr.forEach((element) => {
+			if (element in shelfCards) {
+				return <img src={element} />;
+			}
+		});
+	};
 
 	useEffect(() => {
 		axios
@@ -29,20 +50,31 @@ export const ShelfItemsComponent = () => {
 
 	return (
 		<div className="shelves">
-			<Header />
-			<main>
-				<h1>Your Shelves</h1>
-			</main>
-			{shelfData &&
-				shelfData.map((shelf) => {
-					return (
-						<article>
-							<NavLink to={`/shelves/${shelf.shelf}`}>
-								<span>{shelf.shelf}</span>
-							</NavLink>
-						</article>
-					);
-				})}
+			{shelfData && shelfData.length ? (
+				<>
+					<main>
+						<h1>Your Shelves</h1>
+					</main>
+					{shelfData.map((shelf) => {
+						console.log("🕵🏻‍♂️ shelf: ", shelf); //TODO: remove/comment
+
+						return (
+							<article>
+								<NavLink to={`/shelves/${shelf.shelf}`}>
+									{/* <img src={shelf.shelf} /> */}
+									{/* {fetchImage(shelf)} */}
+									<span>{shelf.shelf}</span>
+								</NavLink>
+							</article>
+						);
+					})}
+				</>
+			) : (
+				<>
+					<h1>Your shelves are empty.</h1>
+					<NavLink to="/search">Create</NavLink>
+				</>
+			)}
 		</div>
 	);
 };

@@ -1,0 +1,91 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.modal {
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+
+	&__title {
+		margin-bottom: 1rem;
+	}
+
+	&__close-icon {
+		align-self: flex-end;
+	}
+
+	&__text {
+		padding-bottom: 17rem;
+		line-height: 1.7rem;
+		font-size: 17px;
+
+		@include tablet {
+			padding-bottom: 3rem;
+		}
+	}
+}
+
+.button-container {
+	display: flex;
+	justify-content: space-between;
+
+	@include tablet {
+		justify-content: right;
+	}
+}
+
+.delete-button {
+	border-style: none;
+	height: 2rem;
+	width: 47%;
+	border-radius: 1rem;
+	background-color: red;
+	color: #fff;
+
+	@include tablet {
+		width: 15%;
+		margin-left: 1rem;
+	}
+}
+
+.cancel-button {
+	border-style: none;
+	height: 2rem;
+	border-radius: 1rem;
+	border: 1px solid black;
+	background-color: white;
+	color: black;
+	width: 47%;
+
+	@include tablet {
+		width: 15%;
+	}
+}
+
+.modal--display {
+	background-color: white;
+	height: 56%;
+	width: 100%;
+	position: absolute;
+	z-index: 2;
+	top: 255px;
+
+	@include tablet {
+		position: absolute;
+		width: 65%;
+		align-self: center;
+		right: 9rem;
+		top: 12rem;
+		height: 19rem;
+	}
+
+	@include desktop {
+		right: 15rem;
+		height: 40rem;
+	}
+}
+
+.modal--hide {
+	display: none;
+}

@@ -5,6 +5,8 @@ import { Header } from "../../components/Header/Header";
 import "./Shelves.scss";
 import { CardComponent } from "../../components/CardComponent/CardComponent";
 import { useParams } from "react-router-dom";
+import { EditShelfPage } from "../EditShelfPage/EditShelfPage";
+import { ModalComponent } from "../../components/ModalComponent/ModalComponent";
 // import LoginButton from "../LoginButton/LoginButton";
 // import LogoComponent from "../LogoComponent/LogoComponent";
 // import "./Header.scss";
@@ -13,6 +15,11 @@ export const Shelves = () => {
 	let { shelfId } = useParams();
 
 	const [shelfData, setShelfData] = useState(null);
+	const [selectedItem, setSelectedItem] = useState(null);
+
+	const handleShowPopup = (itemId) => {
+		setSelectedItem(itemId);
+	};
 
 	useEffect(() => {
 		axios
@@ -30,10 +37,22 @@ export const Shelves = () => {
 	return (
 		<div className="shelves">
 			<Header />
-			{shelfData ? (
+			{/* {showModal && (
+				<EditShelfPage showModal={showModal} handleShow={handleShow} />
+			)} */}
+
+			{/* <button onClick={setShowModal(true)}>Edit</button> */}
+			{shelfData && shelfData.length ? (
 				shelfData.map((shelf) => {
 					return (
 						<article className="shelves__content-container" key={shelf.id}>
+							<button
+								onClick={() => {
+									handleShowPopup(shelf.id);
+								}}
+							>
+								Edit
+							</button>
 							<span className="shelves__title">{shelf.shelf}</span>
 							<div className="shelves__details-container">
 								<div className="shelves__label">Item:</div>
@@ -47,12 +66,10 @@ export const Shelves = () => {
 									className="shelves__image"
 								></img>
 							</div>
-
 							<div className="shelves__details-container">
 								<div className="shelves__label">Description:</div>
 								<div className="shelves__content">{shelf.description}</div>
 							</div>
-
 							<div className="shelves__details-container">
 								<div className="shelves__label">Location:</div>
 								<div className="shelves__content">{shelf.location}</div>
@@ -71,6 +88,9 @@ export const Shelves = () => {
 			) : (
 				<p>...Loading</p>
 			)}
+			{selectedItem ? (
+				<ModalComponent selectedItem={selectedItem} isCreate={false} />
+			) : null}
 		</div>
 	);
 };

@@ -100,6 +100,7 @@ export const SearchPage = () => {
 					productImage={productImage}
 					showModal={showModal}
 					handleShow={handleShow}
+					isCreate={true}
 				/>
 			)}
 		</div>

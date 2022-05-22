@@ -8,6 +8,8 @@ import "./Header.scss";
 export const Header = (props) => {
 	const { handleLoggedIn } = props;
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
+	console.log("🕵🏻‍♂️ handleLoggedIn: ", handleLoggedIn); //TODO: remove/comment
+	console.log("🕵🏻‍♂️ typeOf: ", typeof handleLoggedIn); //TODO: remove/comment
 
 	useEffect(() => {
 		axios
@@ -43,7 +45,7 @@ export const Header = (props) => {
 						>
 							Log Out
 						</a>
-						<NavLink to={"/form-page"} className="header__login-link">
+						<NavLink to={"/search"} className="header__login-link">
 							Add Shelf
 						</NavLink>
 					</>

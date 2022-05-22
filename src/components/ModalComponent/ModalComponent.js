@@ -8,7 +8,10 @@ import { NavLink } from "react-router-dom";
 
 export const ModalComponent = (props) => {
 	// handleClose,
-	const { handleShow, productTitle, productImage } = props;
+	const { selectedItem, handleShow, productTitle, productImage, isCreate } =
+		props;
+	console.log("🕵🏻‍♂️ selectedItem: ", selectedItem); //TODO: remove/comment
+
 	const [show, setShow] = useState(true);
 
 	//logic to show or hide the Modal
@@ -18,8 +21,8 @@ export const ModalComponent = (props) => {
 	// 	navigate('/')
 	// }
 
-	const handleClick = () => {
-		handleShow();
+	const handleCloseModal = () => {
+		// handleShow();
 		setShow(false);
 	};
 
@@ -41,23 +44,46 @@ export const ModalComponent = (props) => {
 							image: "",
 						}}
 						onSubmit={(e, values) => {
-							axios
-								.post(
-									`http://localhost:8000/shelves`,
-									{
-										shelf: e.shelf,
-										description: e.description,
-										item: productTitle,
-										location: e.location,
-										qty: e.qty,
-										notes: e.notes,
-										image: productImage,
-									},
-									{ withCredentials: true }
-								)
-								.catch((err) => {
-									console.log("Error creating a new post:", err);
-								});
+							if (isCreate) {
+								axios
+									.post(
+										`http://localhost:8000/shelves`,
+										{
+											shelf: e.shelf,
+											description: e.description,
+											item: productTitle,
+											location: e.location,
+											qty: e.qty,
+											notes: e.notes,
+											image: productImage,
+										},
+										{ withCredentials: true }
+									)
+									.catch((err) => {
+										console.log("Error creating a new post:", err);
+									});
+							} else {
+								axios
+									.put(
+										`http://localhost:8000/shelves/edit`,
+										{
+											shelf: e.shelf,
+											description: e.description,
+											location: e.location,
+											qty: e.qty,
+											notes: e.notes,
+											item: selectedItem,
+										},
+										{ withCredentials: true }
+									)
+									.catch((err) => {
+										console.log("Error creating a new post:", err);
+									});
+
+								console.log("🕵🏻‍♂️ e: ", e); //TODO: remove/comment
+							}
+
+							handleCloseModal();
 						}}
 					>
 						<Form>
@@ -107,7 +133,7 @@ export const ModalComponent = (props) => {
 
 					<span className="modal__text"></span>
 					<div className="button-container">
-						<button onClick={handleClick} className="delete-button">
+						<button onClick={handleCloseModal} className="delete-button">
 							Cancel
 						</button>
 					</div>

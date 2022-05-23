@@ -30,6 +30,11 @@ export const Shelves = () => {
 		setItemToDelete(itemId);
 	};
 
+	const handleCloseModal = () => {
+		setSelectedItem(false);
+		setItemToDelete(false);
+	};
+
 	useEffect(() => {
 		axios
 			.get(`http://localhost:8000/shelves/${shelfId}`, {
@@ -41,7 +46,7 @@ export const Shelves = () => {
 
 				setShelfData(shelves);
 			});
-	}, []);
+	}, [selectedItem, itemToDelete]);
 
 	return (
 		<div className="shelves">
@@ -106,11 +111,19 @@ export const Shelves = () => {
 				<p>...Loading</p>
 			)}
 			{selectedItem ? (
-				<ModalComponent selectedItem={selectedItem} isCreate={false} />
+				<ModalComponent
+					selectedItem={selectedItem}
+					isCreate={false}
+					handleCloseModal={handleCloseModal}
+				/>
 			) : null}
 
 			{itemToDelete ? (
-				<ConfirmDeleteModal itemToDelete={itemToDelete} shelfData={shelfData} />
+				<ConfirmDeleteModal
+					itemToDelete={itemToDelete}
+					shelfData={shelfData}
+					handleCloseModal={handleCloseModal}
+				/>
 			) : null}
 		</div>
 	);

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Header } from "../Header/Header";
 
 export const ConfirmDeleteModal = (props) => {
-	const { selectedItem, itemToDelete, shelfData } = props;
+	const { handleCloseModal, selectedItem, itemToDelete, shelfData } = props;
 	console.log("🕵🏻‍♂️ shelfData: ", shelfData); //TODO: remove/comment
 
 	console.log("🕵🏻‍♂️ selectedItem: ", selectedItem); //TODO: remove/comment
@@ -33,6 +33,7 @@ export const ConfirmDeleteModal = (props) => {
 			>
 				Delete
 			</button>
+			<button onClick={handleCloseModal}></button>
 		</div>
 	);
 };

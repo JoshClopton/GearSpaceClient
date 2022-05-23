@@ -8,8 +8,13 @@ import { NavLink } from "react-router-dom";
 
 export const ModalComponent = (props) => {
 	// handleClose,
-	const { selectedItem, handleShow, productTitle, productImage, isCreate } =
-		props;
+	const {
+		selectedItem,
+		handleCloseModal,
+		productTitle,
+		productImage,
+		isCreate,
+	} = props;
 	console.log("🕵🏻‍♂️ selectedItem: ", selectedItem); //TODO: remove/comment
 
 	const [show, setShow] = useState(true);
@@ -21,10 +26,10 @@ export const ModalComponent = (props) => {
 	// 	navigate('/')
 	// }
 
-	const handleCloseModal = () => {
-		// handleShow();
-		setShow(false);
-	};
+	// const handleCloseModal = () => {
+	// 	// handleShow();
+	// 	setShow(false);
+	// };
 
 	return (
 		<>

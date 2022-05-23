@@ -51,80 +51,81 @@ export const Shelves = () => {
 	return (
 		<div className="shelves">
 			<Header />
-			{/* {showModal && (
-				<EditShelfPage showModal={showModal} handleShow={handleShow} />
-			)} */}
+			<div className="shelves__main">
+				{shelfData && shelfData.length ? (
+					shelfData.map((shelf) => {
+						return (
+							<article className="shelves__content-container" key={shelf.id}>
+								<span className="shelves__title">{shelf.shelf}</span>
+								<div className="shelves__details-container">
+									{/* <div className="shelves__label">Item:</div> */}
+									<div className="shelves__content">{shelf.item}</div>
+								</div>
+								<div className="shelves__details-container">
+									{/* <div className="shelves__label">Item:</div> */}
+									<img
+										src={shelf.image}
+										alt="stuff"
+										className="shelves__image"
+									></img>
+								</div>
+								<div className="shelves__details-container">
+									{/* <div className="shelves__label">Description:</div> */}
+									{/* <div className="shelves__content">{shelf.description}</div> */}
+								</div>
+								<div className="shelves__details-container">
+									<div className="shelves__label">Location:</div>
+									<div className="shelves__content">{shelf.location}</div>
+								</div>
+								<div className="shelves__details-container">
+									<div className="shelves__label">Notes:</div>
+									<div className="shelves__content">{shelf.notes}</div>
+								</div>
+								<div className="shelves__details-container">
+									<div className="shelves__label">Qty:</div>
+									<div className="shelves__content">{shelf.qty}</div>
+								</div>
+								<div className="button">
+									<button
+										className="button__delete"
+										onClick={() => {
+											handleShowDelete(shelf.id);
+										}}
+									>
+										Delete
+									</button>
+									<button
+										className="button__edit"
+										onClick={() => {
+											handleShowPopup(shelf);
+										}}
+									>
+										Edit
+									</button>
+								</div>
+							</article>
+						);
+					})
+				) : (
+					<p>...Loading</p>
+				)}
+				{selectedItem ? (
+					<ModalComponent
+						selectedItem={selectedItem}
+						isCreate={false}
+						handleCloseModal={handleCloseModal}
+						shelfData={shelfData}
+					/>
+				) : null}
 
-			{/* <button onClick={setShowModal(true)}>Edit</button> */}
-			{shelfData && shelfData.length ? (
-				shelfData.map((shelf) => {
-					return (
-						<article className="shelves__content-container" key={shelf.id}>
-							<button
-								onClick={() => {
-									handleShowDelete(shelf.id);
-								}}
-							>
-								Delete
-							</button>
-							<button
-								onClick={() => {
-									handleShowPopup(shelf.id);
-								}}
-							>
-								Edit
-							</button>
-
-							<span className="shelves__title">{shelf.shelf}</span>
-							<div className="shelves__details-container">
-								<div className="shelves__label">Item:</div>
-								<div className="shelves__content">{shelf.item}</div>
-							</div>
-							<div className="shelves__details-container">
-								<div className="shelves__label">Item:</div>
-								<img
-									src={shelf.image}
-									alt="stuff"
-									className="shelves__image"
-								></img>
-							</div>
-							<div className="shelves__details-container">
-								<div className="shelves__label">Description:</div>
-								<div className="shelves__content">{shelf.description}</div>
-							</div>
-							<div className="shelves__details-container">
-								<div className="shelves__label">Location:</div>
-								<div className="shelves__content">{shelf.location}</div>
-							</div>
-							<div className="shelves__details-container">
-								<div className="shelves__label">Notes:</div>
-								<div className="shelves__content">{shelf.notes}</div>
-							</div>
-							<div className="shelves__details-container">
-								<div className="shelves__label">Qty:</div>
-								<div className="shelves__content">{shelf.qty}</div>
-							</div>
-						</article>
-					);
-				})
-			) : (
-				<p>...Loading</p>
-			)}
-			{selectedItem ? (
-				<ModalComponent
-					selectedItem={selectedItem}
-					isCreate={false}
-					handleCloseModal={handleCloseModal}
-				/>
-			) : null}
-
-			{itemToDelete ? (
-				<ConfirmDeleteModal
-					itemToDelete={itemToDelete}
-					shelfData={shelfData}
-					handleCloseModal={handleCloseModal}
-				/>
-			) : null}
+				{itemToDelete ? (
+					<ConfirmDeleteModal
+						itemToDelete={itemToDelete}
+						shelfData={shelfData}
+						handleCloseModal={handleCloseModal}
+					/>
+				) : null}
+			</div>
 		</div>
 	);
 };

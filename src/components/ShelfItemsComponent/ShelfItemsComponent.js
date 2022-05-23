@@ -48,22 +48,36 @@ export const ShelfItemsComponent = () => {
 			});
 	}, []);
 
+	//create an array to hold the shelves that are not duplicates
+	let uniqueShelves = [];
+
+	//if there is shelfData then loop through the data and push the shelves into uniqeShelves only one time
+	shelfData &&
+		shelfData.forEach((item) => {
+			if (!uniqueShelves.includes(item.shelf)) {
+				uniqueShelves.push(item.shelf);
+			}
+		});
+
 	return (
 		<div className="shelves">
+			{/* make sure shelfData is not null and that it has something in the array */}
 			{shelfData && shelfData.length ? (
 				<>
 					<main>
 						<h1>Your Shelves</h1>
 					</main>
-					{shelfData.map((shelf) => {
+					{/* map through the uniqueShelves array and for each item create a link */}
+					{uniqueShelves.map((shelf) => {
 						console.log("🕵🏻‍♂️ shelf: ", shelf); //TODO: remove/comment
 
 						return (
-							<article>
-								<NavLink to={`/shelves/${shelf.shelf}`}>
-									{/* <img src={shelf.shelf} /> */}
+							<article key={shelf}>
+								<NavLink to={`/shelves/${shelf}`}>
+									{/* <img src={shelf} /> */}
+
 									{/* {fetchImage(shelf)} */}
-									<span>{shelf.shelf}</span>
+									<span>{shelf}</span>
 								</NavLink>
 							</article>
 						);

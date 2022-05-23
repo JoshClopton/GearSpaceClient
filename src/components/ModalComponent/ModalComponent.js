@@ -14,14 +14,33 @@ export const ModalComponent = (props) => {
 		productTitle,
 		productImage,
 		isCreate,
+		shelfData,
 	} = props;
+	console.log("🕵🏻‍♂️ shelfData: ", shelfData); //TODO: remove/comment
 	console.log("🕵🏻‍♂️ selectedItem: ", selectedItem); //TODO: remove/comment
-
+	console.log("🕵🏻‍♂️ handleCloseModal: ", handleCloseModal); //TODO: remove/comment
 	const [show, setShow] = useState(true);
 
 	//logic to show or hide the Modal
 	const toggleModal = show ? "modal--display" : "modal--hide";
-
+	const initialFormValues = isCreate
+		? {
+				shelf: "",
+				item: "",
+				description: "",
+				qty: "",
+				location: "",
+				notes: "",
+				image: "",
+		  }
+		: {
+				shelf: selectedItem.shelf,
+				item: selectedItem.item,
+				description: selectedItem.description,
+				qty: selectedItem.qty,
+				location: selectedItem.location,
+				notes: selectedItem.notes,
+		  };
 	// const route = () =>{
 	// 	navigate('/')
 	// }
@@ -38,16 +57,7 @@ export const ModalComponent = (props) => {
 					<h1 className="modal__title">{productTitle}</h1>
 					<img className="modal__close-icon" src={productImage} />
 					<Formik
-						initialValues={{
-							picked: "",
-							shelf: "",
-							item: "",
-							description: "",
-							qty: "",
-							location: "",
-							notes: "",
-							image: "",
-						}}
+						initialValues={initialFormValues}
 						onSubmit={(e, values) => {
 							if (isCreate) {
 								axios
@@ -77,7 +87,7 @@ export const ModalComponent = (props) => {
 											location: e.location,
 											qty: e.qty,
 											notes: e.notes,
-											item: selectedItem,
+											item: selectedItem.id,
 										},
 										{ withCredentials: true }
 									)
@@ -91,46 +101,63 @@ export const ModalComponent = (props) => {
 							handleCloseModal();
 						}}
 					>
-						<Form>
-							<label>
-								<Field type="radio" name="shelf" value="shelter" />
-								Shelter
-							</label>
-							<label>
-								<Field type="radio" name="shelf" value="cook" />
-								Cook
-							</label>
-							<label>
-								<Field type="radio" name="shelf" value="bedding" />
-								Bedding
-							</label>
-							<label>
-								<Field type="radio" name="shelf" value="lighting" />
-								Lighting
-							</label>
-							<label>
-								<Field type="radio" name="shelf" value="clothing" />
-								Clothing
-							</label>
-							<label>
-								<Field type="radio" name="shelf" value="optics" />
-								Optics
-							</label>
-							<label>
-								<Field type="radio" name="shelf" value="other-gear" />
-								Other Gear
-							</label>
+						<Form className="edit__form">
+							<div className="edit__selectors">
+								<label>
+									<Field type="radio" name="shelf" value="shelter" />
+									Shelter
+								</label>
+								<label>
+									<Field type="radio" name="shelf" value="cook" />
+									Cook
+								</label>
+								<label>
+									<Field type="radio" name="shelf" value="bedding" />
+									Bedding
+								</label>
+								<label>
+									<Field type="radio" name="shelf" value="lighting" />
+									Lighting
+								</label>
+								<label>
+									<Field type="radio" name="shelf" value="clothing" />
+									Clothing
+								</label>
+								<label>
+									<Field type="radio" name="shelf" value="optics" />
+									Optics
+								</label>
+								<label>
+									<Field type="radio" name="shelf" value="other-gear" />
+									Other Gear
+								</label>
+							</div>
 
 							{/* <label htmlFor="item">Item</label> */}
 							{/* <Field id="item" name="item" /> */}
 							{/* <label htmlFor="description">Description</label> */}
-							{/* <Field id="description" name="description" /> */}
+							{/* <Field
+								id="description"
+								name="description"
+								placeholder={`${shelfData[0].description}`}
+							/> */}
 							<label htmlFor="qty">Quantity</label>
-							<Field id="qty" name="qty" />
+							<Field
+								id="qty"
+								name="qty" /*placeholder={`${shelfData[0].qty}`} */
+							/>
 							<label htmlFor="location">Location</label>
-							<Field id="location" name="location" />
+							<Field
+								id="location"
+								name="location"
+								/*placeholder={`${shelfData[0].locationan}`}*/
+							/>
 							<label htmlFor="notes">Notes</label>
-							<Field id="notes" name="notes" />
+							<Field
+								id="notes"
+								name="notes"
+								// placeholder={`${shelfData[0].notes}`}
+							/>
 
 							<button type="submit">Submit</button>
 						</Form>

@@ -26,7 +26,7 @@ export const SearchPage = () => {
 		},
 	};
 
-	const handleShow = () => {
+	const handleCloseModal = () => {
 		setShowModal(false);
 	};
 
@@ -99,7 +99,7 @@ export const SearchPage = () => {
 					productTitle={productTitle}
 					productImage={productImage}
 					showModal={showModal}
-					handleShow={handleShow}
+					handleCloseModal={handleCloseModal}
 					isCreate={true}
 				/>
 			)}

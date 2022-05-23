@@ -89,3 +89,16 @@
 .modal--hide {
 	display: none;
 }
+
+.edit__form {
+	display: flex;
+	flex-direction: column;
+	align-items: baseline;
+
+	&__selectors {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		width: 6rem;
+	}
+}

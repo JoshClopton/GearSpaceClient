@@ -6,17 +6,35 @@
 	display: flex;
 	flex-direction: column;
 
+	&__main {
+		display: flex;
+		justify-content: center;
+		gap: 11rem;
+	}
+
 	&__content-container {
 		display: flex;
 		flex-direction: column;
-		justify-content: right;
-		padding-left: 2rem;
+		margin-left: 3rem;
+		border-radius: 3rem;
+		align-items: baseline;
+		background-color: white;
+		width: 41rem;
+		height: 69rem;
+		padding-top: 1rem;
+		padding-left: 1rem;
 	}
 
 	&__title {
-		color: antiquewhite;
+		color: black;
 		font-size: 2rem;
 		padding-bottom: 0.5rem;
+		/* text-align: center; */
+		display: flex;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		padding-top: 1rem;
 	}
 
 	&__details-container {
@@ -24,19 +42,56 @@
 		flex-direction: column;
 		gap: 0.5rem;
 		padding-bottom: 0.5rem;
+		width: 100%;
 	}
 
 	&__label {
-		color: antiquewhite;
+		display: flex;
+		color: black;
+		border: 1px solid rgb(95, 133, 102);
+		border-radius: 3px;
+		width: 7rem;
+		background-color: rgb(95, 133, 102);
+		/* text-align: center; */
+		height: 2.3rem;
+		justify-content: center;
+		align-items: center;
 	}
 
 	&__image {
 		object-fit: contain;
 		width: 18rem;
+		height: 21rem;
+		margin-bottom: 3rem;
+		margin-left: 10rem;
 	}
 
 	&__content {
-		width: 22rem;
-		line-height: 1.3rem;
+		width: 100%;
+		line-height: 1.6rem;
+		padding-bottom: 3rem;
+		padding-top: 1rem;
+	}
+}
+
+.button {
+	width: 100%;
+	gap: 2rem;
+	justify-content: center;
+	display: flex;
+
+	&__delete {
+		width: 8rem;
+		border-radius: 9px;
+		height: 2rem;
+		border: 1px solid gray;
+		justify-content: center;
+	}
+
+	&__edit {
+		width: 8rem;
+		border-radius: 9px;
+		height: 2rem;
+		border: 1px solid gray;
 	}
 }

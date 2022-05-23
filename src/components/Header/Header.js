@@ -46,7 +46,7 @@ export const Header = (props) => {
 							Log Out
 						</a>
 						<NavLink to={"/search"} className="header__login-link">
-							Add Shelf
+							Add Gear
 						</NavLink>
 					</>
 				) : (

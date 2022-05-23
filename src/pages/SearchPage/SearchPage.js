@@ -5,12 +5,14 @@ import axios from "axios";
 import { Header } from "../../components/Header/Header";
 import { useState, useEffect } from "react";
 import { ModalComponent } from "../../components/ModalComponent/ModalComponent";
+import gearSpinner from "../../assets/images/gear-spinner.svg";
 
 export const SearchPage = () => {
 	const [products, setProducts] = useState(null);
 	const [productTitle, setProductTitle] = useState(null);
 	const [productImage, setProductImage] = useState(null);
 	const [showModal, setShowModal] = useState(null);
+	const [loading, setLoading] = useState(null);
 
 	const options = {
 		method: "GET",
@@ -45,22 +47,21 @@ export const SearchPage = () => {
 				onSubmit={(e, values) => {
 					options.params.keyword = e.search;
 
-					axios
-						.request(options)
-						.then(function (response) {
-							console.log("🕵🏻‍♂️ response.data: ", response.data); //TODO: remove/comment
+					axios.request(options).then(function (response) {
+						console.log("🕵🏻‍♂️ response.data: ", response.data); //TODO: remove/comment
 
-							console.log(
-								"🕵🏻‍♂️ response.data.products.title",
-								response.data.products
-							); //TODO: remove/comment
-							const productsResponse = response.data.products;
-							setProducts(productsResponse);
-							//   e.target.reset();
-						})
-						.catch((err) => {
-							console.log("Error creating a new post:", err);
-						});
+						console.log(
+							"🕵🏻‍♂️ response.data.products.title",
+							response.data.products
+						); //TODO: remove/comment
+						const productsResponse = response.data.products;
+						setProducts(productsResponse);
+						setLoading(false);
+						//   e.target.reset();
+					});
+					setLoading(true).catch((err) => {
+						console.log("Error creating a new post:", err);
+					});
 				}}
 			>
 				<Form className="form">
@@ -73,6 +74,8 @@ export const SearchPage = () => {
 					</button>
 				</Form>
 			</Formik>
+			{loading ? <img src={gearSpinner} className="gear-spinner" /> : null}
+
 			{products ? (
 				products.map((product) => {
 					return (
@@ -92,7 +95,7 @@ export const SearchPage = () => {
 					);
 				})
 			) : (
-				<>...Loading</>
+				<></>
 			)}
 			{showModal && (
 				<ModalComponent

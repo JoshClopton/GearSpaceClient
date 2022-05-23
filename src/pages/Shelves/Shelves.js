@@ -10,15 +10,24 @@ import { ModalComponent } from "../../components/ModalComponent/ModalComponent";
 // import LoginButton from "../LoginButton/LoginButton";
 // import LogoComponent from "../LogoComponent/LogoComponent";
 // import "./Header.scss";
+import { ConfirmDeleteModal } from "../../components/ConfirmDeleteModal/ConfirmDeleteModal";
 
 export const Shelves = () => {
 	let { shelfId } = useParams();
 
+	//response from axios call to grag all shelves for a particular user
 	const [shelfData, setShelfData] = useState(null);
+	//selectedItem is for setting state to be the item that is selected when the user clicks edit
 	const [selectedItem, setSelectedItem] = useState(null);
-
+	//changes state when the user clicks the delete button
+	const [itemToDelete, setItemToDelete] = useState(null);
+	//this function gets called when a user clicks edit. It sets state to be the selected item
 	const handleShowPopup = (itemId) => {
 		setSelectedItem(itemId);
+	};
+	//when user clicks the delete button it calls this function and passes in the selected item.
+	const handleShowDelete = (itemId) => {
+		setItemToDelete(itemId);
 	};
 
 	useEffect(() => {
@@ -48,11 +57,19 @@ export const Shelves = () => {
 						<article className="shelves__content-container" key={shelf.id}>
 							<button
 								onClick={() => {
+									handleShowDelete(shelf.id);
+								}}
+							>
+								Delete
+							</button>
+							<button
+								onClick={() => {
 									handleShowPopup(shelf.id);
 								}}
 							>
 								Edit
 							</button>
+
 							<span className="shelves__title">{shelf.shelf}</span>
 							<div className="shelves__details-container">
 								<div className="shelves__label">Item:</div>
@@ -90,6 +107,10 @@ export const Shelves = () => {
 			)}
 			{selectedItem ? (
 				<ModalComponent selectedItem={selectedItem} isCreate={false} />
+			) : null}
+
+			{itemToDelete ? (
+				<ConfirmDeleteModal itemToDelete={itemToDelete} shelfData={shelfData} />
 			) : null}
 		</div>
 	);

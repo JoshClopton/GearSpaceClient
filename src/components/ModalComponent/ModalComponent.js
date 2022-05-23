@@ -64,7 +64,7 @@ export const ModalComponent = (props) => {
 									});
 							} else {
 								axios
-									.put(
+									.patch(
 										`http://localhost:8000/shelves/edit`,
 										{
 											shelf: e.shelf,

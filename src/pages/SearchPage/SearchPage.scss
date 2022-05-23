@@ -2,22 +2,37 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
+.search-page {
+	padding: 1rem;
+}
+
 .title {
-	margin: 0rem 1rem 1rem 1rem;
+	margin: 1rem 0rem;
 }
 
 .form {
 	margin-bottom: 1rem;
 	display: flex;
-	align-items: center;
+	align-items: baseline;
 
 	@include desktop {
 		gap: 1rem;
 	}
 
+	&__input {
+		width: 12rem;
+		height: 2rem;
+		border: 1px solid gray;
+		justify-content: center;
+	}
+
 	&__button {
 		@include desktop {
-			width: 9.5rem;
+			width: 12rem;
+			border-radius: 9px;
+			height: 2rem;
+			border: 1px solid gray;
+			justify-content: center;
 		}
 	}
 }
@@ -26,15 +41,23 @@
 	display: flex;
 	flex-direction: column;
 	margin-bottom: 1rem;
-	align-items: center;
 
 	@include desktop {
 		display: flex;
 		flex-direction: column;
 		margin-bottom: 1rem;
-		align-items: initial;
+		align-items: center;
 		flex-wrap: wrap;
-		margin-left: 1rem;
+		border-radius: 3rem;
+		align-items: baseline;
+		background-color: white;
+		width: 29rem;
+		height: 21rem;
+		padding-top: 1rem;
+		padding-left: 1rem;
+		gap: 2rem;
+		justify-content: space-between;
+		overflow: hidden;
 	}
 
 	&__title {
@@ -44,10 +67,36 @@
 
 	&__image {
 		margin-bottom: 2rem;
-		width: 8rem;
+		width: 11rem;
+		height: 11rem;
+		object-fit: contain;
 	}
 }
 
 .gear-spinner {
 	color: rgb(95, 133, 102);
+}
+// .button {
+// 	width: 100%;
+// 	gap: 2rem;
+// 	justify-content: center;
+// 	display: flex;
+
+// 	&__delete {
+// 		width: 8rem;
+// 		border-radius: 9px;
+// 		height: 2rem;
+// 		border: 1px solid gray;
+// 		justify-content: center;
+// 	}
+
+// 	&__edit {
+// 		width: 8rem;
+// 		border-radius: 9px;
+// 		height: 2rem;
+// 		border: 1px solid gray;
+// 	}
+// }
+:placeholder-shown {
+	text-align: center;
 }

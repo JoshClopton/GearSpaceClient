@@ -39,73 +39,76 @@ export const SearchPage = () => {
 	return (
 		<div>
 			<Header />
-			<h1 className="title">Search for your items:</h1>
-			<Formik
-				initialValues={{
-					search: "",
-				}}
-				onSubmit={(e, values) => {
-					options.params.keyword = e.search;
+			<main className="search-page">
+				<h1 className="title">Find your gear:</h1>
+				<Formik
+					initialValues={{
+						search: "",
+					}}
+					onSubmit={(e, values) => {
+						options.params.keyword = e.search;
 
-					axios.request(options).then(function (response) {
-						console.log("🕵🏻‍♂️ response.data: ", response.data); //TODO: remove/comment
+						axios.request(options).then(function (response) {
+							console.log("🕵🏻‍♂️ response.data: ", response.data); //TODO: remove/comment
 
-						console.log(
-							"🕵🏻‍♂️ response.data.products.title",
-							response.data.products
-						); //TODO: remove/comment
-						const productsResponse = response.data.products;
-						setProducts(productsResponse);
-						setLoading(false);
-						//   e.target.reset();
-					});
-					setLoading(true).catch((err) => {
-						console.log("Error creating a new post:", err);
-					});
-				}}
-			>
-				<Form className="form">
-					<label>
-						<Field type="input" name="search" />
-						Search
-					</label>
-					<button type="submit" className="form__button">
-						Submit
-					</button>
-				</Form>
-			</Formik>
-			{loading ? <img src={gearSpinner} className="gear-spinner" /> : null}
+							console.log(
+								"🕵🏻‍♂️ response.data.products.title",
+								response.data.products
+							); //TODO: remove/comment
+							const productsResponse = response.data.products;
+							setProducts(productsResponse);
+							setLoading(false);
+							//   e.target.reset();
+						});
+						setLoading(true).catch((err) => {
+							console.log("Error creating a new post:", err);
+						});
+					}}
+				>
+					<Form className="form">
+						<Field
+							type="input"
+							name="search"
+							className="form__input"
+							placeholder="search"
+						/>
 
-			{products ? (
-				products.map((product) => {
-					return (
-						<section className="products">
-							<div
+						<button type="submit" className="form__button">
+							Submit
+						</button>
+					</Form>
+				</Formik>
+				{loading ? <img src={gearSpinner} className="gear-spinner" /> : null}
+
+				{products ? (
+					products.map((product) => {
+						return (
+							<section
+								className="products"
 								onClick={() => {
 									setShowModal(true);
 									setProductImage(product.thumbnail);
 									setProductTitle(product.title);
 								}}
-								className="products__title"
 							>
-								{product.title}
-							</div>
-							<img src={product.thumbnail} className="products__image" />
-						</section>
-					);
-				})
-			) : (
-				<></>
-			)}
-			{showModal && (
-				<ModalComponent
-					productTitle={productTitle}
-					productImage={productImage}
-					showModal={showModal}
-					handleCloseModal={handleCloseModal}
-					isCreate={true}
-				/>
-			)}
+								<div className="products__title">{product.title}</div>
+								<img src={product.thumbnail} className="products__image" />
+							</section>
+						);
+					})
+				) : (
+					<></>
+				)}
+				{showModal && (
+					<ModalComponent
+						productTitle={productTitle}
+						productImage={productImage}
+						showModal={showModal}
+						handleCloseModal={handleCloseModal}
+						isCreate={true}
+					/>
+				)}
+			</main>
 		</div>
 	);
 };

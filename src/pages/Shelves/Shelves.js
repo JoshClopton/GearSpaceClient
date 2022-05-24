@@ -85,7 +85,7 @@ export const Shelves = () => {
 											<button
 												className="button__edit"
 												onClick={() => {
-													handleShowPopup(shelf.id);
+													handleShowPopup(shelf);
 												}}
 											>
 												Edit

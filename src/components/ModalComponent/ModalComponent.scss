@@ -16,14 +16,15 @@
 
 	&__item-container {
 		display: flex;
+		flex-direction: column;
 	}
 
 	&__title {
 		margin-bottom: 4rem;
 	}
 
-	&__image {
-		width: 18rem;
+	&__images {
+		width: 14rem;
 		align-self: center;
 		margin-bottom: 4rem;
 	}
@@ -125,4 +126,7 @@
 	&__notes-input {
 		width: 49%;
 	}
+}
+.modal-contents {
+	display: flex;
 }

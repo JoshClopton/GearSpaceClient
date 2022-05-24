@@ -41,7 +41,6 @@
 		padding-bottom: 0.5rem;
 		width: 40%;
 		/* justify-content: center; */
-		align-items: center;
 	}
 
 	&__label {
@@ -74,6 +73,7 @@
 		height: 2rem;
 		border: 1px solid gray;
 		justify-content: center;
+		cursor: pointer;
 	}
 
 	&__edit {
@@ -81,5 +81,6 @@
 		border-radius: 9px;
 		height: 2rem;
 		border: 1px solid gray;
+		cursor: pointer;
 	}
 }

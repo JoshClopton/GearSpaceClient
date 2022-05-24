@@ -46,30 +46,33 @@ export const ShelfItemsComponent = () => {
 		<div>
 			{/* make sure shelfData is not null and that it has something in the array */}
 			{shelfData && shelfData.length ? (
-				<main className="shelves">
-					<h1>Your Shelves</h1>
+				<>
+					<h1 className="your-shelves">Your Shelves</h1>
 
-					{/* map through the uniqueShelves array and for each item create a link */}
-					{uniqueShelves.map((shelf) => {
-						console.log("🕵🏻‍♂️ shelf: ", shelf); //TODO: remove/comment
+					<main className="shelves-container">
+						{/* map through the uniqueShelves array and for each item create a link */}
+						{uniqueShelves.map((shelf) => {
+							console.log("🕵🏻‍♂️ shelf: ", shelf); //TODO: remove/comment
 
-						return (
-							<NavLink to={`/shelves/${shelf}`}>
-								<article className="shelves__card" key={shelf}>
-									<img
-										className="shelves__image"
-										src={require(`../../assets/images/${shelf}.png`)}
-									/>
+							return (
+								<article className="shelves-container__card" key={shelf}>
+									<NavLink to={`/shelves/${shelf}`}>
+										<img
+											className="shelves-container__image"
+											src={require(`../../assets/images/${shelf}.png`)}
+										/>
+									</NavLink>
+
 									<span className="shelves__shelf">{shelf}</span>
 								</article>
-							</NavLink>
-						);
-					})}
-				</main>
+							);
+						})}
+					</main>
+				</>
 			) : (
 				<>
 					<h1>Your shelves are empty.</h1>
-					<NavLink to="/search">Create</NavLink>
+					{/* <NavLink to="/search">Create</NavLink> */}
 				</>
 			)}
 		</div>

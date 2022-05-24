@@ -23,6 +23,8 @@ export const ConfirmDeleteModal = (props) => {
 			.catch((err) => {
 				console.log("Error deleting request:", err);
 			});
+
+		handleCloseModal();
 	};
 
 	return (
@@ -34,17 +36,19 @@ export const ConfirmDeleteModal = (props) => {
 			/>
 
 			<h1 className="delete-modal__title">Are you sure you want to delete?</h1>
-			<button
-				className="delete-button"
-				onClick={() => {
-					deleteItem();
-				}}
-			>
-				Delete
-			</button>
-			<button className="cancel-button" onClick={handleCloseModal}>
-				Cancel
-			</button>
+			<div className="delete-button-container">
+				<button
+					className="delete-button"
+					onClick={() => {
+						deleteItem();
+					}}
+				>
+					Delete
+				</button>
+				<button className="cancel-button" onClick={handleCloseModal}>
+					Cancel
+				</button>
+			</div>
 		</div>
 	);
 };

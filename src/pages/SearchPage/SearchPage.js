@@ -6,6 +6,7 @@ import { Header } from "../../components/Header/Header";
 import { useState, useEffect } from "react";
 import { ModalComponent } from "../../components/ModalComponent/ModalComponent";
 import gearSpinner from "../../assets/images/gear-spinner.svg";
+import searchImage from "../../assets/icons/search.svg";
 
 export const SearchPage = () => {
 	const [products, setProducts] = useState(null);
@@ -40,7 +41,7 @@ export const SearchPage = () => {
 		<div>
 			<Header />
 			<main className="search-page">
-				<h1 className="title">Find your gear:</h1>
+				<h1 className="search-page__title">FIND YOUR GEAR</h1>
 				<Formik
 					initialValues={{
 						search: "",
@@ -73,41 +74,40 @@ export const SearchPage = () => {
 							placeholder="search"
 						/>
 
-						<button type="submit" className="form__button">
-							Submit
-						</button>
+						<button type="submit" className="form__button"></button>
 					</Form>
 				</Formik>
 				{loading ? <img src={gearSpinner} className="gear-spinner" /> : null}
-
-				{products ? (
-					products.map((product) => {
-						return (
-							<section
-								className="products"
-								onClick={() => {
-									setShowModal(true);
-									setProductImage(product.thumbnail);
-									setProductTitle(product.title);
-								}}
-							>
-								<div className="products__title">{product.title}</div>
-								<img src={product.thumbnail} className="products__image" />
-							</section>
-						);
-					})
-				) : (
-					<></>
-				)}
-				{showModal && (
-					<ModalComponent
-						productTitle={productTitle}
-						productImage={productImage}
-						showModal={showModal}
-						handleCloseModal={handleCloseModal}
-						isCreate={true}
-					/>
-				)}
+				<section className="products-container">
+					{products ? (
+						products.map((product) => {
+							return (
+								<section
+									className="card"
+									onClick={() => {
+										setShowModal(true);
+										setProductImage(product.thumbnail);
+										setProductTitle(product.title);
+									}}
+								>
+									<img src={product.thumbnail} className="card__image" />
+									<div className="card__title">{product.title}</div>
+								</section>
+							);
+						})
+					) : (
+						<></>
+					)}
+					{showModal && (
+						<ModalComponent
+							productTitle={productTitle}
+							productImage={productImage}
+							showModal={showModal}
+							handleCloseModal={handleCloseModal}
+							isCreate={true}
+						/>
+					)}
+				</section>
 			</main>
 		</div>
 	);

@@ -10,22 +10,23 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	width: 39%;
+	width: 70%;
 	background-color: white;
 	box-shadow: 0px 0px 26px gray;
 
 	&__item-container {
 		display: flex;
-		flex-direction: column;
+		//TODO might have to change this back to column
+		flex-direction: row;
 		align-items: center;
 	}
 
 	&__title {
-		margin-bottom: 4rem;
+		margin-bottom: 2rem;
 	}
 
 	&__images {
-		width: 14rem;
+		width: 100%;
 		align-self: center;
 		margin-bottom: 4rem;
 	}
@@ -40,6 +41,15 @@
 
 		@include tablet {
 		}
+	}
+
+	&__image-container {
+		width: 10rem;
+	}
+
+	&__contents {
+		display: flex;
+		flex-direction: row;
 	}
 }
 
@@ -127,8 +137,4 @@
 	&__notes-input {
 		width: 49%;
 	}
-}
-.modal-contents {
-	display: flex;
-	flex-direction: row;
 }

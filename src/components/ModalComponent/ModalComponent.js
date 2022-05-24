@@ -52,9 +52,11 @@ export const ModalComponent = (props) => {
 						className="modal__close-icon"
 						src={close}
 					/>
-					<div modal-contents>
+					<div className="modal__contents">
 						<section className="modal__item-container">
-							<img className="modal__images" src={productImage} />
+							<div className="modal__image-container">
+								<img className="modal__images" src={productImage} />
+							</div>
 							<h1 className="modal__title">{productTitle}</h1>
 						</section>
 						<Formik
@@ -75,6 +77,9 @@ export const ModalComponent = (props) => {
 											},
 											{ withCredentials: true }
 										)
+										.then((res) => {
+											handleCloseModal();
+										})
 										.catch((err) => {
 											console.log("Error creating a new post:", err);
 										});

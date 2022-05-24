@@ -28,13 +28,13 @@ export const Header = (props) => {
 				<h1 className="header__title">Gear Space</h1>
 			</div>
 			<form className="search-form">
-				<input
+				{/* <input
 					className="search-form__input"
 					type="text"
 					id="search"
 					name="search"
 					placeholder="Search by category"
-				/>
+				/> */}
 
 				{isLoggedIn ? (
 					<>
@@ -45,9 +45,11 @@ export const Header = (props) => {
 						>
 							Log Out
 						</a>
-						<NavLink to={"/search"} className="header__login-link">
-							Add Gear
-						</NavLink>
+						<div className="header__login-link-add">
+							<NavLink to={"/search"} className="header__login-link-active">
+								Add Gear
+							</NavLink>
+						</div>
 					</>
 				) : (
 					<a

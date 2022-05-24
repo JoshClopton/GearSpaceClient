@@ -16,6 +16,7 @@ import optics from "../assets/images/optics.png";
 import shelter from "../assets/images/shelter.png";
 import sleep from "../assets/images/sleep.jpg";
 import { NavLink } from "react-router-dom";
+import heroImage from "../assets/images/IMG_2697.jpg";
 
 const HomePage = () => {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);

@@ -35,7 +35,7 @@
 
 	&__title {
 		font-size: 2rem;
-		color: gray;
+		color: white;
 
 		@include tablet {
 			font-size: 2.5rem;
@@ -48,7 +48,24 @@
 
 	&__login-link {
 		text-decoration: none;
-		color: gray;
+		color: white;
+	}
+
+	&__login-link-add {
+		background-color: white;
+		width: 7rem;
+		height: 3rem;
+		display: flex;
+		justify-content: center;
+	}
+
+	&__login-link-active {
+		background-color: white;
+		display: flex;
+		text-decoration: none;
+		color: black;
+		align-self: center;
+		text-align: center;
 	}
 }
 

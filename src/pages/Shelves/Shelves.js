@@ -83,20 +83,21 @@ export const Shelves = () => {
 										</div>
 										<div className="button">
 											<button
+												className="button__edit"
+												onClick={() => {
+													handleShowPopup(shelf.id);
+												}}
+											>
+												Edit
+											</button>
+
+											<button
 												className="button__delete"
 												onClick={() => {
 													handleShowDelete(shelf.id);
 												}}
 											>
 												Delete
-											</button>
-											<button
-												className="button__edit"
-												onClick={() => {
-													handleShowPopup(shelf);
-												}}
-											>
-												Edit
 											</button>
 										</div>
 									</main>

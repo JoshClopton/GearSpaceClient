@@ -20,11 +20,12 @@ export const ConfirmDeleteModal = (props) => {
 				},
 				withCredentials: true,
 			})
+			.then(() => {
+				handleCloseModal();
+			})
 			.catch((err) => {
 				console.log("Error deleting request:", err);
 			});
-
-		handleCloseModal();
 	};
 
 	return (
@@ -37,6 +38,9 @@ export const ConfirmDeleteModal = (props) => {
 
 			<h1 className="delete-modal__title">Are you sure you want to delete?</h1>
 			<div className="delete-button-container">
+				<button className="cancel-button" onClick={handleCloseModal}>
+					Cancel
+				</button>
 				<button
 					className="delete-button"
 					onClick={() => {
@@ -44,9 +48,6 @@ export const ConfirmDeleteModal = (props) => {
 					}}
 				>
 					Delete
-				</button>
-				<button className="cancel-button" onClick={handleCloseModal}>
-					Cancel
 				</button>
 			</div>
 		</div>

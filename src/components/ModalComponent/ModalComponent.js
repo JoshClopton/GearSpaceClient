@@ -92,14 +92,13 @@ export const ModalComponent = (props) => {
 											},
 											{ withCredentials: true }
 										)
+										.then((res) => {
+											handleCloseModal();
+										})
 										.catch((err) => {
 											console.log("Error creating a new post:", err);
 										});
-
-									console.log("🕵🏻‍♂️ e: ", e); //TODO: remove/comment
 								}
-
-								handleCloseModal();
 							}}
 						>
 							<Form className="edit__form">

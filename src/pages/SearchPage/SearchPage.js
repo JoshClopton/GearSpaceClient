@@ -36,6 +36,7 @@ export const SearchPage = () => {
 	// useEffect(() => {
 
 	// }, [showModal]);
+	// const toggleModal = showModal ? "modal--display" : "products-container";
 
 	return (
 		<div>

@@ -5,6 +5,7 @@ import { Formik, Field, Form, validateYupSchema } from "formik";
 
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import close from "../../assets/icons/close.svg";
 
 export const ModalComponent = (props) => {
 	// handleClose,
@@ -41,21 +42,20 @@ export const ModalComponent = (props) => {
 				location: selectedItem.location,
 				notes: selectedItem.notes,
 		  };
-	// const route = () =>{
-	// 	navigate('/')
-	// }
-
-	// const handleCloseModal = () => {
-	// 	// handleShow();
-	// 	setShow(false);
-	// };
 
 	return (
 		<>
 			<div className={toggleModal}>
 				<div className="modal">
-					<h1 className="modal__title">{productTitle}</h1>
-					<img className="modal__close-icon" src={productImage} />
+					<img
+						onClick={handleCloseModal}
+						className="modal__close-icon"
+						src={close}
+					/>
+					<section className="modal__item-container">
+						<h1 className="modal__title">{productTitle}</h1>
+						<img className="edit__image" src={productImage} />
+					</section>
 					<Formik
 						initialValues={initialFormValues}
 						onSubmit={(e, values) => {
@@ -132,15 +132,6 @@ export const ModalComponent = (props) => {
 									Other Gear
 								</label>
 							</div>
-
-							{/* <label htmlFor="item">Item</label> */}
-							{/* <Field id="item" name="item" /> */}
-							{/* <label htmlFor="description">Description</label> */}
-							{/* <Field
-								id="description"
-								name="description"
-								placeholder={`${shelfData[0].description}`}
-							/> */}
 							<label htmlFor="qty">Quantity</label>
 							<Field
 								id="qty"
@@ -150,25 +141,29 @@ export const ModalComponent = (props) => {
 							<Field
 								id="location"
 								name="location"
+								className="edit-form__location-input"
 								/*placeholder={`${shelfData[0].locationan}`}*/
 							/>
 							<label htmlFor="notes">Notes</label>
 							<Field
 								id="notes"
 								name="notes"
+								className="edit-form__notes-input"
 								// placeholder={`${shelfData[0].notes}`}
 							/>
+							<div className="button-container">
+								<button onClick={handleCloseModal} className="cancel-button">
+									Cancel
+								</button>
 
-							<button type="submit">Submit</button>
+								<button className="delete-button" type="submit">
+									Submit
+								</button>
+							</div>
 						</Form>
 					</Formik>
 
-					<span className="modal__text"></span>
-					<div className="button-container">
-						<button onClick={handleCloseModal} className="delete-button">
-							Cancel
-						</button>
-					</div>
+					{/* <span className="modal__text"></span> */}
 				</div>
 			</div>
 		</>

@@ -6,9 +6,26 @@
 	display: flex;
 	flex-direction: column;
 	padding: 1rem;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 39%;
+	background-color: white;
+	box-shadow: 0px 0px 26px gray;
+
+	&__item-container {
+		display: flex;
+	}
 
 	&__title {
-		margin-bottom: 1rem;
+		margin-bottom: 4rem;
+	}
+
+	&__image {
+		width: 18rem;
+		align-self: center;
+		margin-bottom: 4rem;
 	}
 
 	&__close-icon {
@@ -16,32 +33,30 @@
 	}
 
 	&__text {
-		padding-bottom: 17rem;
 		line-height: 1.7rem;
 		font-size: 17px;
 
 		@include tablet {
-			padding-bottom: 3rem;
 		}
 	}
 }
 
 .button-container {
 	display: flex;
-	justify-content: space-between;
-
+	justify-content: flex-start;
+	width: 100%;
 	@include tablet {
-		justify-content: right;
 	}
 }
 
 .delete-button {
 	border-style: none;
 	height: 2rem;
-	width: 47%;
 	border-radius: 1rem;
-	background-color: red;
-	color: #fff;
+	border: 1px solid black;
+	background-color: white;
+	color: black;
+	width: 47%;
 
 	@include tablet {
 		width: 15%;
@@ -94,11 +109,20 @@
 	display: flex;
 	flex-direction: column;
 	align-items: baseline;
+	gap: 1rem;
 
 	&__selectors {
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
 		width: 6rem;
+	}
+
+	&__location-input {
+		width: 49%;
+	}
+
+	&__notes-input {
+		width: 49%;
 	}
 }

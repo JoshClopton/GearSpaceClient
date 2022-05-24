@@ -45,64 +45,61 @@ export const Shelves = () => {
 				console.log("🕵🏻‍♂️ shelves: ", shelves); //TODO: remove/comment
 
 				setShelfData(shelves);
+				console.log("🕵🏻‍♂️ shelfData: ", shelfData); //TODO: remove/comment
 			});
 	}, [selectedItem, itemToDelete]);
+	console.log("🕵🏻‍♂️ shelfData: ", shelfData); //TODO: remove/comment
 
 	return (
 		<div className="shelves">
 			<Header />
+			{shelfData && shelfData.length ? (
+				<span className="shelves__title">{shelfData[0].shelf}</span>
+			) : null}
 			<div className="shelves__main">
 				{shelfData && shelfData.length ? (
 					shelfData.map((shelf) => {
 						return (
 							<article className="shelves__content-container" key={shelf.id}>
-								<span className="shelves__title">{shelf.shelf}</span>
-								<div className="shelves__details-container">
-									{/* <div className="shelves__label">Item:</div> */}
+								<img
+									src={shelf.image}
+									alt="stuff"
+									className="shelves__image"
+								></img>
+								<main className="text-container">
 									<div className="shelves__content">{shelf.item}</div>
-								</div>
-								<div className="shelves__details-container">
-									{/* <div className="shelves__label">Item:</div> */}
-									<img
-										src={shelf.image}
-										alt="stuff"
-										className="shelves__image"
-									></img>
-								</div>
-								<div className="shelves__details-container">
-									{/* <div className="shelves__label">Description:</div> */}
-									{/* <div className="shelves__content">{shelf.description}</div> */}
-								</div>
-								<div className="shelves__details-container">
-									<div className="shelves__label">Location:</div>
-									<div className="shelves__content">{shelf.location}</div>
-								</div>
-								<div className="shelves__details-container">
-									<div className="shelves__label">Notes:</div>
-									<div className="shelves__content">{shelf.notes}</div>
-								</div>
-								<div className="shelves__details-container">
-									<div className="shelves__label">Qty:</div>
-									<div className="shelves__content">{shelf.qty}</div>
-								</div>
-								<div className="button">
-									<button
-										className="button__delete"
-										onClick={() => {
-											handleShowDelete(shelf.id);
-										}}
-									>
-										Delete
-									</button>
-									<button
-										className="button__edit"
-										onClick={() => {
-											handleShowPopup(shelf);
-										}}
-									>
-										Edit
-									</button>
-								</div>
+
+									<div className="shelves__details-container">
+										<div className="shelves__label">Location:</div>
+										<div className="shelves__content">{shelf.location}</div>
+									</div>
+									<div className="shelves__details-container">
+										<div className="shelves__label">Notes:</div>
+										<div className="shelves__content">{shelf.notes}</div>
+									</div>
+									<div className="shelves__details-container">
+										<div className="shelves__label">Qty:</div>
+										<div className="shelves__content">{shelf.qty}</div>
+									</div>
+									<div className="button">
+										<button
+											className="button__delete"
+											onClick={() => {
+												handleShowDelete(shelf.id);
+											}}
+										>
+											Delete
+										</button>
+										<button
+											className="button__edit"
+											onClick={() => {
+												handleShowPopup(shelf);
+											}}
+										>
+											Edit
+										</button>
+									</div>
+								</main>
 							</article>
 						);
 					})

@@ -9,7 +9,7 @@
 	&__image {
 		width: 4rem;
 		filter: invert(1);
-
+		color: white;
 		@include tablet {
 			width: 7rem;
 		}

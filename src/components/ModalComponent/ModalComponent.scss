@@ -16,6 +16,7 @@
 	align-items: center;
 	/* gap: 0rem; */
 	height: 35rem;
+	z-index: 99;
 
 	&__item-container {
 		display: flex;
@@ -72,28 +73,28 @@
 	width: 39%;
 }
 
-.modal--display {
-	background-color: white;
-	height: 56%;
-	width: 100%;
-	position: absolute;
-	z-index: 2;
-	top: 255px;
+// .modal--display {
+// 	background-color: white;
+// 	height: 56%;
+// 	width: 100%;
+// 	position: absolute;
+// 	z-index: 2;
+// 	top: 255px;
 
-	@include tablet {
-		position: absolute;
-		width: 65%;
-		align-self: center;
-		right: 9rem;
-		top: 12rem;
-		height: 19rem;
-	}
+// 	@include tablet {
+// 		position: absolute;
+// 		width: 65%;
+// 		align-self: center;
+// 		right: 9rem;
+// 		top: 12rem;
+// 		height: 19rem;
+// 	}
 
-	// @include desktop {
-	// 	right: 15rem;
-	// 	height: 40rem;
-	// }
-}
+// 	// @include desktop {
+// 	// 	right: 15rem;
+// 	// 	height: 40rem;
+// 	// }
+// }
 
 .modal--hide {
 	display: none;

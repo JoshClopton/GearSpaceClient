@@ -23,7 +23,7 @@ export const ModalComponent = (props) => {
 	const [show, setShow] = useState(true);
 
 	//logic to show or hide the Modal
-	const toggleModal = show ? "modal--display" : "modal--hide";
+	// const toggleModal = show ? "modal--display" : "modal--hide";
 	const initialFormValues = isCreate
 		? {
 				shelf: "",
@@ -45,7 +45,7 @@ export const ModalComponent = (props) => {
 
 	return (
 		<>
-			<div className={toggleModal}>
+			<div>
 				<div className="modal">
 					<img
 						onClick={handleCloseModal}

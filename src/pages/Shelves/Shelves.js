@@ -35,6 +35,9 @@ export const Shelves = () => {
 		setItemToDelete(false);
 	};
 
+	const toggleOverlay =
+		selectedItem || itemToDelete ? "overlay--display" : "overlay--hide";
+
 	useEffect(() => {
 		axios
 			.get(`http://localhost:8000/shelves/${shelfId}`, {
@@ -52,6 +55,8 @@ export const Shelves = () => {
 
 	return (
 		<div className="shelves">
+			<div className={toggleOverlay}></div>
+
 			<Header />
 			{shelfData && shelfData.length ? (
 				<span className="shelves__title">{shelfData[0].shelf}</span>

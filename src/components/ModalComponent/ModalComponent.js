@@ -36,11 +36,12 @@ export const ModalComponent = (props) => {
 		: {
 				shelf: selectedItem.shelf,
 				item: selectedItem.item,
-				// description: selectedItem.description,
+				description: selectedItem.description,
 				qty: selectedItem.qty,
 				location: selectedItem.location,
 				notes: selectedItem.notes,
 		  };
+	console.log("🕵🏻‍♂️ selectedItem: ", selectedItem); //TODO: remove/comment
 
 	return (
 		<>
@@ -54,9 +55,11 @@ export const ModalComponent = (props) => {
 					<div className="modal__contents">
 						<section className="modal__item-container">
 							<div className="modal__image-container">
-								<img className="modal__images" src={productImage} />
+								<img
+									className="modal__images"
+									src={productImage || selectedItem.image}
+								/>
 							</div>
-							<h1 className="modal__title">{productTitle}</h1>
 						</section>
 						<Formik
 							initialValues={initialFormValues}
@@ -88,6 +91,7 @@ export const ModalComponent = (props) => {
 											`http://localhost:8000/shelves/edit`,
 											{
 												shelf: e.shelf,
+
 												// description: e.description,
 												location: e.location,
 												qty: e.qty,
@@ -105,17 +109,21 @@ export const ModalComponent = (props) => {
 								}
 							}}
 						>
-							<Form className="edit__form">
-								<div className="edit__selectors">
-									<label>
+							<Form className="edit-form">
+								<h1 className="edit-form__title">
+									{productTitle || selectedItem.item}
+								</h1>
+
+								<div className="edit-form__selectors">
+									<label className="edit-form__labels">
 										<Field type="radio" name="shelf" value="shelter" />
 										Shelter
 									</label>
-									<label>
+									<label className="edit-form__labels">
 										<Field type="radio" name="shelf" value="cook" />
 										Cook
 									</label>
-									<label>
+									<label className="edit-form__labels">
 										<Field type="radio" name="shelf" value="sleep" />
 										Sleep
 									</label>
@@ -123,32 +131,39 @@ export const ModalComponent = (props) => {
 										<Field type="radio" name="shelf" value="lighting" />
 										Lighting
 									</label> */}
-									<label>
+									<label className="edit-form__labels">
 										<Field type="radio" name="shelf" value="clothing" />
 										Clothing
 									</label>
-									<label>
+									<label className="edit-form__labels">
 										<Field type="radio" name="shelf" value="optics" />
 										Optics
 									</label>
-									<label>
+									<label className="edit-form__labels">
 										<Field type="radio" name="shelf" value="other-gear" />
 										Other Gear
 									</label>
 								</div>
-								<label htmlFor="qty">Quantity</label>
+								<label className="edit-form__labels" htmlFor="qty">
+									Quantity
+								</label>
 								<Field
+									className="edit-form__qty-field"
 									id="qty"
 									name="qty" /*placeholder={`${shelfData[0].qty}`} */
 								/>
-								<label htmlFor="location">Location</label>
+								<label className="edit-form__labels" htmlFor="location">
+									Location
+								</label>
 								<Field
 									id="location"
 									name="location"
 									className="edit-form__location-input"
 									/*placeholder={`${shelfData[0].locationan}`}*/
 								/>
-								<label htmlFor="notes">Notes</label>
+								<label className="edit-form__labels" htmlFor="notes">
+									Notes
+								</label>
 								<Field
 									id="notes"
 									name="notes"
@@ -158,7 +173,7 @@ export const ModalComponent = (props) => {
 								<div className="button-container">
 									<button
 										onClick={handleCloseModal}
-										className="cancel-button"
+										className="edit-cancel-button"
 										type="button"
 									>
 										Cancel
@@ -166,7 +181,7 @@ export const ModalComponent = (props) => {
 
 									<button
 										// onClick={handleCloseModal}
-										className="delete-button"
+										className="edit-delete-button"
 										type="submit"
 									>
 										Submit

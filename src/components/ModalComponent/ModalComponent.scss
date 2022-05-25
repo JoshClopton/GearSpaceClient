@@ -10,9 +10,12 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	width: 70%;
+	width: 40%;
 	background-color: white;
-	box-shadow: 0px 0px 26px gray;
+	box-shadow: 0px 0px 26px grey;
+	align-items: center;
+	/* gap: 0rem; */
+	height: 35rem;
 
 	&__item-container {
 		display: flex;
@@ -21,14 +24,9 @@
 		align-items: center;
 	}
 
-	&__title {
-		margin-bottom: 2rem;
-	}
-
 	&__images {
-		width: 100%;
-		align-self: center;
-		margin-bottom: 4rem;
+		width: 13rem;
+		margin-left: 2.9rem;
 	}
 
 	&__close-icon {
@@ -50,44 +48,28 @@
 	&__contents {
 		display: flex;
 		flex-direction: row;
+		gap: 11.6rem;
+		margin-top: 2rem;
 	}
 }
 
-.button-container {
-	display: flex;
-	justify-content: center;
-	width: 100%;
-	@include tablet {
-	}
-}
-
-.delete-button {
+.edit-delete-button {
 	border-style: none;
 	height: 2rem;
-	border-radius: 1rem;
-	border: 1px solid black;
-	background-color: white;
+	/* border-radius: 1rem; */
+	/* border: 1px solid black; */
+	background-color: #f6784f;
 	color: black;
-	width: 47%;
-
-	@include tablet {
-		width: 15%;
-		margin-left: 1rem;
-	}
+	width: 39%;
 }
 
-.cancel-button {
+.edit-cancel-button {
 	border-style: none;
 	height: 2rem;
-	border-radius: 1rem;
-	border: 1px solid black;
+	border: 1px solid #f6784f;
 	background-color: white;
 	color: black;
-	width: 47%;
-
-	@include tablet {
-		width: 15%;
-	}
+	width: 39%;
 }
 
 .modal--display {
@@ -117,7 +99,7 @@
 	display: none;
 }
 
-.edit__form {
+.edit-form {
 	display: flex;
 	flex-direction: column;
 	align-items: baseline;
@@ -127,14 +109,38 @@
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
-		width: 6rem;
+		width: 18rem;
+		gap: 1rem;
 	}
 
 	&__location-input {
-		width: 49%;
+		height: 1.9rem;
+		width: 16rem;
+	}
+
+	&__title {
+		font-size: 1.1rem;
 	}
 
 	&__notes-input {
-		width: 49%;
+		height: 1.9rem;
+		width: 16rem;
 	}
+
+	&__labels {
+		font-weight: 200;
+		font-style: italic;
+	}
+
+	&__qty-field {
+		width: 2.4rem;
+		height: 1.9rem;
+	}
+}
+
+.button-container {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	padding-top: 2rem;
 }

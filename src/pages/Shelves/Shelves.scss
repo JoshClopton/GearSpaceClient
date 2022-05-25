@@ -47,7 +47,7 @@
 		display: flex;
 		font-weight: 200;
 		font-style: italic;
-		color: #8baf9b;
+		color: #f6784f;
 	}
 
 	&__image {
@@ -83,19 +83,22 @@
 	display: flex;
 
 	&__delete {
-		width: 8rem;
-		border-radius: 9px;
+		border-style: none;
 		height: 2rem;
-		border: 1px solid gray;
-		justify-content: center;
-		cursor: pointer;
+		border: 1px solid #f6784f;
+		background-color: white;
+		color: black;
+		width: 39%;
 	}
 
 	&__edit {
-		width: 8rem;
-		border-radius: 9px;
+		border-style: none;
 		height: 2rem;
-		border: 1px solid gray;
+		/* border-radius: 1rem; */
+		/* border: 1px solid black; */
+		background-color: #f6784f;
+		color: black;
+		width: 39%;
 		cursor: pointer;
 	}
 }

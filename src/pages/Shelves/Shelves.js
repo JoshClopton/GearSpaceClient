@@ -67,19 +67,23 @@ export const Shelves = () => {
 										className="shelves__image"
 									></img>
 									<main className="text-container">
-										<div className="shelves__content">{shelf.item}</div>
-
-										<div className="shelves__details-container">
-											<div className="shelves__label">Location:</div>
-											<div className="shelves__content">{shelf.location}</div>
+										<div className="shelves__content shelves__item-title">
+											{shelf.item}
 										</div>
+										<div className="shelves__qty-location-containter">
+											<div className="shelves__details-container">
+												<div className="shelves__label">Location:</div>
+												<div className="shelves__content">{shelf.location}</div>
+											</div>
+											<div className="shelves__details-container">
+												<div className="shelves__label">Qty:</div>
+												<div className="shelves__content">{shelf.qty}</div>
+											</div>
+										</div>
+
 										<div className="shelves__details-container">
 											<div className="shelves__label">Notes:</div>
 											<div className="shelves__content">{shelf.notes}</div>
-										</div>
-										<div className="shelves__details-container">
-											<div className="shelves__label">Qty:</div>
-											<div className="shelves__content">{shelf.qty}</div>
 										</div>
 										<div className="button">
 											<button

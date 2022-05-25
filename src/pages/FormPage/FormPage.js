@@ -14,7 +14,7 @@ export const FormPage = () => {
 					picked: "",
 					shelf: "",
 					item: "",
-					description: "",
+					// description: "",
 					qty: "",
 					location: "",
 					notes: "",
@@ -26,7 +26,7 @@ export const FormPage = () => {
 							`http://localhost:8000/shelves`,
 							{
 								shelf: e.shelf,
-								description: e.description,
+								// description: e.description,
 								item: e.item,
 								location: e.location,
 								qty: e.qty,
@@ -55,8 +55,8 @@ export const FormPage = () => {
 						Cook
 					</label>
 					<label>
-						<Field type="radio" name="shelf" value="bedding" />
-						Bedding
+						<Field type="radio" name="shelf" value="sleep" />
+						Sleep
 					</label>
 					<label>
 						<Field type="radio" name="shelf" value="lighting" />

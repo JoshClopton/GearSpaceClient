@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import { ModalComponent } from "../../components/ModalComponent/ModalComponent";
 import gearSpinner from "../../assets/images/gear-spinner.svg";
 import searchImage from "../../assets/icons/search.svg";
+import uniqueId from "uniqueid";
 
 export const SearchPage = () => {
 	const [products, setProducts] = useState(null);
@@ -50,21 +51,27 @@ export const SearchPage = () => {
 					onSubmit={(e, values) => {
 						options.params.keyword = e.search;
 
-						axios.request(options).then(function (response) {
-							console.log("🕵🏻‍♂️ response.data: ", response.data); //TODO: remove/comment
+						axios
+							.request(options)
+							.then(function (response) {
+								console.log("🕵🏻‍♂️ response.data: ", response.data); //TODO: remove/comment
 
-							console.log(
-								"🕵🏻‍♂️ response.data.products.title",
-								response.data.products
-							); //TODO: remove/comment
-							const productsResponse = response.data.products;
-							setProducts(productsResponse);
-							setLoading(false);
-							//   e.target.reset();
-						});
-						setLoading(true).catch((err) => {
-							console.log("Error creating a new post:", err);
-						});
+								console.log(
+									"🕵🏻‍♂️ response.data.products.title",
+									response.data.products
+								); //TODO: remove/comment
+								const productsResponse = response.data.products;
+								setProducts(productsResponse);
+								setLoading(false);
+								//   e.target.reset();
+							})
+							.then(() => {
+								handleCloseModal();
+							})
+							.catch((err) => {
+								console.log("Error creating a new post:", err);
+							});
+						setLoading(true);
 					}}
 				>
 					<Form className="form">
@@ -82,8 +89,12 @@ export const SearchPage = () => {
 				<section className="products-container">
 					{products ? (
 						products.map((product) => {
+							{
+								console.log("🕵🏻‍♂️ product: ", product); //TODO: remove/comment
+							}
 							return (
 								<section
+									key={product.asin}
 									className="card"
 									onClick={() => {
 										setShowModal(true);

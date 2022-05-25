@@ -28,7 +28,6 @@ export const ModalComponent = (props) => {
 		? {
 				shelf: "",
 				item: "",
-				description: "",
 				qty: "",
 				location: "",
 				notes: "",
@@ -37,7 +36,7 @@ export const ModalComponent = (props) => {
 		: {
 				shelf: selectedItem.shelf,
 				item: selectedItem.item,
-				description: selectedItem.description,
+				// description: selectedItem.description,
 				qty: selectedItem.qty,
 				location: selectedItem.location,
 				notes: selectedItem.notes,
@@ -68,7 +67,7 @@ export const ModalComponent = (props) => {
 											`http://localhost:8000/shelves`,
 											{
 												shelf: e.shelf,
-												description: e.description,
+												// description: e.description,
 												item: productTitle,
 												location: e.location,
 												qty: e.qty,
@@ -77,7 +76,7 @@ export const ModalComponent = (props) => {
 											},
 											{ withCredentials: true }
 										)
-										.then((res) => {
+										.then(() => {
 											handleCloseModal();
 										})
 										.catch((err) => {
@@ -89,7 +88,7 @@ export const ModalComponent = (props) => {
 											`http://localhost:8000/shelves/edit`,
 											{
 												shelf: e.shelf,
-												description: e.description,
+												// description: e.description,
 												location: e.location,
 												qty: e.qty,
 												notes: e.notes,
@@ -97,7 +96,7 @@ export const ModalComponent = (props) => {
 											},
 											{ withCredentials: true }
 										)
-										.then((res) => {
+										.then(() => {
 											handleCloseModal();
 										})
 										.catch((err) => {
@@ -117,13 +116,13 @@ export const ModalComponent = (props) => {
 										Cook
 									</label>
 									<label>
-										<Field type="radio" name="shelf" value="bedding" />
-										Bedding
+										<Field type="radio" name="shelf" value="sleep" />
+										Sleep
 									</label>
-									<label>
+									{/* <label>
 										<Field type="radio" name="shelf" value="lighting" />
 										Lighting
-									</label>
+									</label> */}
 									<label>
 										<Field type="radio" name="shelf" value="clothing" />
 										Clothing
@@ -157,11 +156,19 @@ export const ModalComponent = (props) => {
 									// placeholder={`${shelfData[0].notes}`}
 								/>
 								<div className="button-container">
-									<button onClick={handleCloseModal} className="cancel-button">
+									<button
+										onClick={handleCloseModal}
+										className="cancel-button"
+										type="button"
+									>
 										Cancel
 									</button>
 
-									<button className="delete-button" type="submit">
+									<button
+										// onClick={handleCloseModal}
+										className="delete-button"
+										type="submit"
+									>
 										Submit
 									</button>
 								</div>

@@ -32,7 +32,7 @@ export const EditShelfPage = (props) => {
 							picked: "",
 							shelf: "",
 							item: "",
-							description: "",
+							// description: "",
 							qty: "",
 							location: "",
 							notes: "",
@@ -47,7 +47,7 @@ export const EditShelfPage = (props) => {
 										location: e.location,
 										qty: e.qty,
 										notes: e.notes,
-										desctiption: e.description,
+										// desctiption: e.description,
 									},
 									{ withCredentials: true }
 								)
@@ -66,8 +66,8 @@ export const EditShelfPage = (props) => {
 								Cook
 							</label>
 							<label>
-								<Field type="radio" name="shelf" value="bedding" />
-								Bedding
+								<Field type="radio" name="shelf" value="sleep" />
+								Sleep
 							</label>
 							<label>
 								<Field type="radio" name="shelf" value="lighting" />

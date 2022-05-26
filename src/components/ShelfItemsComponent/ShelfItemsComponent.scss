@@ -10,6 +10,7 @@
 	width: 95%;
 	padding-bottom: 4rem;
 	gap: 7rem;
+	margin-top: 12rem;
 
 	&__image {
 	}
@@ -26,4 +27,9 @@
 
 .your-shelves {
 	text-align: center;
+}
+
+.shelves__shelf {
+	font-size: 2rem;
+	margin-top: -39px;
 }

@@ -27,9 +27,11 @@ const HomePage = () => {
 	};
 
 	console.log("🕵🏻‍♂️ isLoggedIn: ", isLoggedIn); //TODO: remove/comment
-
+	const removeBackgroundImage = isLoggedIn
+		? "remove-background-image"
+		: "home-page";
 	return (
-		<div className="home-page">
+		<div className={removeBackgroundImage}>
 			<Header handleLoggedIn={handleLoggedIn} />
 			{isLoggedIn ? (
 				<div>
@@ -37,7 +39,7 @@ const HomePage = () => {
 				</div>
 			) : (
 				<main className="home-page__main-container">
-					<h1>Login to view shelves</h1>
+					<h1 className="home-page-header">Login to view shelves</h1>
 					{/* {shelfCards.map((card) => {
 						return (
 							<CardComponent

@@ -11,6 +11,8 @@
 	height: 12rem;
 	margin-bottom: 3rem;
 	width: 100%;
+	position: fixed;
+	top: 0;
 
 	@include tablet {
 		flex-direction: row;

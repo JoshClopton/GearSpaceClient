@@ -7,12 +7,13 @@
 	flex-direction: column;
 	align-items: center;
 	background-color: white;
-	// background-image: url("../assets/images/IMG_2697.jpg");
+	background-image: url("../assets/images/rappelling.JPG");
 	// background-position: top;
 	// height: 100%;
 	// background-repeat: no-repeat;
 	// position: relative;
-	// height: 100vh;
+	background-size: cover;
+	height: 100vh;
 
 	@include tablet {
 		flex-direction: row;
@@ -39,4 +40,20 @@
 			width: 48rem;
 		}
 	}
+}
+
+.remove-background-image {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: white;
+	// background-position: top;
+	// height: 100%;
+	// background-repeat: no-repeat;
+	// position: relative;
+	background-size: cover;
+	height: 100vh;
+}
+
+.home-page-header {
 }

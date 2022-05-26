@@ -38,11 +38,11 @@ export const ConfirmDeleteModal = (props) => {
 
 			<h1 className="delete-modal__title">Are you sure you want to delete?</h1>
 			<div className="delete-button-container">
-				<button className="cancel-button" onClick={handleCloseModal}>
+				<button className="confirm-cancel-button" onClick={handleCloseModal}>
 					Cancel
 				</button>
 				<button
-					className="delete-button"
+					className="confirm-delete-button"
 					onClick={() => {
 						deleteItem();
 					}}

@@ -1,8 +1,44 @@
+@use "../styles/partials/fonts" as *;
+@use "../styles/partials/mixins" as *;
+
 .home-page {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background-color: rgb(95, 133, 102);
+	background-color: white;
+	background-image: url("../assets/images/rappelling.JPG");
+	background-size: cover;
 	height: 100vh;
-	justify-content: center;
+
+	@include tablet {
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: 1rem;
+		justify-content: space-around;
+	}
+
+	@include desktop {
+	}
+
+	&__main-container {
+		@include tablet {
+			display: flex;
+			justify-content: center;
+			gap: 1rem;
+			flex-wrap: wrap;
+		}
+
+		@include desktop {
+			width: 48rem;
+		}
+	}
+}
+
+.remove-background-image {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: white;
+	background-size: cover;
+	height: 100vh;
 }

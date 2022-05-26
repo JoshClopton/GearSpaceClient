@@ -1,6 +1,5 @@
 @use "./fonts" as *;
 @use "./mixins" as *;
-@use "./variables" as *;
 
 //box size reset
 *,
@@ -8,9 +7,14 @@
 *::after {
 	box-sizing: border-box;
 
-	//TODO: Change the font-family
-	font-family: Titillium Web;
+	font-family: "nunito";
+	font-weight: 400;
 }
 body {
 	margin: 0;
+}
+
+h1 {
+	margin: 0;
+	font-weight: bold;
 }

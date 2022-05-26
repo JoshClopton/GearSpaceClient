@@ -1,0 +1,41 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/mixins" as *;
+
+.shelf-card {
+	display: flex;
+	flex-direction: column;
+
+	@include tablet {
+		flex-direction: row;
+		width: 12rem;
+		justify-content: center;
+	}
+
+	&__content-container {
+		@include tablet {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+	&__image {
+		width: 12rem;
+		height: 12rem;
+		border-radius: 0.625rem;
+
+		@include tablet {
+			height: 10rem;
+			width: 10rem;
+		}
+	}
+
+	&__category {
+		font-size: 1.5rem;
+		text-decoration: none;
+	}
+}
+
+.nav-link {
+	text-decoration: none;
+	color: black;
+}

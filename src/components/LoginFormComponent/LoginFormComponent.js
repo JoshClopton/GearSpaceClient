@@ -1,5 +1,5 @@
 import React from "react";
-import LoginButtonComponent from "../LoginButtonComponent/LoginButtonComponent";
+import LoginButton from "../LoginButton/LoginButton";
 import "./LoginFormComponent.scss";
 
 //this is the component for the site logo
@@ -20,7 +20,7 @@ const LoginFormComponent = () => {
 				id="password"
 				placeholder="Password"
 			></input>
-			<LoginButtonComponent />
+			<LoginButton />
 			<div>Create an account.</div>
 		</div>
 	);

@@ -65,10 +65,6 @@ export const EditShelfPage = (props) => {
 								<Field type="radio" name="shelf" value="cook" />
 								Cook
 							</label>
-							{/* <label>
-								<Field type="radio" name="shelf" value="sleep" />
-								Sleep
-							</label> */}
 							<label>
 								<Field type="radio" name="shelf" value="lighting" />
 								Lighting

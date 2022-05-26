@@ -7,12 +7,8 @@ import "./ConfirmDeleteModal.scss";
 
 export const ConfirmDeleteModal = (props) => {
 	const { handleCloseModal, selectedItem, itemToDelete, shelfData } = props;
-	console.log("🕵🏻‍♂️ shelfData: ", shelfData); //TODO: remove/comment
-
-	console.log("🕵🏻‍♂️ selectedItem: ", selectedItem); //TODO: remove/comment
 
 	const deleteItem = () => {
-		console.log("🕵🏻‍♂️ itemToDelete: ", itemToDelete); //TODO: remove/comment
 		axios
 			.delete(`http://localhost:8000/shelves/delete`, {
 				data: {

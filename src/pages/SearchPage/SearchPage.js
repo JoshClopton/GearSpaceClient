@@ -54,16 +54,9 @@ export const SearchPage = () => {
 						axios
 							.request(options)
 							.then(function (response) {
-								console.log("🕵🏻‍♂️ response.data: ", response.data); //TODO: remove/comment
-
-								console.log(
-									"🕵🏻‍♂️ response.data.products.title",
-									response.data.products
-								); //TODO: remove/comment
 								const productsResponse = response.data.products;
 								setProducts(productsResponse);
 								setLoading(false);
-								//   e.target.reset();
 							})
 							.then(() => {
 								handleCloseModal();
@@ -89,9 +82,6 @@ export const SearchPage = () => {
 				<section className="products-container">
 					{products ? (
 						products.map((product) => {
-							{
-								console.log("🕵🏻‍♂️ product: ", product); //TODO: remove/comment
-							}
 							return (
 								<section
 									key={product.asin}

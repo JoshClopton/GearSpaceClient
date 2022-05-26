@@ -14,7 +14,6 @@ import packs from "../assets/images/packs.png";
 import cook from "../assets/images/cook.png";
 import optics from "../assets/images/optics.png";
 import shelter from "../assets/images/shelter.png";
-// import sleep from "../assets/images/sleep.jpg";
 import { NavLink } from "react-router-dom";
 import heroImage from "../assets/images/IMG_2697.jpg";
 import rappelling from "../assets/images/rappelling.JPG";
@@ -26,7 +25,6 @@ const HomePage = () => {
 		setIsLoggedIn(true);
 	};
 
-	console.log("🕵🏻‍♂️ isLoggedIn: ", isLoggedIn); //TODO: remove/comment
 	const removeBackgroundImage = isLoggedIn
 		? "remove-background-image"
 		: "home-page";

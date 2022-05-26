@@ -35,11 +35,6 @@ export const FormPage = () => {
 							},
 							{ withCredentials: true }
 						)
-						// .then(() => {
-						//   // Re-fetch the posts
-						//   this.props.onPostCreate();
-						//   e.target.reset();
-						// })
 						.catch((err) => {
 							console.log("Error creating a new post:", err);
 						});
@@ -54,10 +49,6 @@ export const FormPage = () => {
 						<Field type="radio" name="shelf" value="cook" />
 						Cook
 					</label>
-					{/* <label>
-						<Field type="radio" name="shelf" value="sleep" />
-						Sleep
-					</label> */}
 					<label>
 						<Field type="radio" name="shelf" value="lighting" />
 						Lighting
@@ -74,7 +65,6 @@ export const FormPage = () => {
 						<Field type="radio" name="shelf" value="other-gear" />
 						Other Gear
 					</label>
-					{/* <div>Selected: {values.selected}</div> */}
 
 					<Field id="item" name="item" />
 					<label htmlFor="description">Description</label>

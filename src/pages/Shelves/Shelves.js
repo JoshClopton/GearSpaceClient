@@ -7,9 +7,6 @@ import { CardComponent } from "../../components/CardComponent/CardComponent";
 import { useParams } from "react-router-dom";
 import { EditShelfPage } from "../EditShelfPage/EditShelfPage";
 import { ModalComponent } from "../../components/ModalComponent/ModalComponent";
-// import LoginButton from "../LoginButton/LoginButton";
-// import LogoComponent from "../LogoComponent/LogoComponent";
-// import "./Header.scss";
 import { ConfirmDeleteModal } from "../../components/ConfirmDeleteModal/ConfirmDeleteModal";
 
 export const Shelves = () => {
@@ -45,13 +42,10 @@ export const Shelves = () => {
 			})
 			.then((res) => {
 				const shelves = res.data;
-				console.log("🕵🏻‍♂️ shelves: ", shelves); //TODO: remove/comment
 
 				setShelfData(shelves);
-				console.log("🕵🏻‍♂️ shelfData: ", shelfData); //TODO: remove/comment
 			});
 	}, [selectedItem, itemToDelete]);
-	console.log("🕵🏻‍♂️ shelfData: ", shelfData); //TODO: remove/comment
 
 	return (
 		<div className="shelves">

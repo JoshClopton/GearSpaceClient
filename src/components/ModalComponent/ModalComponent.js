@@ -17,13 +17,8 @@ export const ModalComponent = (props) => {
 		isCreate,
 		shelfData,
 	} = props;
-	console.log("🕵🏻‍♂️ shelfData: ", shelfData); //TODO: remove/comment
-	console.log("🕵🏻‍♂️ selectedItem: ", selectedItem); //TODO: remove/comment
-	console.log("🕵🏻‍♂️ handleCloseModal: ", handleCloseModal); //TODO: remove/comment
 	const [show, setShow] = useState(true);
 
-	//logic to show or hide the Modal
-	// const toggleModal = show ? "modal--display" : "modal--hide";
 	const initialFormValues = isCreate
 		? {
 				shelf: "",
@@ -41,7 +36,6 @@ export const ModalComponent = (props) => {
 				location: selectedItem.location,
 				notes: selectedItem.notes,
 		  };
-	console.log("🕵🏻‍♂️ selectedItem: ", selectedItem); //TODO: remove/comment
 
 	return (
 		<>
@@ -123,11 +117,6 @@ export const ModalComponent = (props) => {
 										<Field type="radio" name="shelf" value="cook" />
 										Cook
 									</label>
-									{/* <label className="edit-form__labels">
-										<Field type="radio" name="shelf" value="sleep" />
-										Sleep
-									</label> */}
-
 									<label className="edit-form__labels">
 										<Field type="radio" name="shelf" value="clothing" />
 										Clothing
@@ -144,11 +133,7 @@ export const ModalComponent = (props) => {
 								<label className="edit-form__labels" htmlFor="qty">
 									Quantity
 								</label>
-								<Field
-									className="edit-form__qty-field"
-									id="qty"
-									name="qty" /*placeholder={`${shelfData[0].qty}`} */
-								/>
+								<Field className="edit-form__qty-field" id="qty" name="qty" />
 								<label className="edit-form__labels" htmlFor="location">
 									Location
 								</label>
@@ -156,7 +141,6 @@ export const ModalComponent = (props) => {
 									id="location"
 									name="location"
 									className="edit-form__location-input"
-									/*placeholder={`${shelfData[0].locationan}`}*/
 								/>
 								<label className="edit-form__labels" htmlFor="notes">
 									Notes
@@ -165,7 +149,6 @@ export const ModalComponent = (props) => {
 									id="notes"
 									name="notes"
 									className="edit-form__notes-input"
-									// placeholder={`${shelfData[0].notes}`}
 								/>
 								<div className="button-container">
 									<button
@@ -176,19 +159,13 @@ export const ModalComponent = (props) => {
 										Cancel
 									</button>
 
-									<button
-										// onClick={handleCloseModal}
-										className="edit-delete-button"
-										type="submit"
-									>
+									<button className="edit-delete-button" type="submit">
 										Submit
 									</button>
 								</div>
 							</Form>
 						</Formik>
 					</div>
-
-					{/* <span className="modal__text"></span> */}
 				</div>
 			</div>
 		</>

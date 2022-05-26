@@ -8,7 +8,6 @@ import cook from "../../assets/images/cook.png";
 import optics from "../../assets/images/optics.png";
 import packs from "../../assets/images/packs.png";
 import shelter from "../../assets/images/shelter.png";
-// import sleep from "../../assets/images/sleep.jpg";
 import otherGear from "../../assets/images/other-gear.png";
 import clothing from "../../assets/images/clothing.png";
 import bedding from "../../assets/images/bedding.png";
@@ -24,9 +23,7 @@ export const ShelfItemsComponent = () => {
 			})
 			.then((res) => {
 				const shelves = res.data;
-				console.log("🕵🏻‍♂️ shelves: ", shelves); //TODO: remove/comment
 				setShelfData(shelves);
-				// setShelfData(shelves);
 			});
 	}, []);
 
@@ -40,7 +37,6 @@ export const ShelfItemsComponent = () => {
 				uniqueShelves.push(item.shelf);
 			}
 		});
-	console.log("🕵🏻‍♂️ shelfData: ", shelfData); //TODO: remove/comment
 
 	return (
 		<div>
@@ -52,8 +48,6 @@ export const ShelfItemsComponent = () => {
 					<main className="shelves-container">
 						{/* map through the uniqueShelves array and for each item create a link */}
 						{uniqueShelves.map((shelf) => {
-							console.log("🕵🏻‍♂️ shelf: ", shelf); //TODO: remove/comment
-
 							return (
 								<article className="shelves-container__card" key={shelf}>
 									<NavLink to={`/shelves/${shelf}`}>

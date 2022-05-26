@@ -1,6 +1,5 @@
 @use "../../styles/partials/fonts" as *;
 @use "../../styles/partials/mixins" as *;
-@use "../../styles/partials/variables" as *;
 @use "../../styles/partials/fonts" as *;
 
 .shelves-container {
@@ -11,12 +10,6 @@
 	padding-bottom: 4rem;
 	gap: 7rem;
 	margin-top: 12rem;
-
-	&__image {
-	}
-
-	&__shelf {
-	}
 
 	&__card {
 		display: flex;

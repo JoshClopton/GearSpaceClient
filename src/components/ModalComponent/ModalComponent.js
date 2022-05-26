@@ -1,23 +1,17 @@
 import React from "react";
 import axios from "axios";
 import "./ModalComponent.scss";
-import { Formik, Field, Form, validateYupSchema } from "formik";
-
-import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Formik, Field, Form } from "formik";
 import close from "../../assets/icons/close.svg";
 
 export const ModalComponent = (props) => {
-	// handleClose,
 	const {
 		selectedItem,
 		handleCloseModal,
 		productTitle,
 		productImage,
 		isCreate,
-		shelfData,
 	} = props;
-	const [show, setShow] = useState(true);
 
 	const initialFormValues = isCreate
 		? {
@@ -57,14 +51,13 @@ export const ModalComponent = (props) => {
 						</section>
 						<Formik
 							initialValues={initialFormValues}
-							onSubmit={(e, values) => {
+							onSubmit={(e) => {
 								if (isCreate) {
 									axios
 										.post(
 											`http://localhost:8000/shelves`,
 											{
 												shelf: e.shelf,
-												// description: e.description,
 												item: productTitle,
 												location: e.location,
 												qty: e.qty,
@@ -85,8 +78,6 @@ export const ModalComponent = (props) => {
 											`http://localhost:8000/shelves/edit`,
 											{
 												shelf: e.shelf,
-
-												// description: e.description,
 												location: e.location,
 												qty: e.qty,
 												notes: e.notes,

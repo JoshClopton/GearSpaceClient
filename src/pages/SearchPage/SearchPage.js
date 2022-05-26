@@ -1,13 +1,11 @@
 import React from "react";
 import "./SearchPage.scss";
-import { Formik, Field, Form, validateYupSchema } from "formik";
+import { Formik, Field, Form } from "formik";
 import axios from "axios";
 import { Header } from "../../components/Header/Header";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { ModalComponent } from "../../components/ModalComponent/ModalComponent";
 import gearSpinner from "../../assets/images/gear-spinner.svg";
-import searchImage from "../../assets/icons/search.svg";
-import uniqueId from "uniqueid";
 
 export const SearchPage = () => {
 	const [products, setProducts] = useState(null);
@@ -34,11 +32,6 @@ export const SearchPage = () => {
 		setShowModal(false);
 	};
 
-	// useEffect(() => {
-
-	// }, [showModal]);
-	// const toggleModal = showModal ? "modal--display" : "products-container";
-
 	return (
 		<div>
 			<Header />
@@ -48,7 +41,7 @@ export const SearchPage = () => {
 					initialValues={{
 						search: "",
 					}}
-					onSubmit={(e, values) => {
+					onSubmit={(e) => {
 						options.params.keyword = e.search;
 
 						axios

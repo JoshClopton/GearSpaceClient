@@ -1,14 +1,5 @@
-import axios from "axios";
 import "./App.scss";
-import {
-	BrowserRouter as Router,
-	Switch,
-	Route,
-	NavLink,
-	Redirect,
-	useParams,
-} from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import { Shelves } from "./pages/Shelves/Shelves";
 import { FormPage } from "./pages/FormPage/FormPage";
@@ -36,10 +27,6 @@ const App = () => {
 					<Route path="/shelves">
 						<ShelfItemsComponent />
 					</Route>
-
-					{/* <Route path="/shelves">
-						<Shelves />
-					</Route> */}
 
 					<Route path="/form-page">
 						<FormPage />

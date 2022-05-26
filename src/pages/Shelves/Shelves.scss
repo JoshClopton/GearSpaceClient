@@ -1,6 +1,5 @@
 @use "../../styles/partials/fonts" as *;
 @use "../../styles/partials/mixins" as *;
-@use "../../styles/partials/variables" as *;
 
 .shelves {
 	display: flex;
@@ -38,10 +37,8 @@
 	&__details-container {
 		display: flex;
 		flex-direction: column;
-		/* gap: 0.5rem; */
 		padding-bottom: 0.5rem;
 		width: 40%;
-		/* justify-content: center; */
 	}
 
 	&__label {
@@ -96,8 +93,6 @@
 	&__edit {
 		border-style: none;
 		height: 2rem;
-		/* border-radius: 1rem; */
-		/* border: 1px solid black; */
 		background-color: #f6784f;
 		color: black;
 		width: 39%;

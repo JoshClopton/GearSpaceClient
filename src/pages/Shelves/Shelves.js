@@ -3,9 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Header } from "../../components/Header/Header";
 import "./Shelves.scss";
-import { CardComponent } from "../../components/CardComponent/CardComponent";
 import { useParams } from "react-router-dom";
-import { EditShelfPage } from "../EditShelfPage/EditShelfPage";
 import { ModalComponent } from "../../components/ModalComponent/ModalComponent";
 import { ConfirmDeleteModal } from "../../components/ConfirmDeleteModal/ConfirmDeleteModal";
 

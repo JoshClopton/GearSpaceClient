@@ -1,6 +1,5 @@
 @use "./fonts" as *;
 @use "./mixins" as *;
-@use "./variables" as *;
 
 //box size reset
 *,
@@ -8,7 +7,6 @@
 *::after {
 	box-sizing: border-box;
 
-	//TODO: Change the font-family
 	font-family: "nunito";
 	font-weight: 400;
 }

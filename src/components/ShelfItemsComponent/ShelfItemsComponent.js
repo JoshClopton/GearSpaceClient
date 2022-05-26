@@ -1,9 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { Link, NavLink } from "react-router-dom";
-import { Header } from "../../components/Header/Header";
-import { useParams } from "react";
-import { CardComponent } from "../../components/CardComponent/CardComponent";
+import { NavLink } from "react-router-dom";
 import cook from "../../assets/images/cook.png";
 import optics from "../../assets/images/optics.png";
 import packs from "../../assets/images/packs.png";
@@ -66,7 +63,6 @@ export const ShelfItemsComponent = () => {
 			) : (
 				<>
 					<h1>Your shelves are empty.</h1>
-					{/* <NavLink to="/search">Create</NavLink> */}
 				</>
 			)}
 		</div>

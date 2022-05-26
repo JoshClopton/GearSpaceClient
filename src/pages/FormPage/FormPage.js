@@ -1,6 +1,5 @@
 import React from "react";
-import "./FormPage.scss";
-import { Formik, Field, Form, validateYupSchema } from "formik";
+import { Formik, Field, Form } from "formik";
 import axios from "axios";
 import { Header } from "../../components/Header/Header";
 
@@ -14,19 +13,17 @@ export const FormPage = () => {
 					picked: "",
 					shelf: "",
 					item: "",
-					// description: "",
 					qty: "",
 					location: "",
 					notes: "",
 					otherGear: "",
 				}}
-				onSubmit={(e, values) => {
+				onSubmit={(e) => {
 					axios
 						.post(
 							`http://localhost:8000/shelves`,
 							{
 								shelf: e.shelf,
-								// description: e.description,
 								item: e.item,
 								location: e.location,
 								qty: e.qty,
@@ -78,7 +75,6 @@ export const FormPage = () => {
 
 					<button type="submit">Submit</button>
 				</Form>
-				{/* )} */}
 			</Formik>
 		</div>
 	);

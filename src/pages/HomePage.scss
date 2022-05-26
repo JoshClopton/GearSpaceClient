@@ -1,6 +1,5 @@
 @use "../styles/partials/fonts" as *;
 @use "../styles/partials/mixins" as *;
-@use "../styles/partials/variables" as *;
 
 .home-page {
 	display: flex;
@@ -8,10 +7,6 @@
 	align-items: center;
 	background-color: white;
 	background-image: url("../assets/images/rappelling.JPG");
-	// background-position: top;
-	// height: 100%;
-	// background-repeat: no-repeat;
-	// position: relative;
 	background-size: cover;
 	height: 100vh;
 
@@ -23,9 +18,6 @@
 	}
 
 	@include desktop {
-		// background-image: url("../assets/images/IMG_2697.jpg");
-		// width: 100%;
-		// height: 100vh;
 	}
 
 	&__main-container {
@@ -47,13 +39,6 @@
 	flex-direction: column;
 	align-items: center;
 	background-color: white;
-	// background-position: top;
-	// height: 100%;
-	// background-repeat: no-repeat;
-	// position: relative;
 	background-size: cover;
 	height: 100vh;
-}
-
-.home-page-header {
 }

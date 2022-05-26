@@ -1,12 +1,10 @@
 import React from "react";
 import axios from "axios";
-import { useState } from "react";
-import { Header } from "../Header/Header";
 import close from "../../assets/icons/close.svg";
 import "./ConfirmDeleteModal.scss";
 
 export const ConfirmDeleteModal = (props) => {
-	const { handleCloseModal, selectedItem, itemToDelete, shelfData } = props;
+	const { handleCloseModal, itemToDelete } = props;
 
 	const deleteItem = () => {
 		axios

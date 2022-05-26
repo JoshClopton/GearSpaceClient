@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { Link, NavLink } from "react-router-dom";
-import LoginButton from "../LoginButton/LoginButton";
+import { NavLink } from "react-router-dom";
 import LogoComponent from "../LogoComponent/LogoComponent";
 import "./Header.scss";
 

@@ -26,12 +26,13 @@
 	&__title {
 		color: black;
 		font-size: 2rem;
-		padding-bottom: 4rem;
+		padding-bottom: -1rem;
 		display: flex;
 		width: 100%;
 		display: flex;
 		justify-content: center;
 		text-transform: capitalize;
+		margin-top: 15rem;
 	}
 
 	&__details-container {

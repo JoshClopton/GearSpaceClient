@@ -8,7 +8,7 @@ import cook from "../../assets/images/cook.png";
 import optics from "../../assets/images/optics.png";
 import packs from "../../assets/images/packs.png";
 import shelter from "../../assets/images/shelter.png";
-import sleep from "../../assets/images/sleep.jpg";
+// import sleep from "../../assets/images/sleep.jpg";
 import otherGear from "../../assets/images/other-gear.png";
 import clothing from "../../assets/images/clothing.png";
 import bedding from "../../assets/images/bedding.png";

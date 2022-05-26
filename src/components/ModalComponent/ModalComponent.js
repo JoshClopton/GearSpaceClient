@@ -123,14 +123,11 @@ export const ModalComponent = (props) => {
 										<Field type="radio" name="shelf" value="cook" />
 										Cook
 									</label>
-									<label className="edit-form__labels">
+									{/* <label className="edit-form__labels">
 										<Field type="radio" name="shelf" value="sleep" />
 										Sleep
-									</label>
-									{/* <label>
-										<Field type="radio" name="shelf" value="lighting" />
-										Lighting
 									</label> */}
+
 									<label className="edit-form__labels">
 										<Field type="radio" name="shelf" value="clothing" />
 										Clothing

@@ -141,7 +141,7 @@ export const ModalComponent = (props) => {
 									name="notes"
 									className="edit-form__notes-input"
 								/>
-								<div className="button-container">
+								<div className="edit__button-container">
 									<button
 										onClick={handleCloseModal}
 										className="edit-cancel-button"

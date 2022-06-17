@@ -2,6 +2,7 @@ import React from "react";
 import { Formik, Field, Form } from "formik";
 import axios from "axios";
 import { Header } from "../../components/Header/Header";
+import { API_URL } from "../../config/index";
 
 export const FormPage = () => {
 	return (
@@ -21,7 +22,7 @@ export const FormPage = () => {
 				onSubmit={(e) => {
 					axios
 						.post(
-							`http://localhost:8000/shelves`,
+							`${API_URL}/shelves`,
 							{
 								shelf: e.shelf,
 								item: e.item,

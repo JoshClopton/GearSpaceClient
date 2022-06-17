@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import LogoComponent from "../LogoComponent/LogoComponent";
 import "./Header.scss";
+import { API_URL } from "../../config/index";
 
 export const Header = (props) => {
 	const { handleLoggedIn } = props;
@@ -10,7 +11,7 @@ export const Header = (props) => {
 
 	useEffect(() => {
 		axios
-			.get("http://localhost:8000/auth/profile", { withCredentials: true })
+			.get(`${API_URL}/auth/profile`, { withCredentials: true })
 			.then((res) => {
 				res.data.google_id ? setIsLoggedIn(true) : setIsLoggedIn(false);
 				res.data.google_id && handleLoggedIn();
@@ -29,7 +30,7 @@ export const Header = (props) => {
 						{" "}
 						<a
 							className="header__login-link header__login-link--active"
-							href="http://localhost:8000/auth/logout"
+							href={`${API_URL}/auth/logout`}
 						>
 							Log Out
 						</a>
@@ -42,7 +43,7 @@ export const Header = (props) => {
 				) : (
 					<a
 						className="header__login-link header__login-link--active"
-						href="http://localhost:8000/auth/google"
+						href={`${API_URL}/auth/google`}
 					>
 						Log In
 					</a>

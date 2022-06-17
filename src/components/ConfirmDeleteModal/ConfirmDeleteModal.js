@@ -2,13 +2,14 @@ import React from "react";
 import axios from "axios";
 import close from "../../assets/icons/close.svg";
 import "./ConfirmDeleteModal.scss";
+import { API_URL } from "../../config/index";
 
 export const ConfirmDeleteModal = (props) => {
 	const { handleCloseModal, itemToDelete } = props;
 
 	const deleteItem = () => {
 		axios
-			.delete(`http://localhost:8000/shelves/delete`, {
+			.delete(`${API_URL}/shelves/delete`, {
 				data: {
 					id: itemToDelete,
 				},

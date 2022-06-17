@@ -9,13 +9,14 @@ import otherGear from "../../assets/images/other-gear.png";
 import clothing from "../../assets/images/clothing.png";
 import bedding from "../../assets/images/bedding.png";
 import "./ShelfItemsComponent.scss";
+import { API_URL } from "../../config";
 
 export const ShelfItemsComponent = () => {
 	const [shelfData, setShelfData] = useState(null);
 
 	useEffect(() => {
 		axios
-			.get(`http://localhost:8000/shelves/`, {
+			.get(`${API_URL}/shelves/`, {
 				withCredentials: true,
 			})
 			.then((res) => {

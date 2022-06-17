@@ -3,6 +3,7 @@ import axios from "axios";
 import "./ModalComponent.scss";
 import { Formik, Field, Form } from "formik";
 import close from "../../assets/icons/close.svg";
+import { API_URL } from "../../config/index";
 
 export const ModalComponent = (props) => {
 	const {
@@ -55,7 +56,7 @@ export const ModalComponent = (props) => {
 								if (isCreate) {
 									axios
 										.post(
-											`http://localhost:8000/shelves`,
+											`${API_URL}/shelves`,
 											{
 												shelf: e.shelf,
 												item: productTitle,
@@ -75,7 +76,7 @@ export const ModalComponent = (props) => {
 								} else {
 									axios
 										.patch(
-											`http://localhost:8000/shelves/edit`,
+											`${API_URL}/shelves/edit`,
 											{
 												shelf: e.shelf,
 												location: e.location,

@@ -6,6 +6,7 @@ import "./Shelves.scss";
 import { useParams } from "react-router-dom";
 import { ModalComponent } from "../../components/ModalComponent/ModalComponent";
 import { ConfirmDeleteModal } from "../../components/ConfirmDeleteModal/ConfirmDeleteModal";
+import { API_URL } from "../../config";
 
 export const Shelves = () => {
 	let { shelfId } = useParams();
@@ -35,7 +36,7 @@ export const Shelves = () => {
 
 	useEffect(() => {
 		axios
-			.get(`http://localhost:8000/shelves/${shelfId}`, {
+			.get(`${API_URL}/shelves/${shelfId}`, {
 				withCredentials: true,
 			})
 			.then((res) => {

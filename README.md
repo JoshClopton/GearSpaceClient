@@ -52,6 +52,4 @@ Press the Create button and copy the generated client ID and client secret. This
 MySQL, NodeJS, Knex, PassportJS
 
 ## 🔗 Links
-
-https://github.com/JoshClopton/BrainStation-Capstone
-https://github.com/JoshClopton/Capstone-Server
+Here's a clip of me demonstrating how my app works https://youtu.be/ZPxhNqkDcBk

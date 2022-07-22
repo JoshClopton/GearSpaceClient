@@ -55,4 +55,4 @@ MySQL, NodeJS, Knex, PassportJS
 https://github.com/JoshClopton/BrainStation-Capstone/issues/3#issue-1314935942
 
 ## 🔗 Links
-Here's a clip of me demonstrating how my app works https://youtu.be/ZPxhNqkDcBk
+Here's a clip demonstrating how my app works https://youtu.be/ZPxhNqkDcBk

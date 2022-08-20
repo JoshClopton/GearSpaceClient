@@ -15,26 +15,21 @@ const App = () => {
 					<Route path="/" exact>
 						<HomePage />
 					</Route>
-
 					<Route path="/shelves/:shelfId/edit">
 						<EditShelfPage />
 					</Route>
-
 					<Route path="/shelves/:shelfId">
 						<Shelves />
 					</Route>
-
 					<Route path="/shelves">
 						<ShelfItemsComponent />
 					</Route>
-
 					<Route path="/form-page">
 						<FormPage />
 					</Route>
 					<Route path="/search">
 						<SearchPage />
 					</Route>
-
 					<Route path="/profile" />
 				</Switch>
 			</Router>

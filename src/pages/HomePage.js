@@ -24,7 +24,7 @@ const HomePage = () => {
 	const handleLoggedIn = () => {
 		setIsLoggedIn(true);
 	};
-
+	//Toggle class depending on if user is logged in, if so remove the background image and display their shelves
 	const removeBackgroundImage = isLoggedIn
 		? "remove-background-image"
 		: "home-page";

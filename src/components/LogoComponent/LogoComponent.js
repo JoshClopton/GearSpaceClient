@@ -5,9 +5,16 @@ import { NavLink } from "react-router-dom";
 
 const LogoComponent = () => {
 	return (
-		<NavLink to="/" className="logo">
-			<img className="logo__image" src={logoImage} alt="Bunch of Fives Logo" />
-		</NavLink>
+		<div className="header__title-logo-container">
+			<NavLink to="/" className="logo">
+				<img
+					className="logo__image"
+					src={logoImage}
+					alt="Bunch of Fives Logo"
+				/>
+			</NavLink>
+			<h1 className="header__title">Gear Space</h1>
+		</div>
 	);
 };
 

@@ -1,8 +1,10 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
 import LogoComponent from "../LogoComponent/LogoComponent";
 import "./Header.scss";
+import LogoutButton from "../LogoutButton/LogoutButton";
+import LoginButton from "../LoginButton/LoginButton";
+import AddGearComponent from "../AddGearComponent/AddGearComponent.js";
 
 export const Header = ({ handleLoggedIn }) => {
 	//If user is logged in display a link to log out or to add gear
@@ -20,33 +22,16 @@ export const Header = ({ handleLoggedIn }) => {
 
 	return (
 		<div className="header">
-			<div className="header__title-logo-container">
-				<LogoComponent />
-				<h1 className="header__title">Gear Space</h1>
-			</div>
+			<LogoComponent />
 			<form className="search-form">
 				{isLoggedIn ? (
 					<>
-						<a
-							className="header__login-link header__login-link--active"
-							href="http://localhost:8000/auth/logout"
-						>
-							Log Out
-						</a>
-						<div className="header__login-link-add">
-							<NavLink to={"/search"} className="header__login-link-active">
-								Add Gear
-							</NavLink>
-						</div>
+						<LogoutButton />
+						<AddGearComponent />
 					</>
 				) : (
 					//If user clicks the login link then send a request for authentication to google
-					<a
-						className="header__login-link header__login-link--active"
-						href="http://localhost:8000/auth/google"
-					>
-						Log In
-					</a>
+					<LoginButton />
 				)}
 			</form>
 		</div>

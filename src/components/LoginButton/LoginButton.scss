@@ -26,3 +26,16 @@
 // 		<a className="login-button" href={`${SERVER_URL}/auth/google`}></a>
 // 	);
 // };
+.header__login-link {
+	text-decoration: none;
+	color: white;
+}
+
+.header__login-link--active {
+	background-color: black;
+	display: flex;
+	text-decoration: none;
+	color: white;
+	align-self: center;
+	text-align: center;
+}

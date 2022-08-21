@@ -27,3 +27,28 @@
 // };
 
 // export default LoginFormComponent;
+
+import React from "react";
+import AddGearComponent from "../AddGearComponent/AddGearComponent.js";
+import "../AddGearComponent/AddGearComponent.scss";
+import LogoutButton from "../LogoutButton/LogoutButton.js";
+import "../LogoutButton/LogoutButton.scss";
+import LoginButton from "../LoginButton/LoginButton.js";
+import "../LoginButton/LoginButton.scss";
+
+const LoginFormComponent = ({ isLoggedIn }) => {
+	return (
+		<form className="search-form">
+			{isLoggedIn ? (
+				<>
+					<LogoutButton />
+					<AddGearComponent />
+				</>
+			) : (
+				<LoginButton />
+			)}
+		</form>
+	);
+};
+
+export default LoginFormComponent;

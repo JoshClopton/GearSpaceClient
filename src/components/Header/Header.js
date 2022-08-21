@@ -5,6 +5,7 @@ import "./Header.scss";
 import LogoutButton from "../LogoutButton/LogoutButton";
 import LoginButton from "../LoginButton/LoginButton";
 import AddGearComponent from "../AddGearComponent/AddGearComponent.js";
+import LoginFormComponent from "../LoginFormComponent/LoginFormComponent";
 
 export const Header = ({ handleLoggedIn }) => {
 	//If user is logged in display a link to log out or to add gear
@@ -23,17 +24,7 @@ export const Header = ({ handleLoggedIn }) => {
 	return (
 		<div className="header">
 			<LogoComponent />
-			<form className="search-form">
-				{isLoggedIn ? (
-					<>
-						<LogoutButton />
-						<AddGearComponent />
-					</>
-				) : (
-					//If user clicks the login link then send a request for authentication to google
-					<LoginButton />
-				)}
-			</form>
+			<LoginFormComponent isLoggedIn={isLoggedIn} />
 		</div>
 	);
 };

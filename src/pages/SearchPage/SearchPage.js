@@ -32,8 +32,12 @@ export const SearchPage = () => {
 		setShowModal(false);
 	};
 
+	const toggleOverlay = showModal ? "overlay--display" : "overlay--hide";
+
 	return (
 		<div>
+			<div className={toggleOverlay} />
+
 			<Header />
 			<main className="search-page">
 				<h1 className="search-page__title">FIND YOUR GEAR</h1>

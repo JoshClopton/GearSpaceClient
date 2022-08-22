@@ -17,6 +17,7 @@ export const Header = ({ handleLoggedIn }) => {
 			.then((res) => {
 				res.data.google_id ? setIsLoggedIn(true) : setIsLoggedIn(false);
 				//ToDo: figure out the error in the console here
+
 				res.data.google_id && handleLoggedIn();
 			});
 	}, []);

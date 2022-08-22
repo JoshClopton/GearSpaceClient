@@ -6,6 +6,7 @@ import { FormPage } from "./pages/FormPage/FormPage";
 import { SearchPage } from "./pages/SearchPage/SearchPage";
 import { ShelfItemsComponent } from "./components/ShelfItemsComponent/ShelfItemsComponent";
 import { EditShelfPage } from "./pages/EditShelfPage/EditShelfPage";
+//ToDo: Do I need profile route?
 
 const App = () => {
 	return (

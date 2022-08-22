@@ -6,6 +6,7 @@ import "./Shelves.scss";
 import { useParams } from "react-router-dom";
 import { ModalComponent } from "../../components/ModalComponent/ModalComponent";
 import { ConfirmDeleteModal } from "../../components/ConfirmDeleteModal/ConfirmDeleteModal";
+import ShelfCardComponent from "../../components/ShelfCardComponent/ShelfCardComponent";
 
 export const Shelves = () => {
 	let { shelfId } = useParams();
@@ -47,7 +48,7 @@ export const Shelves = () => {
 
 	return (
 		<div className="shelves">
-			<div className={toggleOverlay}></div>
+			<div className={toggleOverlay} />
 
 			<Header />
 			{shelfData && shelfData.length ? (
@@ -56,13 +57,15 @@ export const Shelves = () => {
 			<div className="shelves__main">
 				{shelfData && shelfData.length
 					? shelfData.map((shelf) => {
+							//ToDo: Turn this into a component
 							return (
+								// <ShelfCardComponent shelf={shelf} handleShowDelete={handleShowDelete} handleShowPopup={handleShowPopup}/>
 								<article className="shelves__content-container" key={shelf.id}>
 									<img
 										src={shelf.image}
 										alt="stuff"
 										className="shelves__image"
-									></img>
+									/>
 									<main className="text-container">
 										<div className="shelves__content shelves__item-title">
 											{shelf.item}

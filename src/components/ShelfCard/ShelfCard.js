@@ -1,7 +1,7 @@
 import React from "react";
-import "./ShelfCardComponent.scss";
+import "./ShelfCard.scss";
 
-const ShelfCardComponent = ({ handleShowDelete, handleShowPopup, shelf }) => {
+const ShelfCard = ({ handleShowDelete, handleShowPopup, shelf }) => {
 	return (
 		<article className="shelves__content-container" key={shelf.id}>
 			<img src={shelf.image} alt="stuff" className="shelves__image" />
@@ -46,4 +46,4 @@ const ShelfCardComponent = ({ handleShowDelete, handleShowPopup, shelf }) => {
 	);
 };
 
-export default ShelfCardComponent;
+export default ShelfCard;

@@ -6,7 +6,7 @@ import "./Shelves.scss";
 import { useParams } from "react-router-dom";
 import SelectedItemModal from "../../components/SelectedItemModal/SelectedItemModal";
 import { ConfirmDeleteModal } from "../../components/ConfirmDeleteModal/ConfirmDeleteModal";
-import ShelfCardComponent from "../../components/ShelfCardComponent/ShelfCardComponent";
+import ShelfCardComponent from "../../components/ShelfCard/ShelfCard";
 
 export const Shelves = () => {
 	let { shelfId } = useParams();

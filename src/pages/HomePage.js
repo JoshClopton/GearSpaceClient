@@ -1,5 +1,5 @@
 import React from "react";
-import { ShelfItemsComponent } from "../components/ShelfItemsComponent/ShelfItemsComponent";
+import ShelfItems from "../components/ShelfItems/ShelfItems";
 import "./HomePage.scss";
 import { Header } from "../components/Header/Header";
 import { useState } from "react";
@@ -19,7 +19,7 @@ const HomePage = () => {
 			<Header handleLoggedIn={handleLoggedIn} />
 			{isLoggedIn ? (
 				<div>
-					<ShelfItemsComponent />
+					<ShelfItems />
 				</div>
 			) : (
 				<main className="home-page__main-container">

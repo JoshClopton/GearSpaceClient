@@ -4,7 +4,7 @@ import HomePage from "./pages/HomePage";
 import { Shelves } from "./pages/Shelves/Shelves";
 import { FormPage } from "./pages/FormPage/FormPage";
 import { SearchPage } from "./pages/SearchPage/SearchPage";
-import { ShelfItemsComponent } from "./components/ShelfItemsComponent/ShelfItemsComponent";
+import ShelfItems from "./components/ShelfItems/ShelfItems";
 import { EditShelfPage } from "./pages/EditShelfPage/EditShelfPage";
 //ToDo: Do I need profile route?
 
@@ -23,7 +23,7 @@ const App = () => {
 						<Shelves />
 					</Route>
 					<Route path="/shelves">
-						<ShelfItemsComponent />
+						<ShelfItems />
 					</Route>
 					<Route path="/form-page">
 						<FormPage />

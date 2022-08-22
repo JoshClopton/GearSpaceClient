@@ -68,7 +68,7 @@ export const SearchPage = () => {
 							placeholder="search"
 						/>
 
-						<button type="submit" className="form__button"></button>
+						<button type="submit" className="form__button" />
 					</Form>
 				</Formik>
 				{loading ? <img src={gearSpinner} className="gear-spinner" /> : null}

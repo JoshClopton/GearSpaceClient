@@ -1,10 +1,13 @@
 @use "../../styles/partials/fonts" as *;
 @use "../../styles/partials/mixins" as *;
 
+//ToDo: add overlay
 .modal {
 	display: flex;
 	flex-direction: column;
 	padding: 1rem;
+	height: fit-content;
+	width: fit-content;
 
 	&__title {
 		margin-bottom: 1rem;
@@ -78,4 +81,18 @@
 		top: 12rem;
 		height: 19rem;
 	}
+}
+
+.overlay--display {
+	z-index: 1;
+	background-color: black;
+	opacity: 0.7;
+	top: 0rem;
+	position: absolute;
+	width: 100%;
+	height: 100rem;
+}
+
+.overlay--hide {
+	display: none;
 }

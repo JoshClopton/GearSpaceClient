@@ -9,12 +9,16 @@ export const EditShelfPage = (props) => {
 	const [show, setShow] = useState(true);
 
 	// logic to show or hide the Modal
-	const toggleModal = show ? "modal--display" : "modal--hide";
+	const toggleModal = show
+		? "modal--display overlay--display"
+		: "modal--hide overlay--hide";
 
-	const handleClick = () => {
-		handleShow();
-		setShow(false);
-	};
+	const toggleOverlay = show ? "overlay--display" : "overlay--hide";
+
+	// const handleClick = () => {
+	// 	handleShow();
+	// 	setShow(false);
+	// };
 
 	return (
 		<>

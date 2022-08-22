@@ -6,7 +6,7 @@ import Header from "../Header/Header";
 const ItemDetailsForm = () => {
 	return (
 		<div>
-			<Header />
+			{/* <Header /> */}
 			<h1>Create a new shelf:</h1>
 			<Formik
 				initialValues={{

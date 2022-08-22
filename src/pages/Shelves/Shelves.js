@@ -49,7 +49,7 @@ const Shelves = () => {
 		<div className="shelves">
 			<div className={toggleOverlay} />
 
-			<Header />
+			{/* <Header /> */}
 			{shelfData && shelfData.length ? (
 				<span className="shelves__title">{shelfData[0].shelf}</span>
 			) : null}

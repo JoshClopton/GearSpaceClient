@@ -4,19 +4,19 @@ import "./HomePage.scss";
 import Header from "../components/Header/Header";
 import { useState } from "react";
 
-const HomePage = () => {
-	const [isLoggedIn, setIsLoggedIn] = useState(false);
+const HomePage = ({ isLoggedIn }) => {
+	// const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-	const handleLoggedIn = () => {
-		setIsLoggedIn(true);
-	};
+	// const handleLoggedIn = () => {
+	// 	setIsLoggedIn(true);
+	// };
 	//Toggle class depending on if user is logged in, if so remove the background image and display their shelves
 	const removeBackgroundImage = isLoggedIn
 		? "remove-background-image"
 		: "home-page";
 	return (
 		<div className={removeBackgroundImage}>
-			<Header handleLoggedIn={handleLoggedIn} />
+			{/* <Header handleLoggedIn={handleLoggedIn} /> */}
 			{isLoggedIn ? (
 				<div>
 					<ShelfItems />

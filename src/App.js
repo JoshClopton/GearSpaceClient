@@ -2,7 +2,7 @@ import "./App.scss";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import { Shelves } from "./pages/Shelves/Shelves";
-import { FormPage } from "./pages/FormPage/FormPage";
+import { FormPage } from "./components/ItemDetailsForm/ItemDetailsForm";
 import { SearchPage } from "./pages/SearchPage/SearchPage";
 import ShelfItems from "./components/ShelfItems/ShelfItems";
 import { EditShelfPage } from "./pages/EditShelfPage/EditShelfPage";
@@ -21,9 +21,6 @@ const App = () => {
 					</Route>
 					<Route path="/shelves/:shelfId">
 						<Shelves />
-					</Route>
-					<Route path="/shelves">
-						<ShelfItems />
 					</Route>
 					<Route path="/search">
 						<SearchPage />

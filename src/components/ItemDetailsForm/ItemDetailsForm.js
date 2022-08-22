@@ -1,9 +1,9 @@
 import React from "react";
 import { Formik, Field, Form } from "formik";
 import axios from "axios";
-import { Header } from "../../components/Header/Header";
+import { Header } from "../Header/Header";
 
-export const FormPage = () => {
+const ItemDetailsForm = () => {
 	return (
 		<div>
 			<Header />
@@ -79,3 +79,5 @@ export const FormPage = () => {
 		</div>
 	);
 };
+
+export default ItemDetailsForm;

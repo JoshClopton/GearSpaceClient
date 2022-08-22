@@ -1,9 +1,9 @@
 import React from "react";
 import logoImage from "../../assets/logo/BunchofFives_WEB_BW_800x800px.png";
-import "./LogoComponent.scss";
+import "./Logo.scss";
 import { NavLink } from "react-router-dom";
 
-const LogoComponent = () => {
+const Logo = () => {
 	return (
 		<div className="header__title-logo-container">
 			<NavLink to="/" className="logo">
@@ -18,4 +18,4 @@ const LogoComponent = () => {
 	);
 };
 
-export default LogoComponent;
+export default Logo;

@@ -1,11 +1,11 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import LogoComponent from "../LogoComponent/LogoComponent";
+import Logo from "../Logo/Logo";
 import "./Header.scss";
 import LogoutButton from "../LogoutButton/LogoutButton";
 import LoginButton from "../LoginButton/LoginButton";
-import AddGearComponent from "../AddGear/AddGear.js";
-import LoginFormComponent from "../LoginFormComponent/LoginFormComponent";
+import AddGear from "../AddGear/AddGear.js";
+import LoginForm from "../LoginForm/LoginForm";
 
 export const Header = ({ handleLoggedIn }) => {
 	//If user is logged in display a link to log out or to add gear
@@ -24,8 +24,8 @@ export const Header = ({ handleLoggedIn }) => {
 
 	return (
 		<div className="header">
-			<LogoComponent />
-			<LoginFormComponent isLoggedIn={isLoggedIn} />
+			<Logo />
+			<LoginForm isLoggedIn={isLoggedIn} />
 		</div>
 	);
 };

@@ -4,7 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import { Header } from "../../components/Header/Header";
 import "./Shelves.scss";
 import { useParams } from "react-router-dom";
-import { ModalComponent } from "../../components/ModalComponent/ModalComponent";
+import SelectedItemModal from "../../components/SelectedItemModal/SelectedItemModal";
 import { ConfirmDeleteModal } from "../../components/ConfirmDeleteModal/ConfirmDeleteModal";
 import ShelfCardComponent from "../../components/ShelfCardComponent/ShelfCardComponent";
 
@@ -69,7 +69,7 @@ export const Shelves = () => {
 					  })
 					: null}
 				{selectedItem ? (
-					<ModalComponent
+					<SelectedItemModal
 						selectedItem={selectedItem}
 						isCreate={false}
 						handleCloseModal={handleCloseModal}

@@ -29,20 +29,20 @@
 // export default LoginFormComponent;
 
 import React from "react";
-import AddGearComponent from "../AddGear/AddGear.js";
+import AddGear from "../AddGear/AddGear.js";
 import "../AddGear/AddGear.scss";
 import LogoutButton from "../LogoutButton/LogoutButton.js";
 import "../LogoutButton/LogoutButton.scss";
 import LoginButton from "../LoginButton/LoginButton.js";
 import "../LoginButton/LoginButton.scss";
 
-const LoginFormComponent = ({ isLoggedIn }) => {
+const LoginForm = ({ isLoggedIn }) => {
 	return (
 		<form className="search-form">
 			{isLoggedIn ? (
 				<>
 					<LogoutButton />
-					<AddGearComponent />
+					<AddGear />
 				</>
 			) : (
 				<LoginButton />
@@ -51,4 +51,4 @@ const LoginFormComponent = ({ isLoggedIn }) => {
 	);
 };
 
-export default LoginFormComponent;
+export default LoginForm;

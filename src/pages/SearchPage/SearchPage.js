@@ -4,7 +4,7 @@ import { Formik, Field, Form } from "formik";
 import axios from "axios";
 import { Header } from "../../components/Header/Header";
 import { useState } from "react";
-import { ModalComponent } from "../../components/ModalComponent/ModalComponent";
+import SelectedItemModal from "../../components/SelectedItemModal/SelectedItemModal";
 import gearSpinner from "../../assets/images/gear-spinner.svg";
 
 export const SearchPage = () => {
@@ -114,7 +114,7 @@ export const SearchPage = () => {
 						<></>
 					)}
 					{showModal && (
-						<ModalComponent
+						<SelectedItemModal
 							productTitle={productTitle}
 							productImage={productImage}
 							showModal={showModal}

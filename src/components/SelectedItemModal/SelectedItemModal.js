@@ -1,10 +1,10 @@
 import React from "react";
 import axios from "axios";
-import "./ModalComponent.scss";
+import "./SelectedItemModal.scss";
 import { Formik, Field, Form } from "formik";
 import close from "../../assets/icons/close.svg";
 
-export const ModalComponent = (props) => {
+const SelectedItemModal = (props) => {
 	const {
 		selectedItem,
 		handleCloseModal,
@@ -162,3 +162,5 @@ export const ModalComponent = (props) => {
 		</>
 	);
 };
+
+export default SelectedItemModal;

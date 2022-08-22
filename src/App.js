@@ -1,11 +1,8 @@
 import "./App.scss";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-import { Shelves } from "./pages/Shelves/Shelves";
-import { FormPage } from "./components/ItemDetailsForm/ItemDetailsForm";
-import { SearchPage } from "./pages/SearchPage/SearchPage";
-import ShelfItems from "./components/ShelfItems/ShelfItems";
-import { EditShelfPage } from "./pages/EditShelfPage/EditShelfPage";
+import Shelves from "./pages/Shelves/Shelves";
+import SearchPage from "./pages/SearchPage/SearchPage";
 //ToDo: Do I need profile route?
 
 const App = () => {

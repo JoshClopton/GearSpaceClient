@@ -2,12 +2,12 @@ import React from "react";
 import "./SearchPage.scss";
 import { Formik, Field, Form } from "formik";
 import axios from "axios";
-import { Header } from "../../components/Header/Header";
+import Header from "../../components/Header/Header";
 import { useState } from "react";
 import SelectedItemModal from "../../components/SelectedItemModal/SelectedItemModal";
 import gearSpinner from "../../assets/images/gear-spinner.svg";
 
-export const SearchPage = () => {
+const SearchPage = () => {
 	const [products, setProducts] = useState(null);
 	const [productTitle, setProductTitle] = useState(null);
 	const [productImage, setProductImage] = useState(null);
@@ -127,3 +127,5 @@ export const SearchPage = () => {
 		</div>
 	);
 };
+
+export default SearchPage;

@@ -1,7 +1,7 @@
 import React from "react";
 import ShelfItems from "../components/ShelfItems/ShelfItems";
 import "./HomePage.scss";
-import { Header } from "../components/Header/Header";
+import Header from "../components/Header/Header";
 import { useState } from "react";
 
 const HomePage = () => {

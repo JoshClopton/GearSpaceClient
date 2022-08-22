@@ -1,11 +1,11 @@
 import React from "react";
-import "./EditShelfPage.scss";
+import "./EditShelf.scss";
 import { Formik, Field, Form } from "formik";
 import axios from "axios";
 import { useState } from "react";
 
-export const EditShelfPage = (props) => {
-	const { handleShow, showModal, shelf } = props;
+const EditShelf = (props) => {
+	const { handleShow } = props;
 	const [show, setShow] = useState(true);
 
 	// logic to show or hide the Modal
@@ -14,11 +14,6 @@ export const EditShelfPage = (props) => {
 		: "modal--hide overlay--hide";
 
 	const toggleOverlay = show ? "overlay--display" : "overlay--hide";
-
-	// const handleClick = () => {
-	// 	handleShow();
-	// 	setShow(false);
-	// };
 
 	return (
 		<>
@@ -95,3 +90,5 @@ export const EditShelfPage = (props) => {
 		</>
 	);
 };
+
+export default EditShelf;

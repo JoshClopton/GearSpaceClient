@@ -3,7 +3,7 @@ import axios from "axios";
 import close from "../../assets/icons/close.svg";
 import "./ConfirmDeleteModal.scss";
 
-export const ConfirmDeleteModal = ({ handleCloseModal, itemToDelete }) => {
+const ConfirmDeleteModal = ({ handleCloseModal, itemToDelete }) => {
 	const deleteItem = () => {
 		axios
 			.delete(`http://localhost:8000/shelves/delete`, {
@@ -45,3 +45,5 @@ export const ConfirmDeleteModal = ({ handleCloseModal, itemToDelete }) => {
 		</div>
 	);
 };
+
+export default ConfirmDeleteModal;

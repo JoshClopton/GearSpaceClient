@@ -1,7 +1,7 @@
 import React from "react";
 import { Formik, Field, Form } from "formik";
 import axios from "axios";
-import { Header } from "../Header/Header";
+import Header from "../Header/Header";
 
 const ItemDetailsForm = () => {
 	return (

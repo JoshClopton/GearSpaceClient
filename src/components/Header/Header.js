@@ -2,12 +2,9 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Logo from "../Logo/Logo";
 import "./Header.scss";
-import LogoutButton from "../LogoutButton/LogoutButton";
-import LoginButton from "../LoginButton/LoginButton";
-import AddGear from "../AddGear/AddGear.js";
 import LoginForm from "../LoginForm/LoginForm";
 
-export const Header = ({ handleLoggedIn }) => {
+const Header = ({ handleLoggedIn }) => {
 	//If user is logged in display a link to log out or to add gear
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
 	//On page load, a get request is sent to the back end to check if the session has been authenticated. If so, set logged in to true in the header component and also set it in the home page. Otherwise, set logged in to false.
@@ -29,3 +26,5 @@ export const Header = ({ handleLoggedIn }) => {
 		</div>
 	);
 };
+
+export default Header;

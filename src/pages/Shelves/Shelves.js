@@ -1,14 +1,14 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Header } from "../../components/Header/Header";
+import Header from "../../components/Header/Header";
 import "./Shelves.scss";
 import { useParams } from "react-router-dom";
 import SelectedItemModal from "../../components/SelectedItemModal/SelectedItemModal";
-import { ConfirmDeleteModal } from "../../components/ConfirmDeleteModal/ConfirmDeleteModal";
+import ConfirmDeleteModal from "../../components/ConfirmDeleteModal/ConfirmDeleteModal";
 import ShelfCardComponent from "../../components/ShelfCard/ShelfCard";
 
-export const Shelves = () => {
+const Shelves = () => {
 	let { shelfId } = useParams();
 
 	//response from axios call to grag all shelves for a particular user
@@ -88,3 +88,5 @@ export const Shelves = () => {
 		</div>
 	);
 };
+
+export default Shelves;

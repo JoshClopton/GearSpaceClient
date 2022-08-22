@@ -116,6 +116,11 @@ const SelectedItemModal = (props) => {
 										<Field type="radio" name="shelf" value="optics" />
 										Optics
 									</label>
+									{/* <label className="edit-form__labels">
+										<Field type="radio" name="shelf" value="packs" />
+										Packs
+									</label> */}
+
 									<label className="edit-form__labels">
 										<Field type="radio" name="shelf" value="other-gear" />
 										Other Gear

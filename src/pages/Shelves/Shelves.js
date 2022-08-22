@@ -49,7 +49,6 @@ const Shelves = () => {
 		<div className="shelves">
 			<div className={toggleOverlay} />
 
-			{/* <Header /> */}
 			{shelfData && shelfData.length ? (
 				<span className="shelves__title">{shelfData[0].shelf}</span>
 			) : null}

@@ -53,7 +53,6 @@ const SearchPage = () => {
 		<div>
 			<div className={toggleOverlay} />
 
-			{/* <Header /> */}
 			<main className="search-page">
 				<h1 className="search-page__title">FIND YOUR GEAR</h1>
 				<Formik

@@ -4,7 +4,7 @@ import HomePage from "./pages/HomePage";
 import Shelves from "./pages/Shelves/Shelves";
 import SearchPage from "./pages/SearchPage/SearchPage";
 import Header from "./components/Header/Header";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
 const App = () => {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -13,10 +13,18 @@ const App = () => {
 		setIsLoggedIn(true);
 	};
 
+	const handleLoggedOut = () => {
+		setIsLoggedIn(false);
+	};
+
 	return (
 		<>
 			<Router>
-				<Header handleLoggedIn={handleLoggedIn} />
+				<Header
+					handleLoggedIn={handleLoggedIn}
+					handleLoggedOut={handleLoggedOut}
+					isLoggedIn={isLoggedIn}
+				/>
 				<Switch>
 					<Route path="/" exact>
 						<HomePage isLoggedIn={isLoggedIn} />

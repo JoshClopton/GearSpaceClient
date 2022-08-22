@@ -66,6 +66,11 @@ const EditShelf = (props) => {
 								<Field type="radio" name="shelf" value="optics" />
 								Optics
 							</label>
+							{/* <label>
+								<Field type="radio" name="shelf" value="packs" />
+								Packs
+							</label> */}
+
 							<label>
 								<Field type="radio" name="shelf" value="other-gear" />
 								Other Gear

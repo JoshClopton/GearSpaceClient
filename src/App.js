@@ -25,9 +25,6 @@ const App = () => {
 					<Route path="/shelves">
 						<ShelfItems />
 					</Route>
-					<Route path="/form-page">
-						<FormPage />
-					</Route>
 					<Route path="/search">
 						<SearchPage />
 					</Route>

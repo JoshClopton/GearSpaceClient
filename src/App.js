@@ -31,7 +31,6 @@ const App = () => {
 					<Route path="/search">
 						<SearchPage />
 					</Route>
-					<Route path="/profile" />
 				</Switch>
 			</Router>
 		</>

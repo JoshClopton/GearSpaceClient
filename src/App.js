@@ -16,9 +16,6 @@ const App = () => {
 					<Route path="/" exact>
 						<HomePage />
 					</Route>
-					<Route path="/shelves/:shelfId/edit">
-						<EditShelfPage />
-					</Route>
 					<Route path="/shelves/:shelfId">
 						<Shelves />
 					</Route>

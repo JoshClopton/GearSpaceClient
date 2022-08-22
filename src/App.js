@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Shelves from "./pages/Shelves/Shelves";
 import SearchPage from "./pages/SearchPage/SearchPage";
-//ToDo: Do I need profile route?
 
 const App = () => {
 	return (

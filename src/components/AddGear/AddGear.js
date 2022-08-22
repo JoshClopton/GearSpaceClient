@@ -1,5 +1,5 @@
 import React from "react";
-import "./AddGearComponent.scss";
+import "./AddGear.scss";
 import { NavLink } from "react-router-dom";
 
 function AddGearComponent() {

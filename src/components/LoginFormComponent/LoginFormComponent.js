@@ -29,8 +29,8 @@
 // export default LoginFormComponent;
 
 import React from "react";
-import AddGearComponent from "../AddGearComponent/AddGearComponent.js";
-import "../AddGearComponent/AddGearComponent.scss";
+import AddGearComponent from "../AddGear/AddGear.js";
+import "../AddGear/AddGear.scss";
 import LogoutButton from "../LogoutButton/LogoutButton.js";
 import "../LogoutButton/LogoutButton.scss";
 import LoginButton from "../LoginButton/LoginButton.js";

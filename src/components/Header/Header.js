@@ -4,7 +4,7 @@ import LogoComponent from "../LogoComponent/LogoComponent";
 import "./Header.scss";
 import LogoutButton from "../LogoutButton/LogoutButton";
 import LoginButton from "../LoginButton/LoginButton";
-import AddGearComponent from "../AddGearComponent/AddGearComponent.js";
+import AddGearComponent from "../AddGear/AddGear.js";
 import LoginFormComponent from "../LoginFormComponent/LoginFormComponent";
 
 export const Header = ({ handleLoggedIn }) => {

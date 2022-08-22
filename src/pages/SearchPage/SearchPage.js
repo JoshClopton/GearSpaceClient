@@ -27,7 +27,22 @@ export const SearchPage = () => {
 			"X-RapidAPI-Key": "2edab6dd23msh7b1abb83e1d7a9ep19250bjsn2a09939b82ef",
 		},
 	};
+	const handleSubmit = (e) => {
+		options.params.keyword = e.search;
 
+		axios
+			.request(options)
+			.then(function (response) {
+				const productsResponse = response.data.products;
+				setProducts(productsResponse);
+				setLoading(false);
+			})
+			.then(handleCloseModal)
+			.catch((err) => {
+				console.log("Error creating a new post:", err);
+			});
+		setLoading(true);
+	};
 	const handleCloseModal = () => {
 		setShowModal(false);
 	};
@@ -45,24 +60,25 @@ export const SearchPage = () => {
 					initialValues={{
 						search: "",
 					}}
-					onSubmit={(e) => {
-						options.params.keyword = e.search;
+					onSubmit={handleSubmit}
+					// onSubmit={(e) => {
+					// 	options.params.keyword = e.search;
 
-						axios
-							.request(options)
-							.then(function (response) {
-								const productsResponse = response.data.products;
-								setProducts(productsResponse);
-								setLoading(false);
-							})
-							.then(() => {
-								handleCloseModal();
-							})
-							.catch((err) => {
-								console.log("Error creating a new post:", err);
-							});
-						setLoading(true);
-					}}
+					// 	axios
+					// 		.request(options)
+					// 		.then(function (response) {
+					// 			const productsResponse = response.data.products;
+					// 			setProducts(productsResponse);
+					// 			setLoading(false);
+					// 		})
+					// 		.then(() => {
+					// 			handleCloseModal();
+					// 		})
+					// 		.catch((err) => {
+					// 			console.log("Error creating a new post:", err);
+					// 		});
+					// 	setLoading(true);
+					// }}
 				>
 					<Form className="form">
 						<Field

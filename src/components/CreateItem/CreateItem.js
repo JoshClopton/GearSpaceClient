@@ -1,18 +1,17 @@
 import React from "react";
 import axios from "axios";
+import CreateItemForm from "../CreateItemForm/CreateItemForm";
 import "./CreateItem.scss";
 import { Formik, Field, Form } from "formik";
 import close from "../../assets/icons/close.svg";
 
-const CreateItem = (props) => {
-	const {
-		selectedItem,
-		handleCloseModal,
-		productTitle,
-		productImage,
-		isCreate,
-	} = props;
-
+const CreateItem = ({
+	selectedItem,
+	handleCloseModal,
+	productTitle,
+	productImage,
+	isCreate,
+}) => {
 	const initialFormValues = isCreate
 		? {
 				shelf: "",
@@ -94,7 +93,12 @@ const CreateItem = (props) => {
 								}
 							}}
 						>
-							<Form className="edit-form">
+							<CreateItemForm
+								productTitle={productTitle}
+								selectedItem={selectedItem}
+								handleCloseModal={handleCloseModal}
+							/>
+							{/* <Form className="edit-form">
 								<h1 className="edit-form__title">
 									{productTitle || selectedItem.item}
 								</h1>
@@ -159,7 +163,7 @@ const CreateItem = (props) => {
 										Submit
 									</button>
 								</div>
-							</Form>
+							</Form> */}
 						</Formik>
 					</div>
 				</div>

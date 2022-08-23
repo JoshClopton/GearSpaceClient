@@ -7,18 +7,18 @@ import LoginButton from "../LoginButton/LoginButton.js";
 import "../LoginButton/LoginButton.scss";
 
 const LoginForm = ({ isLoggedIn }) => {
-	return (
-		<div className="search-form">
-			{isLoggedIn ? (
-				<>
-					<LogoutButton />
-					<AddGear />
-				</>
-			) : (
-				<LoginButton />
-			)}
-		</div>
-	);
+  return (
+    <div className="search-form">
+      {isLoggedIn ? (
+        <>
+          <LogoutButton />
+          <AddGear />
+        </>
+      ) : (
+        <LoginButton />
+      )}
+    </div>
+  );
 };
 
 export default LoginForm;

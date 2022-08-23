@@ -27,6 +27,7 @@ const ConfirmDeleteModal = ({ handleCloseModal, itemToDelete }) => {
         onClick={handleCloseModal}
         className="modal__close-icon"
         src={close}
+        alt="close"
       />
 
       <h1 className="delete-modal__title">Are you sure you want to delete?</h1>

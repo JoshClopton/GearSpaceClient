@@ -41,6 +41,7 @@ const ShelfItems = () => {
                 <img
                   className="shelves-container__image"
                   src={require(`../../assets/images/${shelf}.png`)}
+                  alt="Item"
                 />
               </NavLink>
               <span className="shelves__shelf">{shelf}</span>

@@ -41,7 +41,7 @@ const Shelves = () => {
 
         setShelfData(shelves);
       });
-  }, [selectedItem, itemToDelete]);
+  });
 
   return (
     <div className="shelves">

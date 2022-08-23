@@ -1,7 +1,7 @@
 import React from "react";
 import "./LogoutButton.scss";
 //ToDo: Update SERVER_URL
-const SERVER_URL = process.env.REACT_APP_SERVER_URL;
+// const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const LogoutButton = () => {
   return (

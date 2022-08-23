@@ -38,6 +38,7 @@ const CreateItem = ({
             onClick={handleCloseModal}
             className="modal__close-icon"
             src={close}
+            alt="close"
           />
           <div className="modal__contents">
             <section className="modal__item-container">
@@ -45,6 +46,7 @@ const CreateItem = ({
                 <img
                   className="modal__images"
                   src={productImage || selectedItem.image}
+                  alt="Product"
                 />
               </div>
             </section>

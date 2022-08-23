@@ -1,9 +1,8 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import Header from "../../components/Header/Header";
 import "./Shelves.scss";
 import { useParams } from "react-router-dom";
-import SelectedItemModal from "../../components/SelectedItemModal/SelectedItemModal";
+import CreateItem from "../../components/CreateItem/CreateItem";
 import ConfirmDeleteModal from "../../components/ConfirmDeleteModal/ConfirmDeleteModal";
 import ShelfCardComponent from "../../components/ShelfCard/ShelfCard";
 
@@ -67,7 +66,7 @@ const Shelves = () => {
 					  })
 					: null}
 				{selectedItem ? (
-					<SelectedItemModal
+					<CreateItem
 						selectedItem={selectedItem}
 						isCreate={false}
 						handleCloseModal={handleCloseModal}

@@ -3,7 +3,7 @@ import "./Search.scss";
 import { Formik, Field, Form } from "formik";
 import axios from "axios";
 import { useState } from "react";
-import SelectedItemModal from "../../components/SelectedItemModal/SelectedItemModal";
+import CreateItem from "../../components/CreateItem/CreateItem";
 import gearSpinner from "../../assets/images/gear-spinner.svg";
 
 const Search = () => {
@@ -100,7 +100,7 @@ const Search = () => {
 						<></>
 					)}
 					{showModal && (
-						<SelectedItemModal
+						<CreateItem
 							productTitle={productTitle}
 							productImage={productImage}
 							showModal={showModal}

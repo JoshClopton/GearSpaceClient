@@ -12,7 +12,7 @@ const Header = ({ handleLoggedIn, handleLoggedOut, isLoggedIn }) => {
 			.then((res) => {
 				res.data.google_id ? handleLoggedIn() : handleLoggedOut();
 			});
-	}, [isLoggedIn]);
+	});
 
 	return (
 		<div className="header">

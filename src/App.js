@@ -1,6 +1,6 @@
 import "./App.scss";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import Shelves from "./pages/Shelves/Shelves";
 import Search from "./pages/Search/Search";
 import Header from "./components/Header/Header";

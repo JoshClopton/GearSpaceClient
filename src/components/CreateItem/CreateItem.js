@@ -2,8 +2,9 @@ import React from "react";
 import axios from "axios";
 import CreateItemForm from "../CreateItemForm/CreateItemForm";
 import "./CreateItem.scss";
-import { Formik, Field, Form } from "formik";
+import { Formik } from "formik";
 import close from "../../assets/icons/close.svg";
+// import AxiosPatch from "../AxiosPatch/AxiosPatch";
 
 const CreateItem = ({
 	selectedItem,
@@ -72,6 +73,12 @@ const CreateItem = ({
 											console.log("Error creating a new post:", err);
 										});
 								} else {
+									// <AxiosPatch
+									// 	e={e}
+									// 	selectedItem={selectedItem}
+									// 	handleCloseModal={handleCloseModal}
+									// 	initialFormValues={initialFormValues}
+									// />;
 									axios
 										.patch(
 											`http://localhost:8000/shelves/edit`,
@@ -98,72 +105,6 @@ const CreateItem = ({
 								selectedItem={selectedItem}
 								handleCloseModal={handleCloseModal}
 							/>
-							{/* <Form className="edit-form">
-								<h1 className="edit-form__title">
-									{productTitle || selectedItem.item}
-								</h1>
-
-								<div className="edit-form__selectors">
-									<label className="edit-form__labels">
-										<Field type="radio" name="shelf" value="shelter" />
-										Shelter
-									</label>
-									<label className="edit-form__labels">
-										<Field type="radio" name="shelf" value="cook" />
-										Cook
-									</label>
-									<label className="edit-form__labels">
-										<Field type="radio" name="shelf" value="clothing" />
-										Clothing
-									</label>
-									<label className="edit-form__labels">
-										<Field type="radio" name="shelf" value="optics" />
-										Optics
-									</label>
-									<label className="edit-form__labels">
-										<Field type="radio" name="shelf" value="packs" />
-										Packs
-									</label>
-
-									<label className="edit-form__labels">
-										<Field type="radio" name="shelf" value="other-gear" />
-										Other Gear
-									</label>
-								</div>
-								<label className="edit-form__labels" htmlFor="qty">
-									Quantity
-								</label>
-								<Field className="edit-form__qty-field" id="qty" name="qty" />
-								<label className="edit-form__labels" htmlFor="location">
-									Location
-								</label>
-								<Field
-									id="location"
-									name="location"
-									className="edit-form__location-input"
-								/>
-								<label className="edit-form__labels" htmlFor="notes">
-									Notes
-								</label>
-								<Field
-									id="notes"
-									name="notes"
-									className="edit-form__notes-input"
-								/>
-								<div className="edit__button-container">
-									<button
-										onClick={handleCloseModal}
-										className="edit-cancel-button"
-										type="button"
-									>
-										Cancel
-									</button>
-
-									<button className="edit-delete-button" type="submit">
-										Submit
-									</button>
-								</div>
-							</Form> */}
 						</Formik>
 					</div>
 				</div>

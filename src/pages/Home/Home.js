@@ -1,5 +1,5 @@
 import React from "react";
-import ShelfItems from "../components/ShelfItems/ShelfItems";
+import ShelfItems from "../../components/ShelfItems/ShelfItems";
 import "./Home.scss";
 
 const Home = ({ isLoggedIn }) => {
@@ -9,7 +9,6 @@ const Home = ({ isLoggedIn }) => {
 	return (
 		<div className={removeBackgroundImage}>
 			{isLoggedIn ? (
-				// <div className="shelf-items">
 				<ShelfItems />
 			) : (
 				// </div>

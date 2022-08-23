@@ -8,7 +8,7 @@ import "../LoginButton/LoginButton.scss";
 
 const LoginForm = ({ isLoggedIn }) => {
 	return (
-		<form className="search-form">
+		<div className="search-form">
 			{isLoggedIn ? (
 				<>
 					<LogoutButton />
@@ -17,7 +17,7 @@ const LoginForm = ({ isLoggedIn }) => {
 			) : (
 				<LoginButton />
 			)}
-		</form>
+		</div>
 	);
 };
 

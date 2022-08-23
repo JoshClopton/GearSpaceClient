@@ -58,10 +58,10 @@ const ItemDetailsForm = () => {
 						<Field type="radio" name="shelf" value="optics" />
 						Optics
 					</label>
-					{/* <label>
+					<label>
 						<Field type="radio" name="shelf" value="packs" />
 						Packs
-					</label> */}
+					</label>
 
 					<label>
 						<Field type="radio" name="shelf" value="other-gear" />

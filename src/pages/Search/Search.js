@@ -59,24 +59,6 @@ const Search = () => {
 						search: "",
 					}}
 					onSubmit={handleSubmit}
-					// onSubmit={(e) => {
-					// 	options.params.keyword = e.search;
-
-					// 	axios
-					// 		.request(options)
-					// 		.then(function (response) {
-					// 			const productsResponse = response.data.products;
-					// 			setProducts(productsResponse);
-					// 			setLoading(false);
-					// 		})
-					// 		.then(() => {
-					// 			handleCloseModal();
-					// 		})
-					// 		.catch((err) => {
-					// 			console.log("Error creating a new post:", err);
-					// 		});
-					// 	setLoading(true);
-					// }}
 				>
 					<Form className="form">
 						<Field

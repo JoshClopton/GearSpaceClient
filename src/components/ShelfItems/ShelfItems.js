@@ -35,7 +35,7 @@ const ShelfItems = () => {
 			{/* Make sure shelfData is not null and that it has something in the array */}
 			{shelfData && shelfData.length ? (
 				<>
-					<h1 className="your-shelves">Your Shelves</h1>
+					{/* <h1 className="your-shelves">Your Shelves</h1> */}
 					<main className="shelves-container">
 						{/* map through the uniqueShelves array and for each item create a link */}
 						{uniqueShelves.map((shelf) => {

@@ -9,7 +9,7 @@ const Home = ({ isLoggedIn }) => {
 	return (
 		<div className={removeBackgroundImage}>
 			{isLoggedIn ? (
-				<div>
+				<div className="shelf-items">
 					<ShelfItems />
 				</div>
 			) : (

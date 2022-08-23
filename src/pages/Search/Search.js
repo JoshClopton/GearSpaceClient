@@ -1,13 +1,12 @@
 import React from "react";
-import "./SearchPage.scss";
+import "./Search.scss";
 import { Formik, Field, Form } from "formik";
 import axios from "axios";
-import Header from "../../components/Header/Header";
 import { useState } from "react";
 import SelectedItemModal from "../../components/SelectedItemModal/SelectedItemModal";
 import gearSpinner from "../../assets/images/gear-spinner.svg";
 
-const SearchPage = () => {
+const Search = () => {
 	const [products, setProducts] = useState(null);
 	const [productTitle, setProductTitle] = useState(null);
 	const [productImage, setProductImage] = useState(null);
@@ -90,7 +89,9 @@ const SearchPage = () => {
 						<button type="submit" className="form__button" />
 					</Form>
 				</Formik>
-				{loading ? <img src={gearSpinner} className="gear-spinner" /> : null}
+				{loading ? (
+					<img src={gearSpinner} className="gear-spinner" alt="Loading" />
+				) : null}
 				<section className="products-container">
 					{products ? (
 						products.map((product) => {
@@ -104,7 +105,11 @@ const SearchPage = () => {
 										setProductTitle(product.title);
 									}}
 								>
-									<img src={product.thumbnail} className="card__image" />
+									<img
+										src={product.thumbnail}
+										className="card__image"
+										alt={product.title}
+									/>
 									<div className="card__title">{product.title}</div>
 								</section>
 							);
@@ -127,4 +132,4 @@ const SearchPage = () => {
 	);
 };
 
-export default SearchPage;
+export default Search;

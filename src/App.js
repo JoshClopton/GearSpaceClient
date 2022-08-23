@@ -1,10 +1,10 @@
 import "./App.scss";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import HomePage from "./pages/HomePage";
+import Home from "./pages/Home";
 import Shelves from "./pages/Shelves/Shelves";
-import SearchPage from "./pages/SearchPage/SearchPage";
+import Search from "./pages/Search/Search";
 import Header from "./components/Header/Header";
-import { useState, useCallback } from "react";
+import { useState } from "react";
 
 const App = () => {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -27,13 +27,13 @@ const App = () => {
 				/>
 				<Switch>
 					<Route path="/" exact>
-						<HomePage isLoggedIn={isLoggedIn} />
+						<Home isLoggedIn={isLoggedIn} />
 					</Route>
 					<Route path="/shelves/:shelfId">
 						<Shelves />
 					</Route>
 					<Route path="/search">
-						<SearchPage />
+						<Search />
 					</Route>
 				</Switch>
 			</Router>

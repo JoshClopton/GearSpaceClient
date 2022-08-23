@@ -1,8 +1,8 @@
 import React from "react";
 import ShelfItems from "../components/ShelfItems/ShelfItems";
-import "./HomePage.scss";
+import "./Home.scss";
 
-const HomePage = ({ isLoggedIn }) => {
+const Home = ({ isLoggedIn }) => {
 	const removeBackgroundImage = isLoggedIn
 		? "remove-background-image"
 		: "home-page";
@@ -21,4 +21,4 @@ const HomePage = ({ isLoggedIn }) => {
 	);
 };
 
-export default HomePage;
+export default Home;

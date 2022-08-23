@@ -30,34 +30,30 @@ const ShelfItems = () => {
 			}
 		});
 
-	return (
-		<div>
-			{/* Make sure shelfData is not null and that it has something in the array */}
-			{shelfData && shelfData.length ? (
-				<main className="shelves-container">
-					{/* map through the uniqueShelves array and for each item create a link */}
-					{uniqueShelves.map((shelf) => {
-						return (
-							<article className="shelves-container__card" key={shelf}>
-								<NavLink to={`/shelves/${shelf}`}>
-									<img
-										className="shelves-container__image"
-										src={require(`../../assets/images/${shelf}.png`)}
-									/>
-								</NavLink>
-								<span className="shelves__shelf">{shelf}</span>
-							</article>
-						);
-					})}
-				</main>
-			) : (
-				//If the user has not added any shelves
-				<>
-					<h1>Your shelves are empty.</h1>
-				</>
-			)}
-		</div>
-	);
+	if (shelfData && shelfData.length) {
+		return (
+			<main className="shelves-container">
+				{/* map through the uniqueShelves array and for each item create a link */}
+				{uniqueShelves.map((shelf) => {
+					return (
+						<article className="shelves-container__card" key={shelf}>
+							<NavLink to={`/shelves/${shelf}`}>
+								<img
+									className="shelves-container__image"
+									src={require(`../../assets/images/${shelf}.png`)}
+								/>
+							</NavLink>
+							<span className="shelves__shelf">{shelf}</span>
+						</article>
+					);
+				})}
+			</main>
+		);
+	} else {
+		<>
+			<h1>Your shelves are empty.</h1>
+		</>;
+	}
 };
 
 export default ShelfItems;

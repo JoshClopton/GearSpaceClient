@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import CreateItem from "../../components/CreateItem/CreateItem";
 import ConfirmDeleteModal from "../../components/ConfirmDeleteModal/ConfirmDeleteModal";
-import ShelfCardComponent from "../../components/ShelfCard/ShelfCard";
+import ShelfCard from "../../components/ShelfCard/ShelfCard";
 
 const Shelves = () => {
   let { shelfId } = useParams();
@@ -15,15 +15,18 @@ const Shelves = () => {
   //changes state when the user clicks the delete button
   const [itemToDelete, setItemToDelete] = useState(null);
   //this function gets called when a user clicks edit. It sets state to be the selected item
+
+  //Toggle state when user deletes an item so useEffect runs and shows only current items
+  const [itemWasDeleted, setItemWasDeleted] = useState(false);
+
   const handleShowPopup = (itemId) => {
     setSelectedItem(itemId);
   };
-  //when user clicks the delete button it calls this function and passes in the selected item.
-  const handleShowDelete = (itemId) => {
-    setItemToDelete(itemId);
-  };
 
+  //when user clicks the delete button it calls this function and passes in the selected item.
   const handleCloseModal = () => {
+    itemWasDeleted ? setItemWasDeleted(false) : setItemWasDeleted(true);
+
     setSelectedItem(false);
     setItemToDelete(false);
   };
@@ -38,10 +41,16 @@ const Shelves = () => {
       })
       .then((res) => {
         const shelves = res.data;
+        console.log("🕵🏻‍♂️ shelves: ", shelves); //TODO: remove/comment
 
         setShelfData(shelves);
       });
-  });
+  }, [itemWasDeleted, shelfId]);
+
+  const handleShowDelete = (itemId) => {
+    setItemToDelete(itemId);
+    itemWasDeleted ? setItemWasDeleted(false) : setItemWasDeleted(true);
+  };
 
   return (
     <div className="shelves">
@@ -54,7 +63,7 @@ const Shelves = () => {
         {shelfData && shelfData.length
           ? shelfData.map((shelf) => {
               return (
-                <ShelfCardComponent
+                <ShelfCard
                   shelf={shelf}
                   handleShowDelete={handleShowDelete}
                   handleShowPopup={handleShowPopup}

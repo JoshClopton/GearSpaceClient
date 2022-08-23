@@ -9,10 +9,10 @@ const Home = ({ isLoggedIn }) => {
 	return (
 		<div className={removeBackgroundImage}>
 			{isLoggedIn ? (
-				<div className="shelf-items">
-					<ShelfItems />
-				</div>
+				// <div className="shelf-items">
+				<ShelfItems />
 			) : (
+				// </div>
 				<main className="home-page__main-container">
 					{/* ToDo: Add welcome text */}
 				</main>

@@ -7,38 +7,38 @@ import Header from "./components/Header/Header";
 import { useState } from "react";
 
 const App = () => {
-	const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-	const handleLoggedIn = () => {
-		setIsLoggedIn(true);
-	};
+  const handleLoggedIn = () => {
+    setIsLoggedIn(true);
+  };
 
-	const handleLoggedOut = () => {
-		setIsLoggedIn(false);
-	};
+  const handleLoggedOut = () => {
+    setIsLoggedIn(false);
+  };
 
-	return (
-		<>
-			<Router>
-				<Header
-					handleLoggedIn={handleLoggedIn}
-					handleLoggedOut={handleLoggedOut}
-					isLoggedIn={isLoggedIn}
-				/>
-				<Switch>
-					<Route path="/" exact>
-						<Home isLoggedIn={isLoggedIn} />
-					</Route>
-					<Route path="/shelves/:shelfId">
-						<Shelves />
-					</Route>
-					<Route path="/search">
-						<Search />
-					</Route>
-				</Switch>
-			</Router>
-		</>
-	);
+  return (
+    <>
+      <Router>
+        <Header
+          handleLoggedIn={handleLoggedIn}
+          handleLoggedOut={handleLoggedOut}
+          isLoggedIn={isLoggedIn}
+        />
+        <Switch>
+          <Route path="/" exact>
+            <Home isLoggedIn={isLoggedIn} />
+          </Route>
+          <Route path="/shelves/:shelfId">
+            <Shelves />
+          </Route>
+          <Route path="/search">
+            <Search />
+          </Route>
+        </Switch>
+      </Router>
+    </>
+  );
 };
 
 export default App;

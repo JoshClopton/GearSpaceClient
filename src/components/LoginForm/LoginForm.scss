@@ -2,23 +2,23 @@
 @use "../../styles/partials/mixins" as *;
 
 .search-form {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 
-	@include tablet {
-		flex-direction: row;
-	}
+  @include tablet {
+    flex-direction: row;
+  }
 
-	@include desktop {
-		gap: 2rem;
-	}
+  @include desktop {
+    gap: 2rem;
+  }
 
-	&__input {
-		text-align: center;
-		font-size: 1.2rem;
-	}
+  &__input {
+    text-align: center;
+    font-size: 1.2rem;
+  }
 }
 // .form {
 // 	display: flex;

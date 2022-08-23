@@ -2,120 +2,120 @@
 @use "../../styles/partials/mixins" as *;
 
 .modal {
-	display: flex;
-	flex-direction: column;
-	padding: 1rem;
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 40%;
-	background-color: white;
-	box-shadow: 0px 0px 26px grey;
-	align-items: center;
-	height: 35rem;
-	z-index: 99;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  background-color: white;
+  box-shadow: 0px 0px 26px grey;
+  align-items: center;
+  height: 35rem;
+  z-index: 99;
 
-	&__item-container {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-	}
+  &__item-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
 
-	&__images {
-		width: 13rem;
-		margin-left: 2.9rem;
-	}
+  &__images {
+    width: 13rem;
+    margin-left: 2.9rem;
+  }
 
-	&__close-icon {
-		align-self: flex-end;
-	}
+  &__close-icon {
+    align-self: flex-end;
+  }
 
-	&__text {
-		line-height: 1.7rem;
-		font-size: 17px;
+  &__text {
+    line-height: 1.7rem;
+    font-size: 17px;
 
-		@include tablet {
-		}
-	}
+    @include tablet {
+    }
+  }
 
-	&__image-container {
-		width: 10rem;
-	}
+  &__image-container {
+    width: 10rem;
+  }
 
-	&__contents {
-		display: flex;
-		flex-direction: row;
-		gap: 11.6rem;
-		margin-top: 2rem;
-	}
+  &__contents {
+    display: flex;
+    flex-direction: row;
+    gap: 11.6rem;
+    margin-top: 2rem;
+  }
 }
 
 .edit-delete-button {
-	border-style: none;
-	height: 2rem;
-	background-color: #f6784f;
-	color: black;
-	width: 39%;
-	cursor: pointer;
+  border-style: none;
+  height: 2rem;
+  background-color: #f6784f;
+  color: black;
+  width: 39%;
+  cursor: pointer;
 }
 
 .edit-cancel-button {
-	border-style: none;
-	height: 2rem;
-	border: 1px solid #f6784f;
-	background-color: white;
-	color: black;
-	width: 39%;
-	cursor: pointer;
+  border-style: none;
+  height: 2rem;
+  border: 1px solid #f6784f;
+  background-color: white;
+  color: black;
+  width: 39%;
+  cursor: pointer;
 }
 
 .modal--hide {
-	display: none;
+  display: none;
 }
 
 .edit-form {
-	display: flex;
-	flex-direction: column;
-	align-items: baseline;
-	gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  gap: 1rem;
 
-	&__selectors {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		width: 18rem;
-		gap: 1rem;
-	}
+  &__selectors {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 18rem;
+    gap: 1rem;
+  }
 
-	&__location-input {
-		height: 1.9rem;
-		width: 16rem;
-	}
+  &__location-input {
+    height: 1.9rem;
+    width: 16rem;
+  }
 
-	&__title {
-		font-size: 1.1rem;
-	}
+  &__title {
+    font-size: 1.1rem;
+  }
 
-	&__notes-input {
-		height: 1.9rem;
-		width: 16rem;
-	}
+  &__notes-input {
+    height: 1.9rem;
+    width: 16rem;
+  }
 
-	&__labels {
-		font-weight: 200;
-		font-style: italic;
-	}
+  &__labels {
+    font-weight: 200;
+    font-style: italic;
+  }
 
-	&__qty-field {
-		width: 2.4rem;
-		height: 1.9rem;
-	}
+  &__qty-field {
+    width: 2.4rem;
+    height: 1.9rem;
+  }
 }
 
 .edit__button-container {
-	display: flex;
-	justify-content: space-between;
-	width: 100%;
-	padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 2rem;
 }

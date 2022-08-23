@@ -3,26 +3,26 @@
 //media queries for breakpoints
 
 @mixin mobile {
-	@media (min-width: 20rem) {
-		@content;
-	}
+  @media (min-width: 20rem) {
+    @content;
+  }
 }
 
 @mixin tablet {
-	@media (min-width: 48rem) {
-		@content;
-	}
+  @media (min-width: 48rem) {
+    @content;
+  }
 }
 @mixin desktop {
-	@media (min-width: 67.5rem) {
-		@content;
-	}
+  @media (min-width: 67.5rem) {
+    @content;
+  }
 }
 
 @mixin input-styles {
-	text-align: center;
-	border: 1px;
-	border-radius: 10px;
-	margin-bottom: 0.5rem;
-	height: 1.4rem;
+  text-align: center;
+  border: 1px;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+  height: 1.4rem;
 }

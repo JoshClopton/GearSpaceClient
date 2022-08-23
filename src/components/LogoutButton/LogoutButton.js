@@ -4,14 +4,14 @@ import "./LogoutButton.scss";
 const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const LogoutButton = () => {
-	return (
-		<a
-			className="header__login-link header__login-link--active"
-			href="http://localhost:8000/auth/logout"
-		>
-			Log Out
-		</a>
-	);
+  return (
+    <a
+      className="header__login-link header__login-link--active"
+      href="http://localhost:8000/auth/logout"
+    >
+      Log Out
+    </a>
+  );
 };
 
 export default LogoutButton;

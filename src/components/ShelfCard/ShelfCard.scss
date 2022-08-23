@@ -8,18 +8,20 @@
 	&__main {
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: center;
-		gap: 16rem;
+		justify-content: flex-start;
+
 		margin-bottom: 4rem;
+		margin-left: 10rem;
 	}
 
 	&__content-container {
 		width: 19rem;
 		padding-top: 1rem;
 		display: flex;
-		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		margin-right: 17rem;
+		margin-bottom: 4rem;
 	}
 
 	&__title {
@@ -78,7 +80,7 @@
 .button {
 	width: 100%;
 	gap: 2rem;
-	justify-content: center;
+	justify-content: left;
 	display: flex;
 
 	&__delete {

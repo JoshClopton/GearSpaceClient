@@ -41,7 +41,6 @@ const Shelves = () => {
       })
       .then((res) => {
         const shelves = res.data;
-        console.log("🕵🏻‍♂️ shelves: ", shelves); //TODO: remove/comment
 
         setShelfData(shelves);
       });

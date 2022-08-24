@@ -15,7 +15,6 @@ const ShelfItems = () => {
       //Initialize shelves variable as the response data and set the state to be the shelves. Evaluates to [{},{}] with the key/value of shelf: "cook"
       .then((res) => {
         const shelves = res.data;
-        console.log("🕵🏻‍♂️ shelves: ", shelves); //TODO: remove/comment
 
         setShelfData(shelves);
       });

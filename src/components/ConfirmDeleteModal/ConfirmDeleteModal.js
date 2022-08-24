@@ -2,7 +2,6 @@ import React from "react";
 import axios from "axios";
 import close from "../../assets/icons/close.svg";
 import "./ConfirmDeleteModal.scss";
-// import deleteItem from "../../api/api";
 
 const ConfirmDeleteModal = ({ handleCloseModal, itemToDelete }) => {
   const deleteItem = () => {

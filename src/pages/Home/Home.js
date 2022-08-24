@@ -11,10 +11,7 @@ const Home = ({ isLoggedIn }) => {
       {isLoggedIn ? (
         <ShelfItems />
       ) : (
-        // </div>
-        <main className="home-page__main-container">
-          {/* ToDo: Add welcome text */}
-        </main>
+        <main className="home-page__main-container"></main>
       )}
     </div>
   );

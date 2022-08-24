@@ -1,9 +1,9 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import "./ShelfItems.scss";
+import "./ShelfCategories.scss";
 
-const ShelfItems = () => {
+const ShelfCategories = () => {
   //Initialize a variable to hold state for a users shelf inventory
   const [shelfData, setShelfData] = useState(null);
   //On page load send a request to get the users shelf items
@@ -57,4 +57,4 @@ const ShelfItems = () => {
   }
 };
 
-export default ShelfItems;
+export default ShelfCategories;

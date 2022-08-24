@@ -41,7 +41,6 @@ const ShelfItemsDetails = () => {
       })
       .then((res) => {
         const shelfItemsDetails = res.data;
-        console.log("🕵🏻‍♂️ shelfItemsDetails: ", shelfItemsDetails); //TODO: remove/comment
 
         setShelfData(shelfItemsDetails);
       });

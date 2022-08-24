@@ -22,7 +22,7 @@ const App = () => {
       <Router>
         <Header
           loggedIntoGoogle={handleLoggedIn}
-          handleLoggedOut={handleLoggedOut}
+          loggedOutOfGoogle={handleLoggedOut}
           isLoggedIn={isLoggedIn}
         />
         <Switch>

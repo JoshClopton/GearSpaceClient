@@ -5,7 +5,7 @@ import CreateItem from "../../components/CreateItem/CreateItem";
 import ConfirmDeleteModal from "../../components/ConfirmDeleteModal/ConfirmDeleteModal";
 import ShelfCard from "../../components/ShelfCard/ShelfCard";
 
-const Shelves = () => {
+const ShelfItemsDetails = () => {
   let { shelfId } = useParams();
 
   //response from axios call to grag all shelves for a particular user
@@ -40,10 +40,10 @@ const Shelves = () => {
         withCredentials: true,
       })
       .then((res) => {
-        const shelfItemDetails = res.data;
-        console.log("🕵🏻‍♂️ shelfItemDetails: ", shelfItemDetails); //TODO: remove/comment
+        const shelfItemsDetails = res.data;
+        console.log("🕵🏻‍♂️ shelfItemsDetails: ", shelfItemsDetails); //TODO: remove/comment
 
-        setShelfData(shelfItemDetails);
+        setShelfData(shelfItemsDetails);
       });
   }, [itemWasDeleted, shelfId]);
 
@@ -93,4 +93,4 @@ const Shelves = () => {
   );
 };
 
-export default Shelves;
+export default ShelfItemsDetails;

@@ -1,7 +1,7 @@
 import "./App.scss";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
-import Shelves from "./pages/Shelves/Shelves";
+import ShelfItemsDetails from "./pages/ShelfItemsDetails/ShelfItemsDetails";
 import Search from "./pages/Search/Search";
 import Header from "./components/Header/Header";
 import { useState } from "react";
@@ -30,7 +30,7 @@ const App = () => {
             <Home isLoggedIn={isLoggedIn} />
           </Route>
           <Route path="/shelves/:shelfId">
-            <Shelves />
+            <ShelfItemsDetails />
           </Route>
           <Route path="/search">
             <Search />

@@ -4,15 +4,15 @@ import Logo from "../Logo/Logo";
 import "./Header.scss";
 import LoginForm from "../LoginForm/LoginForm";
 
-const Header = ({ handleLoggedIn, handleLoggedOut, isLoggedIn }) => {
+const Header = ({ loggedIntoGoogle, handleLoggedOut, isLoggedIn }) => {
   // //On page load, a get request is sent to the back end to check if the session has been authenticated. If so, set logged in to true in home page. Otherwise, set logged in to false.
   useEffect(() => {
     axios
       .get("http://localhost:8000/auth/profile", { withCredentials: true })
       .then((res) => {
-        res.data.google_id ? handleLoggedIn() : handleLoggedOut();
+        res.data.google_id ? loggedIntoGoogle() : handleLoggedOut();
       });
-  });
+  }, [loggedIntoGoogle, handleLoggedOut]);
 
   return (
     <div className="header">

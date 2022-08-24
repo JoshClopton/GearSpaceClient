@@ -21,7 +21,7 @@ const App = () => {
     <>
       <Router>
         <Header
-          handleLoggedIn={handleLoggedIn}
+          loggedIntoGoogle={handleLoggedIn}
           handleLoggedOut={handleLoggedOut}
           isLoggedIn={isLoggedIn}
         />

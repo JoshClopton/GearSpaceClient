@@ -40,9 +40,10 @@ const Shelves = () => {
         withCredentials: true,
       })
       .then((res) => {
-        const shelves = res.data;
+        const shelfItemDetails = res.data;
+        console.log("🕵🏻‍♂️ shelfItemDetails: ", shelfItemDetails); //TODO: remove/comment
 
-        setShelfData(shelves);
+        setShelfData(shelfItemDetails);
       });
   }, [itemWasDeleted, shelfId]);
 

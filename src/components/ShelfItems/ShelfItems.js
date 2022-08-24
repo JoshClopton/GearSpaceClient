@@ -12,7 +12,6 @@ const ShelfItems = () => {
       .get(`http://localhost:8000/shelves/`, {
         withCredentials: true,
       })
-      //Initialize shelves variable as the response data and set the state to be the shelves. Evaluates to [{},{}] with the key/value of shelf: "cook"
       .then((res) => {
         const shelves = res.data;
 

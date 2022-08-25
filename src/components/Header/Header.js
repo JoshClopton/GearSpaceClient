@@ -4,8 +4,11 @@ import Logo from "../Logo/Logo";
 import "./Header.scss";
 import LoginForm from "../LoginForm/LoginForm";
 
-export const Header = (props) => {
-  const { loggedIntoGoogle, loggedOutOfGoogle, handleLoggedIn } = props;
+export const Header = ({
+  loggedIntoGoogle,
+  loggedOutOfGoogle,
+  handleLoggedIn,
+}) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
@@ -15,7 +18,7 @@ export const Header = (props) => {
         res.data.google_id ? setIsLoggedIn(true) : setIsLoggedIn(false);
         res.data.google_id && handleLoggedIn();
       });
-  }, [loggedIntoGoogle, loggedOutOfGoogle, handleLoggedIn]);
+  }, [loggedIntoGoogle, loggedOutOfGoogle]);
 
   return (
     <div className="header">

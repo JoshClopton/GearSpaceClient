@@ -1,45 +1,44 @@
 import "./App.scss";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import { Shelves } from "./pages/Shelves/Shelves";
-import { FormPage } from "./pages/FormPage/FormPage";
-import { SearchPage } from "./pages/SearchPage/SearchPage";
-import { ShelfItemsComponent } from "./components/ShelfItemsComponent/ShelfItemsComponent";
-import { EditShelfPage } from "./pages/EditShelfPage/EditShelfPage";
+import Home from "./pages/Home/Home";
+import ShelfItemsDetails from "./pages/ShelfItemsDetails/ShelfItemsDetails";
+import Search from "./pages/Search/Search";
+import Header from "./components/Header/Header";
+import { useState } from "react";
 
 const App = () => {
-	return (
-		<>
-			<Router>
-				<Switch>
-					<Route path="/" exact>
-						<HomePage />
-					</Route>
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-					<Route path="/shelves/:shelfId/edit">
-						<EditShelfPage />
-					</Route>
+  const handleLoggedIn = () => {
+    setIsLoggedIn(true);
+  };
 
-					<Route path="/shelves/:shelfId">
-						<Shelves />
-					</Route>
+  const handleLoggedOut = () => {
+    setIsLoggedIn(false);
+  };
 
-					<Route path="/shelves">
-						<ShelfItemsComponent />
-					</Route>
-
-					<Route path="/form-page">
-						<FormPage />
-					</Route>
-					<Route path="/search">
-						<SearchPage />
-					</Route>
-
-					<Route path="/profile" />
-				</Switch>
-			</Router>
-		</>
-	);
+  return (
+    <>
+      <Router>
+        <Header
+          loggedIntoGoogle={handleLoggedIn}
+          loggedOutOfGoogle={handleLoggedOut}
+          isLoggedIn={isLoggedIn}
+        />
+        <Switch>
+          <Route path="/" exact>
+            <Home isLoggedIn={isLoggedIn} />
+          </Route>
+          <Route path="/shelves/:shelfId">
+            <ShelfItemsDetails />
+          </Route>
+          <Route path="/search">
+            <Search />
+          </Route>
+        </Switch>
+      </Router>
+    </>
+  );
 };
 
 export default App;

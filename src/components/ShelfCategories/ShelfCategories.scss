@@ -1,0 +1,32 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/fonts" as *;
+
+.shelves-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 67%;
+  padding-bottom: 4rem;
+  gap: 7rem;
+  margin-top: 12rem;
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__image {
+    height: 16rem;
+  }
+}
+
+.your-shelves {
+  text-align: center;
+}
+
+.shelves__shelf {
+  font-size: 2rem;
+  margin-top: -39px;
+}

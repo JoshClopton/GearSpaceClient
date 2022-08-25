@@ -1,0 +1,35 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/mixins" as *;
+
+.search-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  @include tablet {
+    flex-direction: row;
+  }
+
+  @include desktop {
+    gap: 2rem;
+  }
+
+  &__input {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+}
+// .form {
+// 	display: flex;
+// 	flex-direction: column;
+// 	width: 48%;
+
+// 	&__username {
+// 		@include input-styles;
+// 	}
+
+// 	&__password {
+// 		@include input-styles;
+// 	}
+// }

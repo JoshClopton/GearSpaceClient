@@ -1,18 +1,17 @@
 import React from "react";
 import axios from "axios";
-import "./ModalComponent.scss";
-import { Formik, Field, Form } from "formik";
+import CreateItemForm from "../CreateItemForm/CreateItemForm";
+import "./CreateItem.scss";
+import { Formik } from "formik";
 import close from "../../assets/icons/close.svg";
 
-export const ModalComponent = (props) => {
-  const {
-    selectedItem,
-    handleCloseModal,
-    productTitle,
-    productImage,
-    isCreate,
-  } = props;
-
+const CreateItem = ({
+  selectedItem,
+  handleCloseModal,
+  productTitle,
+  productImage,
+  isCreate,
+}) => {
   const initialFormValues = isCreate
     ? {
         shelf: "",
@@ -39,6 +38,7 @@ export const ModalComponent = (props) => {
             onClick={handleCloseModal}
             className="modal__close-icon"
             src={close}
+            alt="close"
           />
           <div className="modal__contents">
             <section className="modal__item-container">
@@ -46,6 +46,7 @@ export const ModalComponent = (props) => {
                 <img
                   className="modal__images"
                   src={productImage || selectedItem.image}
+                  alt="Product"
                 />
               </div>
             </section>
@@ -94,67 +95,11 @@ export const ModalComponent = (props) => {
                 }
               }}
             >
-              <Form className="edit-form">
-                <h1 className="edit-form__title">
-                  {productTitle || selectedItem.item}
-                </h1>
-
-                <div className="edit-form__selectors">
-                  <label className="edit-form__labels">
-                    <Field type="radio" name="shelf" value="shelter" />
-                    Shelter
-                  </label>
-                  <label className="edit-form__labels">
-                    <Field type="radio" name="shelf" value="cook" />
-                    Cook
-                  </label>
-                  <label className="edit-form__labels">
-                    <Field type="radio" name="shelf" value="clothing" />
-                    Clothing
-                  </label>
-                  <label className="edit-form__labels">
-                    <Field type="radio" name="shelf" value="optics" />
-                    Optics
-                  </label>
-                  <label className="edit-form__labels">
-                    <Field type="radio" name="shelf" value="other-gear" />
-                    Other Gear
-                  </label>
-                </div>
-                <label className="edit-form__labels" htmlFor="qty">
-                  Quantity
-                </label>
-                <Field className="edit-form__qty-field" id="qty" name="qty" />
-                <label className="edit-form__labels" htmlFor="location">
-                  Location
-                </label>
-                <Field
-                  id="location"
-                  name="location"
-                  className="edit-form__location-input"
-                />
-                <label className="edit-form__labels" htmlFor="notes">
-                  Notes
-                </label>
-                <Field
-                  id="notes"
-                  name="notes"
-                  className="edit-form__notes-input"
-                />
-                <div className="edit__button-container">
-                  <button
-                    onClick={handleCloseModal}
-                    className="edit-cancel-button"
-                    type="button"
-                  >
-                    Cancel
-                  </button>
-
-                  <button className="edit-delete-button" type="submit">
-                    Submit
-                  </button>
-                </div>
-              </Form>
+              <CreateItemForm
+                productTitle={productTitle}
+                selectedItem={selectedItem}
+                handleCloseModal={handleCloseModal}
+              />
             </Formik>
           </div>
         </div>
@@ -162,3 +107,5 @@ export const ModalComponent = (props) => {
     </>
   );
 };
+
+export default CreateItem;

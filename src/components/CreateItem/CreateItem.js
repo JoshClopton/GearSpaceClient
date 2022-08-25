@@ -4,6 +4,7 @@ import CreateItemForm from "../CreateItemForm/CreateItemForm";
 import "./CreateItem.scss";
 import { Formik } from "formik";
 import close from "../../assets/icons/close.svg";
+import postItem from "../../api/postItem";
 
 const CreateItem = ({
   selectedItem,
@@ -54,25 +55,7 @@ const CreateItem = ({
               initialValues={initialFormValues}
               onSubmit={(e) => {
                 if (isCreate) {
-                  axios
-                    .post(
-                      `http://localhost:8000/shelves`,
-                      {
-                        shelf: e.shelf,
-                        item: productTitle,
-                        location: e.location,
-                        qty: e.qty,
-                        notes: e.notes,
-                        image: productImage,
-                      },
-                      { withCredentials: true }
-                    )
-                    .then(() => {
-                      handleCloseModal();
-                    })
-                    .catch((err) => {
-                      console.log("Error creating a new post:", err);
-                    });
+                  postItem(handleCloseModal, productTitle, productImage, e);
                 } else {
                   axios
                     .patch(

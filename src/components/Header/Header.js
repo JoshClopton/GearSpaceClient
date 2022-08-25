@@ -1,7 +1,8 @@
 import axios from "axios";
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Logo from "../Logo/Logo";
 import "./Header.scss";
+import LoginForm from "../LoginForm/LoginForm";
 
 export const Header = (props) => {
   const { handleLoggedIn } = props;

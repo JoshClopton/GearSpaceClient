@@ -6,6 +6,8 @@ import close from "../../assets/icons/close.svg";
 import postItem from "../../api/postItem";
 import editItem from "../../api/editItem";
 
+// import FormikCreateForm from "../FormikCreateForm/FormikCreateForm";
+
 const CreateItem = ({
   selectedItem,
   handleCloseModal,
@@ -30,6 +32,16 @@ const CreateItem = ({
         location: selectedItem.location,
         notes: selectedItem.notes,
       };
+
+  // function formInput(value) {
+  //   let error;
+  //   if (!value) {
+  //     error = 'Required';
+  //   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
+  //     error = 'Invalid email address';
+  //   }
+  //   return error;
+  // }
 
   return (
     <>

@@ -2,7 +2,7 @@
 
 Gear Space
 
-Gear Space is an inventory system that allows you to keep track of your outdoor equipment. You can create new "shelves" by searching for your items using Rapid API and you can then save and update those items as needed.
+Gear Space is an inventory system that allows you to keep track of your outdoor equipment. You can create new "shelves" by searching for your items using Rapid API and you can then save and update those items as needed. Checkout my YouTube video my GearSpace project here https://youtu.be/ZPxhNqkDcBk
 
 ## Environment Variables
 
@@ -51,7 +51,8 @@ Press the Create button and copy the generated client ID and client secret. This
 **Server:** Node, Express
 MySQL, NodeJS, Knex, PassportJS
 
-## 🔗 Links
+**Code Snippet**
+https://github.com/JoshClopton/BrainStation-Capstone/issues/3#issue-1314935942
 
-https://github.com/JoshClopton/BrainStation-Capstone
-https://github.com/JoshClopton/Capstone-Server
+## 🔗 Links
+Here's a clip demonstrating how my app works https://youtu.be/ZPxhNqkDcBk

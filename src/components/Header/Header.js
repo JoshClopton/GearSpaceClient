@@ -5,7 +5,7 @@ import "./Header.scss";
 import LoginForm from "../LoginForm/LoginForm";
 
 export const Header = (props) => {
-  const { handleLoggedIn } = props;
+  const { loggedIntoGoogle, loggedOutOfGoogle, handleLoggedIn } = props;
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ export const Header = (props) => {
         res.data.google_id ? setIsLoggedIn(true) : setIsLoggedIn(false);
         res.data.google_id && handleLoggedIn();
       });
-  }, []);
+  }, [loggedIntoGoogle, loggedOutOfGoogle, handleLoggedIn]);
 
   return (
     <div className="header">

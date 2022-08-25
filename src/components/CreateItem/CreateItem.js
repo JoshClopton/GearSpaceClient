@@ -1,10 +1,10 @@
 import React from "react";
-import axios from "axios";
 import CreateItemForm from "../CreateItemForm/CreateItemForm";
 import "./CreateItem.scss";
 import { Formik } from "formik";
 import close from "../../assets/icons/close.svg";
 import postItem from "../../api/postItem";
+import editItem from "../../api/editItem";
 
 const CreateItem = ({
   selectedItem,
@@ -57,24 +57,7 @@ const CreateItem = ({
                 if (isCreate) {
                   postItem(handleCloseModal, productTitle, productImage, e);
                 } else {
-                  axios
-                    .patch(
-                      `http://localhost:8000/shelves/edit`,
-                      {
-                        shelf: e.shelf,
-                        location: e.location,
-                        qty: e.qty,
-                        notes: e.notes,
-                        item: selectedItem.id,
-                      },
-                      { withCredentials: true }
-                    )
-                    .then(() => {
-                      handleCloseModal();
-                    })
-                    .catch((err) => {
-                      console.log("Error creating a new post:", err);
-                    });
+                  editItem(e, selectedItem, handleCloseModal);
                 }
               }}
             >

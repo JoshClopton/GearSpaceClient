@@ -1,9 +1,12 @@
 import React from "react";
-import axios from "axios";
 import CreateItemForm from "../CreateItemForm/CreateItemForm";
 import "./CreateItem.scss";
 import { Formik } from "formik";
 import close from "../../assets/icons/close.svg";
+import postItem from "../../api/postItem";
+import editItem from "../../api/editItem";
+
+// import FormikCreateForm from "../FormikCreateForm/FormikCreateForm";
 
 const CreateItem = ({
   selectedItem,
@@ -30,6 +33,16 @@ const CreateItem = ({
         notes: selectedItem.notes,
       };
 
+  // function formInput(value) {
+  //   let error;
+  //   if (!value) {
+  //     error = 'Required';
+  //   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
+  //     error = 'Invalid email address';
+  //   }
+  //   return error;
+  // }
+
   return (
     <>
       <div>
@@ -54,44 +67,9 @@ const CreateItem = ({
               initialValues={initialFormValues}
               onSubmit={(e) => {
                 if (isCreate) {
-                  axios
-                    .post(
-                      `http://localhost:8000/shelves`,
-                      {
-                        shelf: e.shelf,
-                        item: productTitle,
-                        location: e.location,
-                        qty: e.qty,
-                        notes: e.notes,
-                        image: productImage,
-                      },
-                      { withCredentials: true }
-                    )
-                    .then(() => {
-                      handleCloseModal();
-                    })
-                    .catch((err) => {
-                      console.log("Error creating a new post:", err);
-                    });
+                  postItem(handleCloseModal, productTitle, productImage, e);
                 } else {
-                  axios
-                    .patch(
-                      `http://localhost:8000/shelves/edit`,
-                      {
-                        shelf: e.shelf,
-                        location: e.location,
-                        qty: e.qty,
-                        notes: e.notes,
-                        item: selectedItem.id,
-                      },
-                      { withCredentials: true }
-                    )
-                    .then(() => {
-                      handleCloseModal();
-                    })
-                    .catch((err) => {
-                      console.log("Error creating a new post:", err);
-                    });
+                  editItem(e, selectedItem, handleCloseModal);
                 }
               }}
             >

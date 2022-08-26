@@ -1,0 +1,67 @@
+// @use "../../styles/partials/fonts" as *;
+// @use "../../styles/partials/mixins" as *;
+
+// .edit-form {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: baseline;
+//   gap: 1rem;
+
+//   &__selectors {
+//     display: flex;
+//     flex-direction: row;
+//     flex-wrap: wrap;
+//     width: 18rem;
+//     gap: 1rem;
+//   }
+
+//   &__location-input {
+//     height: 1.9rem;
+//     width: 16rem;
+//   }
+
+//   &__title {
+//     font-size: 1.1rem;
+//   }
+
+//   &__notes-input {
+//     height: 1.9rem;
+//     width: 16rem;
+//   }
+
+//   &__labels {
+//     font-weight: 200;
+//     font-style: italic;
+//   }
+
+//   &__qty-field {
+//     width: 2.4rem;
+//     height: 1.9rem;
+//   }
+// }
+
+// .edit__button-container {
+//   display: flex;
+//   justify-content: space-between;
+//   width: 100%;
+//   padding-top: 2rem;
+// }
+
+// .edit-delete-button {
+//   border-style: none;
+//   height: 2rem;
+//   background-color: #f6784f;
+//   color: black;
+//   width: 39%;
+//   cursor: pointer;
+// }
+
+// .edit-cancel-button {
+//   border-style: none;
+//   height: 2rem;
+//   border: 1px solid #f6784f;
+//   background-color: white;
+//   color: black;
+//   width: 39%;
+//   cursor: pointer;
+// }

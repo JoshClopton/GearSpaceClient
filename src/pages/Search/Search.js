@@ -5,6 +5,8 @@ import axios from "axios";
 import { useState } from "react";
 import CreateItem from "../../components/CreateItem/CreateItem";
 import gearSpinner from "../../assets/images/gear-spinner.svg";
+// import getItem from "../../api/getItem";
+// import FormikCreateForm from "../../components/FormikCreateForm/FormikCreateForm";
 
 const Search = () => {
   const [products, setProducts] = useState(null);
@@ -28,6 +30,8 @@ const Search = () => {
   };
   const handleSubmit = (e) => {
     options.params.keyword = e.search;
+
+    // getItem(handleCloseModal, setLoading);
 
     axios
       .request(options)

@@ -7,8 +7,6 @@ import LoginForm from "../LoginForm/LoginForm";
 const Header = ({ loggedIntoGoogle, loggedOutOfGoogle, isLoggedIn }) => {
   // //On page load, a get request is sent to the back end to check if the session has been authenticated. If so, set logged in to true in home page. Otherwise, set logged in to false.
   useEffect(() => {
-    console.log("🕵🏻‍♂️ Header UseEffect ran: "); //TODO: remove/comment
-
     axios
       .get("http://localhost:8000/auth/profile", { withCredentials: true })
       .then((res) => {

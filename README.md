@@ -1,8 +1,6 @@
-# BrainStation-Capstone
+#Gear Space
 
-Gear Space
-
-Gear Space is an inventory system that allows you to keep track of your outdoor equipment. You can create new "shelves" by searching for your items using Rapid API and you can then save and update those items as needed. Checkout my YouTube video my GearSpace project here https://youtu.be/ZPxhNqkDcBk
+Gear Space is an inventory system that allows you to keep track of your outdoor equipment. You can create new "shelves" by searching for your items and you can then save and update those items as needed. Checkout my YouTube video my GearSpace project here https://youtu.be/ZPxhNqkDcBk
 
 ## Environment Variables
 

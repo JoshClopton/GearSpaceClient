@@ -11,6 +11,10 @@
   gap: 7rem;
   margin-top: 12rem;
 
+  @include tablet {
+    gap: 5rem;
+  }
+
   &__card {
     display: flex;
     flex-direction: column;

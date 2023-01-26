@@ -11,6 +11,7 @@
 # production
 /build
 #Test comment
+#test comment 2
 # misc
 .env
 .DS_Store
